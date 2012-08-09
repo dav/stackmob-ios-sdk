@@ -1,0 +1,20 @@
+[
+ {
+  "first_name":"Jon",
+  "last_name":"Cooper",
+  "company":"Carbon Five",
+  "armor_class":12
+ },
+ {
+  "first_name":"Jonah",
+  "last_name":"Williams",
+  "company":"Carbon Five",
+  "armor_class":15
+ },
+ {
+  "first_name":"Matt",
+  "last_name":"Vaznaian",
+  "company":"StackMob",
+  "armor_class":17
+ }
+]

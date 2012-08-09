@@ -1,0 +1,9 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - Kiwi (1.0.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.0RC1)
+  - Kiwi (from `https://github.com/allending/Kiwi.git', commit `15a2936ac30117ab3bacca7fbd0d952b6dad37f8')
+  - Kiwi (from `https://github.com/allending/Kiwi.git', commit `15a2936ac30117ab3bacca7fbd0d952b6dad37f8')
+  - Kiwi (from `https://github.com/allending/Kiwi.git', commit `15a2936ac30117ab3bacca7fbd0d952b6dad37f8')

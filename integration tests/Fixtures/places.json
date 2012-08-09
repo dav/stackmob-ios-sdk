@@ -1,0 +1,18 @@
+[
+ {
+ "name": "Lake Tahoe",
+ "location": {"lat": 39.119939, "lon": -120.033188}
+ },
+ {
+  "name": "San Francisco",
+  "location": {"lat": 37.7750, "lon": -122.4183}
+ },
+ {
+ "name": "Turkmenistan",
+ "location": {"lat": 38.993572, "lon": 59.084473}
+ },
+ {
+  "name": "San Rafael",
+  "location": {"lat": 37.977086, "lon": -122.531033}
+ }
+]
