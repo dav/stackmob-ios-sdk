@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSManagedObject(StackMobSerialization) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSManagedObject(StackMobSerialization) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/sm_assignObjectId">&nbsp;&nbsp;&nbsp;&nbsp;- sm_assignObjectId</option>
+	
+	<option value="//api/name/sm_dictionarySerialization">&nbsp;&nbsp;&nbsp;&nbsp;- sm_dictionarySerialization</option>
+	
+	<option value="//api/name/sm_objectId">&nbsp;&nbsp;&nbsp;&nbsp;- sm_objectId</option>
+	
+	<option value="//api/name/sm_primaryKeyField">&nbsp;&nbsp;&nbsp;&nbsp;- sm_primaryKeyField</option>
+	
+	<option value="//api/name/sm_relationshipHeader">&nbsp;&nbsp;&nbsp;&nbsp;- sm_relationshipHeader</option>
+	
+	<option value="//api/name/sm_schema">&nbsp;&nbsp;&nbsp;&nbsp;- sm_schema</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_assignObjectId">sm_assignObjectId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_dictionarySerialization">sm_dictionarySerialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_objectId">sm_objectId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_primaryKeyField">sm_primaryKeyField</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_relationshipHeader">sm_relationshipHeader</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_schema">sm_schema</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSManagedObject(StackMobSerialization) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSManagedObject(StackMobSerialization) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSManagedObject+StackMobSerialization.h<br />NSManagedObject+StackMobSerialization.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The methods in this category serve as the bread and butter for translating instances of <code>NSManagedObject</code> into StackMob equivalent objects.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_schema">&ndash;&nbsp;sm_schema</a></code>
+		<span class="tooltip"><p>Returns the StackMob equivalent schema for the entity name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_objectId">&ndash;&nbsp;sm_objectId</a></code>
+		<span class="tooltip"><p>Returns the unique StackMob ID for this object using the designated primary key attribute for the <code>NSManagedObject</code> instance entity.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_assignObjectId">&ndash;&nbsp;sm_assignObjectId</a></code>
+		<span class="tooltip"><p>Assigns a unique ID to the <code>NSManagedObject</code> instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_primaryKeyField">&ndash;&nbsp;sm_primaryKeyField</a></code>
+		<span class="tooltip"><p>Returns the primary key field for the entity used to uniquely define the object on StackMob.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_dictionarySerialization">&ndash;&nbsp;sm_dictionarySerialization</a></code>
+		<span class="tooltip"><p>Converts an <code>NSManagedObject</code> into an equivalent dictionary form for StackMob to process.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_relationshipHeader">&ndash;&nbsp;sm_relationshipHeader</a></code>
+		<span class="tooltip"><p>Triggers the <code>sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</code> method in <a href="../Categories/NSEntityDescription+StackMobSerialization.html">NSEntityDescription(StackMobSerialization)</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_assignObjectId" title="sm_assignObjectId"></a>
+	<h3 class="subsubtitle method-title">sm_assignObjectId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Assigns a unique ID to the <code>NSManagedObject</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_assignObjectId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The id is placed in the objects primary key attribute, retieved from <a href="#//api/name/sm_primaryKeyField">sm_primaryKeyField</a>. It is used as the reference when assigning a permanent ID to the Core Data <code>NSManagedObject</code> so that Core Data and StackMob are referencing the same key.</p><div class="note"><p><strong>Note:</strong> When creating an <code>NSManagedObject</code>, you must call this method and set it&rsquo;s return string as the value for the primary key field.  A call to save: on the managed object context will fail if any newly inserted object has a nil value for its primary key field.  To avoid this, when you are done setting other values simply add the line (assuming your new object is called newManagedObject):</p>
+
+<pre><code>[newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
+</code></pre></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_dictionarySerialization" title="sm_dictionarySerialization"></a>
+	<h3 class="subsubtitle method-title">sm_dictionarySerialization</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts an <code>NSManagedObject</code> into an equivalent dictionary form for StackMob to process.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)sm_dictionarySerialization</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_objectId" title="sm_objectId"></a>
+	<h3 class="subsubtitle method-title">sm_objectId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the unique StackMob ID for this object using the designated primary key attribute for the <code>NSManagedObject</code> instance entity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_objectId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_primaryKeyField" title="sm_primaryKeyField"></a>
+	<h3 class="subsubtitle method-title">sm_primaryKeyField</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the primary key field for the entity used to uniquely define the object on StackMob.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_primaryKeyField</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the <code>NSManagedObject</code> sublass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overriden <code>primaryKeyFieldName</code> method is returned. Otherwise lowercaseEntityName_id (i.e. person_id for entity Person) is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> sublass for this entity does not conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, and lowercaseEntityName_id is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_relationshipHeader" title="sm_relationshipHeader"></a>
+	<h3 class="subsubtitle method-title">sm_relationshipHeader</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Triggers the <code>sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</code> method in <a href="../Categories/NSEntityDescription+StackMobSerialization.html">NSEntityDescription(StackMobSerialization)</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_relationshipHeader</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string of all relationship header components joined by &amp;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_schema" title="sm_schema"></a>
+	<h3 class="subsubtitle method-title">sm_schema</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the StackMob equivalent schema for the entity name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_schema</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSManagedObject+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

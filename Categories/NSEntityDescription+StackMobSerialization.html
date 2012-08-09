@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSEntityDescription(StackMobSerialization) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSEntityDescription(StackMobSerialization) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/sm_fieldNameForProperty:">&nbsp;&nbsp;&nbsp;&nbsp;- sm_fieldNameForProperty:</option>
+	
+	<option value="//api/name/sm_primaryKeyField">&nbsp;&nbsp;&nbsp;&nbsp;- sm_primaryKeyField</option>
+	
+	<option value="//api/name/sm_propertyForField:">&nbsp;&nbsp;&nbsp;&nbsp;- sm_propertyForField:</option>
+	
+	<option value="//api/name/sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:">&nbsp;&nbsp;&nbsp;&nbsp;- sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</option>
+	
+	<option value="//api/name/sm_schema">&nbsp;&nbsp;&nbsp;&nbsp;- sm_schema</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_fieldNameForProperty:">sm_fieldNameForProperty:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_primaryKeyField">sm_primaryKeyField</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_propertyForField:">sm_propertyForField:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:">sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sm_schema">sm_schema</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSEntityDescription(StackMobSerialization) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSEntityDescription(StackMobSerialization) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSEntityDescription+StackMobSerialization.h<br />NSEntityDescription+StackMobSerialization.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The primary purpose for this category is use the information and methods provided by an <code>NSEntityDescription</code> to return StackMob equivalent descriptions of schemas and fields.  This is useful when we have an entity description for entity Person and we want to translate that into the schema for StackMob, or for creating relationship headers needed when posting objects with nested relationship objects.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_schema">&ndash;&nbsp;sm_schema</a></code>
+		<span class="tooltip"><p>Returns the StackMob equivalent schema for the entity name.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_primaryKeyField">&ndash;&nbsp;sm_primaryKeyField</a></code>
+		<span class="tooltip"><p>Returns the primary key field for the entity used to uniquely define the object on StackMob.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_fieldNameForProperty:">&ndash;&nbsp;sm_fieldNameForProperty:</a></code>
+		<span class="tooltip"><p>Given a property description, returns the equivalent field name on StackMob.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_propertyForField:">&ndash;&nbsp;sm_propertyForField:</a></code>
+		<span class="tooltip"><p>Given a StackMob field name, returns the equivalent <code>NSPropertyDescription</code> for the Core Data attribute or relationship.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:">&ndash;&nbsp;sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</a></code>
+		<span class="tooltip"><p>A recursive method to traverse an <code>NSEntityDescription</code>&rsquo;s properties and create a relationship header needed by StackMob when POSTing objects which contain nested relationship objects.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_fieldNameForProperty:" title="sm_fieldNameForProperty:"></a>
+	<h3 class="subsubtitle method-title">sm_fieldNameForProperty:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Given a property description, returns the equivalent field name on StackMob.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_fieldNameForProperty:(NSPropertyDescription *)<em>property</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>property</em></dt>
+			<dd><p>The description of an entity&rsquo;s property.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The StackMob field name for that property.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> An <code>SMExceptionIncompatibleObject</code> excpetion is thrown if the field name matches multiple properties.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSEntityDescription+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_primaryKeyField" title="sm_primaryKeyField"></a>
+	<h3 class="subsubtitle method-title">sm_primaryKeyField</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the primary key field for the entity used to uniquely define the object on StackMob.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_primaryKeyField</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the <code>NSManagedObject</code> sublass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overriden primaryKeyFieldName method is returned. Otherwise <lowercase entity name>_id is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> sublass for this entity does not conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, and lowercaseEntityName_id (i.e. person_id for entity Person) is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSEntityDescription+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_propertyForField:" title="sm_propertyForField:"></a>
+	<h3 class="subsubtitle method-title">sm_propertyForField:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Given a StackMob field name, returns the equivalent <code>NSPropertyDescription</code> for the Core Data attribute or relationship.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSPropertyDescription *)sm_propertyForField:(NSString *)<em>fieldName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fieldName</em></dt>
+			<dd><p>The field name from StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSPropertyDescription</code> for the equivalent Core Data attribute or relationship, if one exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSEntityDescription+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:" title="sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:"></a>
+	<h3 class="subsubtitle method-title">sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:withKeyPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A recursive method to traverse an <code>NSEntityDescription</code>&rsquo;s properties and create a relationship header needed by StackMob when POSTing objects which contain nested relationship objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:(NSMutableSet *)<em>processedEntities</em> withKeyPath:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>processedEntities</em></dt>
+			<dd><p>A set of the entities that have already been processed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The current path in the traversal tree, which allows us to add headers like person.superpower.interest=interest.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing each piece of the relationship header, which is then joined by &amp; to form an <code>NSString</code> and added to the request headers.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSEntityDescription+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sm_schema" title="sm_schema"></a>
+	<h3 class="subsubtitle method-title">sm_schema</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the StackMob equivalent schema for the entity name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)sm_schema</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSEntityDescription+StackMobSerialization.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

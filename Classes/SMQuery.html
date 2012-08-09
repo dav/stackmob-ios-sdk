@@ -1,0 +1,1467 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SMQuery Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SMQuery Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/requestHeaders">&nbsp;&nbsp;&nbsp;&nbsp;requestHeaders</option>
+	
+	<option value="//api/name/requestParameters">&nbsp;&nbsp;&nbsp;&nbsp;requestParameters</option>
+	
+	<option value="//api/name/schemaName">&nbsp;&nbsp;&nbsp;&nbsp;schemaName</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/fromIndex:toIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- fromIndex:toIndex:</option>
+	
+	<option value="//api/name/initWithEntity:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithEntity:</option>
+	
+	<option value="//api/name/initWithSchema:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithSchema:</option>
+	
+	<option value="//api/name/limit:">&nbsp;&nbsp;&nbsp;&nbsp;- limit:</option>
+	
+	<option value="//api/name/orderByField:ascending:">&nbsp;&nbsp;&nbsp;&nbsp;- orderByField:ascending:</option>
+	
+	<option value="//api/name/where:isEqualTo:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isEqualTo:</option>
+	
+	<option value="//api/name/where:isGreaterThan:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isGreaterThan:</option>
+	
+	<option value="//api/name/where:isGreaterThanOrEqualTo:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isGreaterThanOrEqualTo:</option>
+	
+	<option value="//api/name/where:isIn:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isIn:</option>
+	
+	<option value="//api/name/where:isLessThan:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isLessThan:</option>
+	
+	<option value="//api/name/where:isLessThanOrEqualTo:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isLessThanOrEqualTo:</option>
+	
+	<option value="//api/name/where:isNotEqualTo:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isNotEqualTo:</option>
+	
+	<option value="//api/name/where:isWithin:metersOf:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isWithin:metersOf:</option>
+	
+	<option value="//api/name/where:isWithin:milesOf:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isWithin:milesOf:</option>
+	
+	<option value="//api/name/where:isWithinBoundsWithSWCorner:andNECorner:">&nbsp;&nbsp;&nbsp;&nbsp;- where:isWithinBoundsWithSWCorner:andNECorner:</option>
+	
+	<option value="//api/name/where:near:">&nbsp;&nbsp;&nbsp;&nbsp;- where:near:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialize">Initialize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Where Clauses">Where Clauses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Pagination / Limiting">Pagination / Limiting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Order By">Order By</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestHeaders">requestHeaders</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestParameters">requestParameters</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/schemaName">schemaName</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fromIndex:toIndex:">fromIndex:toIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithEntity:">initWithEntity:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithSchema:">initWithSchema:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/limit:">limit:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/orderByField:ascending:">orderByField:ascending:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isEqualTo:">where:isEqualTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isGreaterThan:">where:isGreaterThan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isGreaterThanOrEqualTo:">where:isGreaterThanOrEqualTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isIn:">where:isIn:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isLessThan:">where:isLessThan:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isLessThanOrEqualTo:">where:isLessThanOrEqualTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isNotEqualTo:">where:isNotEqualTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isWithin:metersOf:">where:isWithin:metersOf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isWithin:milesOf:">where:isWithin:milesOf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:isWithinBoundsWithSWCorner:andNECorner:">where:isWithinBoundsWithSWCorner:andNECorner:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/where:near:">where:near:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SMQuery Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SMQuery Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SMQuery.h<br />SMQuery.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>SMQuery</code> exposes an interface for defining a query against StackMob&rsquo;s datastore API.</p>
+
+<p><code>SMQuery</code> uses StackMob&rsquo;s terminology:
+&ndash; Queries are performed against a specific <em>schema</em> (usually also the name of a model class or of an entity in a managed object model)
+&ndash; Queries may select or order based on the <em>values</em> of the <em>fields</em> of an object belonging to their <em>schema</em>.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestParameters">&nbsp;&nbsp;requestParameters</a></code>
+		<span class="tooltip"><p>requestParameters holds the HTTP request parameters i.e. for a request that looks like <code>GET /something?key=value</code>, it holds a dictionary entry mapping <code>key</code> to <code>value</code>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestHeaders">&nbsp;&nbsp;requestHeaders</a></code>
+		<span class="tooltip"><p>requestHeaders holds the HTTP headers, which affect things like sort order and pagination/limiting.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/schemaName">&nbsp;&nbsp;schemaName</a></code>
+		<span class="tooltip"><p>schemaName is the name of the StackMob schema against which this query will be executed.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Initialize" name="task_Initialize"></a>
+						<h3 class="subsubtitle task-title">Initialize</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithEntity:">&ndash;&nbsp;initWithEntity:</a></code>
+		<span class="tooltip"><p>Initializes an <code>SMQuery</code> object from the provided entity.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithSchema:">&ndash;&nbsp;initWithSchema:</a></code>
+		<span class="tooltip"><p>Initializes an <code>SMQuery</code> object from the provided schema.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Where Clauses" name="task_Where Clauses"></a>
+						<h3 class="subsubtitle task-title">Where Clauses</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isEqualTo:">&ndash;&nbsp;where:isEqualTo:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field == value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isNotEqualTo:">&ndash;&nbsp;where:isNotEqualTo:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field != value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isLessThan:">&ndash;&nbsp;where:isLessThan:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field &lt; value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isLessThanOrEqualTo:">&ndash;&nbsp;where:isLessThanOrEqualTo:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field &lt;= value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isGreaterThan:">&ndash;&nbsp;where:isGreaterThan:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field > value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isGreaterThanOrEqualTo:">&ndash;&nbsp;where:isGreaterThanOrEqualTo:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field >= value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isIn:">&ndash;&nbsp;where:isIn:</a></code>
+		<span class="tooltip"><p>Add the query criteria: field is in the array valuesArray.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isWithin:milesOf:">&ndash;&nbsp;where:isWithin:milesOf:</a></code>
+		<span class="tooltip"><p>Add the query criteria: <code>field</code>&rsquo;s location is within <code>miles</code> of <code>point</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isWithin:metersOf:">&ndash;&nbsp;where:isWithin:metersOf:</a></code>
+		<span class="tooltip"><p>Add the query criteria: <code>field</code>&rsquo;s location is within <code>meters</code> of <code>point</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:isWithinBoundsWithSWCorner:andNECorner:">&ndash;&nbsp;where:isWithinBoundsWithSWCorner:andNECorner:</a></code>
+		<span class="tooltip"><p>Add the query criteria: <code>field</code>&rsquo;s location falls within the bounding box with corners <code>sw</code> and <code>ne</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/where:near:">&ndash;&nbsp;where:near:</a></code>
+		<span class="tooltip"><p>StackMob will insert a field <code>distance</code> and insert it into the response. This field is the distance between the query <code>field</code>&rsquo;s location and <code>location</code>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Pagination / Limiting" name="task_Pagination / Limiting"></a>
+						<h3 class="subsubtitle task-title">Pagination / Limiting</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fromIndex:toIndex:">&ndash;&nbsp;fromIndex:toIndex:</a></code>
+		<span class="tooltip"><p>Return a subset of the result set.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/limit:">&ndash;&nbsp;limit:</a></code>
+		<span class="tooltip"><p>Limit the result set.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Order By" name="task_Order By"></a>
+						<h3 class="subsubtitle task-title">Order By</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/orderByField:ascending:">&ndash;&nbsp;orderByField:ascending:</a></code>
+		<span class="tooltip"><p>Order the result set.
+Note: You can apply multiple ordering criteria by invoking this multiple times.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/requestHeaders" title="requestHeaders"></a>
+	<h3 class="subsubtitle method-title">requestHeaders</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>requestHeaders holds the HTTP headers, which affect things like sort order and pagination/limiting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *requestHeaders</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestParameters" title="requestParameters"></a>
+	<h3 class="subsubtitle method-title">requestParameters</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>requestParameters holds the HTTP request parameters i.e. for a request that looks like <code>GET /something?key=value</code>, it holds a dictionary entry mapping <code>key</code> to <code>value</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *requestParameters</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/schemaName" title="schemaName"></a>
+	<h3 class="subsubtitle method-title">schemaName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>schemaName is the name of the StackMob schema against which this query will be executed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSString *schemaName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/fromIndex:toIndex:" title="fromIndex:toIndex:"></a>
+	<h3 class="subsubtitle method-title">fromIndex:toIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return a subset of the result set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fromIndex:(NSUInteger)<em>start</em> toIndex:(NSUInteger)<em>end</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>start</em></dt>
+			<dd><p>Offset of the first result to return.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>end</em></dt>
+			<dd><p>Offset of the last result to return.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithEntity:" title="initWithEntity:"></a>
+	<h3 class="subsubtitle method-title">initWithEntity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes an <code>SMQuery</code> object from the provided entity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithEntity:(NSEntityDescription *)<em>entity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>entity</em></dt>
+			<dd><p>A Core Data <code>NSEntityDescription</code> for which we assume a corresponding schema named [[entity name] lowercaseString].</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithSchema:" title="initWithSchema:"></a>
+	<h3 class="subsubtitle method-title">initWithSchema:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes an <code>SMQuery</code> object from the provided schema.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithSchema:(NSString *)<em>schema</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema to run the query against.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/limit:" title="limit:"></a>
+	<h3 class="subsubtitle method-title">limit:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Limit the result set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)limit:(NSUInteger)<em>count</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>count</em></dt>
+			<dd><p>The number of objects to return.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/orderByField:ascending:" title="orderByField:ascending:"></a>
+	<h3 class="subsubtitle method-title">orderByField:ascending:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Order the result set.
+Note: You can apply multiple ordering criteria by invoking this multiple times.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)orderByField:(NSString *)<em>field</em> ascending:(BOOL)<em>ascending</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field to order by.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ascending</em></dt>
+			<dd><p><code>YES</code> for ascending, <code>NO</code> for descending.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isEqualTo:" title="where:isEqualTo:"></a>
+	<h3 class="subsubtitle method-title">where:isEqualTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field == value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isEqualTo:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isGreaterThan:" title="where:isGreaterThan:"></a>
+	<h3 class="subsubtitle method-title">where:isGreaterThan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field > value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isGreaterThan:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isGreaterThanOrEqualTo:" title="where:isGreaterThanOrEqualTo:"></a>
+	<h3 class="subsubtitle method-title">where:isGreaterThanOrEqualTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field >= value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isGreaterThanOrEqualTo:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isIn:" title="where:isIn:"></a>
+	<h3 class="subsubtitle method-title">where:isIn:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field is in the array valuesArray.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isIn:(NSArray *)<em>valuesArray</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>valuesArray</em></dt>
+			<dd><p>An array containing values with which to compare <code>field</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isLessThan:" title="where:isLessThan:"></a>
+	<h3 class="subsubtitle method-title">where:isLessThan:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field &lt; value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isLessThan:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isLessThanOrEqualTo:" title="where:isLessThanOrEqualTo:"></a>
+	<h3 class="subsubtitle method-title">where:isLessThanOrEqualTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field &lt;= value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isLessThanOrEqualTo:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isNotEqualTo:" title="where:isNotEqualTo:"></a>
+	<h3 class="subsubtitle method-title">where:isNotEqualTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: field != value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isNotEqualTo:(id)<em>value</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A constant value to be compared.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isWithin:metersOf:" title="where:isWithin:metersOf:"></a>
+	<h3 class="subsubtitle method-title">where:isWithin:metersOf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: <code>field</code>&rsquo;s location is within <code>meters</code> of <code>point</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isWithin:(CLLocationDistance)<em>meters</em> metersOf:(CLLocationCoordinate2D)<em>point</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The geo field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>meters</em></dt>
+			<dd><p>Distance in meters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>The point around which to search.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> StackMob will generate a field <code>distance</code> and insert it into the response. This field is the distance between the query <code>field</code>&rsquo;s location and <code>point</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isWithin:milesOf:" title="where:isWithin:milesOf:"></a>
+	<h3 class="subsubtitle method-title">where:isWithin:milesOf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: <code>field</code>&rsquo;s location is within <code>miles</code> of <code>point</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isWithin:(double)<em>miles</em> milesOf:(CLLocationCoordinate2D)<em>point</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The geo field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>miles</em></dt>
+			<dd><p>Distance in miles.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>The point around which to search.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> StackMob will generate a field <code>distance</code> and insert it into the response. This field is the distance between the query <code>field</code>&rsquo;s location and <code>point</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:isWithinBoundsWithSWCorner:andNECorner:" title="where:isWithinBoundsWithSWCorner:andNECorner:"></a>
+	<h3 class="subsubtitle method-title">where:isWithinBoundsWithSWCorner:andNECorner:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add the query criteria: <code>field</code>&rsquo;s location falls within the bounding box with corners <code>sw</code> and <code>ne</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> isWithinBoundsWithSWCorner:(CLLocationCoordinate2D)<em>sw</em> andNECorner:(CLLocationCoordinate2D)<em>ne</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The geo field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sw</em></dt>
+			<dd><p>Location of the bounding box&rsquo;s southwest corner.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ne</em></dt>
+			<dd><p>Location of the bounding box&rsquo;s northeast corner.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/where:near:" title="where:near:"></a>
+	<h3 class="subsubtitle method-title">where:near:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>StackMob will insert a field <code>distance</code> and insert it into the response. This field is the distance between the query <code>field</code>&rsquo;s location and <code>location</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)where:(NSString *)<em>field</em> near:(CLLocationCoordinate2D)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>The geo field in the StackMob schema that is to be compared.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>The reference location.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> You probably want to apply a limit when including this clause or you may end up with more results than intended.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMQuery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

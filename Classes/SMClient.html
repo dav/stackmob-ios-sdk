@@ -1,0 +1,2626 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SMClient Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SMClient Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/defaultClient">&nbsp;&nbsp;&nbsp;&nbsp;+ defaultClient</option>
+	
+	<option value="//api/name/setDefaultClient:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDefaultClient:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/coreDataStoreWithManagedObjectModel:">&nbsp;&nbsp;&nbsp;&nbsp;- coreDataStoreWithManagedObjectModel:</option>
+	
+	<option value="//api/name/createUserWithFacebookToken:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createUserWithFacebookToken:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/createUserWithFacebookToken:username:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createUserWithFacebookToken:username:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/dataStore">&nbsp;&nbsp;&nbsp;&nbsp;- dataStore</option>
+	
+	<option value="//api/name/getLoggedInUserFacebookInfoWithOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- getLoggedInUserFacebookInfoWithOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/getLoggedInUserOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- getLoggedInUserOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/getLoggedInUserTwitterInfoWithOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- getLoggedInUserTwitterInfoWithOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/getLoggedInUserWithOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- getLoggedInUserWithOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:</option>
+	
+	<option value="//api/name/initWithAPIVersion:publicKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:publicKey:</option>
+	
+	<option value="//api/name/isLoggedIn">&nbsp;&nbsp;&nbsp;&nbsp;- isLoggedIn</option>
+	
+	<option value="//api/name/isLoggedOut">&nbsp;&nbsp;&nbsp;&nbsp;- isLoggedOut</option>
+	
+	<option value="//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithFacebookToken:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithFacebookToken:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithFacebookToken:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithFacebookToken:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithTwitterToken:twitterSecret:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithTwitterToken:twitterSecret:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithUsername:password:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithUsername:password:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithUsername:password:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithUsername:password:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/logoutOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- logoutOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/refreshLoginWithOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- refreshLoginWithOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/sendForgotPaswordEmailForUser:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- sendForgotPaswordEmailForUser:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateFacebookStatusWithMessage:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateFacebookStatusWithMessage:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateTwitterStatusWithMessage:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateTwitterStatusWithMessage:onSuccess:onFailure:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialize">Initialize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving a Data Store">Retrieving a Data Store</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Basic Authentication">Basic Authentication</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieve the Logged In User">Retrieve the Logged In User</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Logout">Logout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reseting Password">Reseting Password</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Facebook Authentication">Facebook Authentication</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Twitter Authentication">Twitter Authentication</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultClient">defaultClient</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultClient:">setDefaultClient:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:">changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/coreDataStoreWithManagedObjectModel:">coreDataStoreWithManagedObjectModel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">createUserWithFacebookToken:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserWithFacebookToken:username:onSuccess:onFailure:">createUserWithFacebookToken:username:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataStore">dataStore</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLoggedInUserFacebookInfoWithOnSuccess:onFailure:">getLoggedInUserFacebookInfoWithOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLoggedInUserOnSuccess:onFailure:">getLoggedInUserOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLoggedInUserTwitterInfoWithOnSuccess:onFailure:">getLoggedInUserTwitterInfoWithOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLoggedInUserWithOptions:onSuccess:onFailure:">getLoggedInUserWithOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:">initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:publicKey:">initWithAPIVersion:publicKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLoggedIn">isLoggedIn</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLoggedOut">isLoggedOut</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithFacebookToken:onSuccess:onFailure:">loginWithFacebookToken:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithFacebookToken:withOptions:onSuccess:onFailure:">loginWithFacebookToken:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithTwitterToken:twitterSecret:onSuccess:onFailure:">loginWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:">loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithUsername:password:withOptions:onSuccess:onFailure:">loginWithUsername:password:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:">loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logoutOnSuccess:onFailure:">logoutOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshLoginWithOnSuccess:onFailure:">refreshLoginWithOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendForgotPaswordEmailForUser:onSuccess:onFailure:">sendForgotPaswordEmailForUser:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateFacebookStatusWithMessage:onSuccess:onFailure:">updateFacebookStatusWithMessage:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateTwitterStatusWithMessage:onSuccess:onFailure:">updateTwitterStatusWithMessage:onSuccess:onFailure:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SMClient Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SMClient Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SMClient.h<br />SMClient.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An <code>SMClient</code> provides a high level interface to interacting with StackMob. A new client must be given at the very least an API version and public key in order to communicate with your StackMob application.</p>
+
+<p><code>SMClient</code> sets default values for other configuration settings which may be set as necessary by your application.</p>
+
+<p><code>SMClient</code> exposes a <a href="#//api/name/defaultClient">defaultClient</a> for applications which use a globally available client to share configuration settings.</p>
+
+<h2>Core Data Integration</h2>
+
+<p>In order to use the Core Data integration, you must initialize an <code>SMClient</code> as well as a <code>NSManagedObjectModel</code>, then pass the <code>NSManagedObjectModel</code> instance to the <code>SMClient</code> instance method <a href="#//api/name/coreDataStoreWithManagedObjectModel:">coreDataStoreWithManagedObjectModel:</a> which returns an instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a>.  You can then retrieve an instance of <code>NSManagedObjectContext</code>:</p>
+
+<pre><code>SMClient *client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"12345"];
+SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:self.managedObjectModel];
+self.managedObjectContext = [coreDataStore managedObjectContext];
+</code></pre>
+
+<p>It is important only to insantiate one <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> instance and use the same managedObjectContext throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.</p>
+
+<h2>User Sessions</h2>
+
+<p>When a client is instantiated, an instance of <a href="../Classes/SMUserSession.html">SMUserSession</a> is initialized and configured with the provided settings.  This is where the user&rsquo;s OAuth2 credentials and token information is located, and is used by the internal <a href="../Classes/SMDataStore.html">SMDataStore</a> instance to authenticate requests.</p>
+
+<h2>Facebook Authentication</h2>
+
+<p>The Facebook token used in the methods to create, link or login users comes from the Facebook SDK.  You must register your application with the Facebook developer website, import the SDK, and follow the tutorial to get the SDK set up in your application.  When you successfully login via Facebook, a method in your application is called and provided with the token you&rsquo;ll need to pass to the Facebook methods listed below.  This token does not changed once assigned but is used to verify that you have a currently authenticated session by the Facebook SDK.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initialize" name="task_Initialize"></a>
+						<h3 class="subsubtitle task-title">Initialize</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultClient:">+&nbsp;setDefaultClient:</a></code>
+		<span class="tooltip"><p>Override the default client.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultClient">+&nbsp;defaultClient</a></code>
+		<span class="tooltip"><p>A convenient shared <code>SMClient</code> instance. This will be the first <code>SMClient</code> object created, unless overridden
+via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:">&ndash;&nbsp;initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:</a></code>
+		<span class="tooltip"><p>Initialize specifying all parameters.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAPIVersion:publicKey:">&ndash;&nbsp;initWithAPIVersion:publicKey:</a></code>
+		<span class="tooltip"><p>Initialize with only the most basic parameters and defaults for the rest.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Retrieving a Data Store" name="task_Retrieving a Data Store"></a>
+						<h3 class="subsubtitle task-title">Retrieving a Data Store</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/coreDataStoreWithManagedObjectModel:">&ndash;&nbsp;coreDataStoreWithManagedObjectModel:</a></code>
+		<span class="tooltip"><p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataStore">&ndash;&nbsp;dataStore</a></code>
+		<span class="tooltip"><p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Basic Authentication" name="task_Basic Authentication"></a>
+						<h3 class="subsubtitle task-title">Basic Authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">&ndash;&nbsp;loginWithUsername:password:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a username/password.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithUsername:password:withOptions:onSuccess:onFailure:">&ndash;&nbsp;loginWithUsername:password:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a username/password.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">&ndash;&nbsp;loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a username and temporary password, changing the users&rsquo;s password to the supplied new password.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:">&ndash;&nbsp;loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a username and temporary password, changing the users&rsquo;s password to the supplied new password.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshLoginWithOnSuccess:onFailure:">&ndash;&nbsp;refreshLoginWithOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Refresh the current login.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Retrieve the Logged In User" name="task_Retrieve the Logged In User"></a>
+						<h3 class="subsubtitle task-title">Retrieve the Logged In User</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLoggedInUserWithOptions:onSuccess:onFailure:">&ndash;&nbsp;getLoggedInUserWithOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Return the full object associated with the logged in user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLoggedInUserOnSuccess:onFailure:">&ndash;&nbsp;getLoggedInUserOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Return the full object associated with the logged in user.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isLoggedIn">&ndash;&nbsp;isLoggedIn</a></code>
+		<span class="tooltip"><p>Check whether the current user is logged in.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isLoggedOut">&ndash;&nbsp;isLoggedOut</a></code>
+		<span class="tooltip"><p>Check whether the user is logged out by returning the negation of <a href="#//api/name/isLoggedIn">isLoggedIn</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Logout" name="task_Logout"></a>
+						<h3 class="subsubtitle task-title">Logout</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logoutOnSuccess:onFailure:">&ndash;&nbsp;logoutOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Logout, clearing token validity locally and on the server.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Reseting Password" name="task_Reseting Password"></a>
+						<h3 class="subsubtitle task-title">Reseting Password</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendForgotPaswordEmailForUser:onSuccess:onFailure:">&ndash;&nbsp;sendForgotPaswordEmailForUser:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Kick off the &ldquo;Forgot Password&rdquo; process.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:">&ndash;&nbsp;changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Reset a user&rsquo;s password securely.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Facebook Authentication" name="task_Facebook Authentication"></a>
+						<h3 class="subsubtitle task-title">Facebook Authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">&ndash;&nbsp;createUserWithFacebookToken:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a user linked with a Facebook account.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserWithFacebookToken:username:onSuccess:onFailure:">&ndash;&nbsp;createUserWithFacebookToken:username:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a user linked with a Facebook account</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">&ndash;&nbsp;linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Link the logged in user with a Facebook account.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithFacebookToken:onSuccess:onFailure:">&ndash;&nbsp;loginWithFacebookToken:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a Facebook token.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithFacebookToken:withOptions:onSuccess:onFailure:">&ndash;&nbsp;loginWithFacebookToken:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with a Facebook token.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateFacebookStatusWithMessage:onSuccess:onFailure:">&ndash;&nbsp;updateFacebookStatusWithMessage:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Update the logged in users&rsquo;s Facebook status.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLoggedInUserFacebookInfoWithOnSuccess:onFailure:">&ndash;&nbsp;getLoggedInUserFacebookInfoWithOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Get Facebook info for the logged in users.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Twitter Authentication" name="task_Twitter Authentication"></a>
+						<h3 class="subsubtitle task-title">Twitter Authentication</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">&ndash;&nbsp;createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a user linked with a Twitter account</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:">&ndash;&nbsp;createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a user linked with a Twitter account.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">&ndash;&nbsp;linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Link the logged in user with a Twitter account.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithTwitterToken:twitterSecret:onSuccess:onFailure:">&ndash;&nbsp;loginWithTwitterToken:twitterSecret:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with twitter credentials.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:">&ndash;&nbsp;loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Login a user to your app with twitter credentials.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateTwitterStatusWithMessage:onSuccess:onFailure:">&ndash;&nbsp;updateTwitterStatusWithMessage:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Update the logged in users&rsquo;s Twitter status.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLoggedInUserTwitterInfoWithOnSuccess:onFailure:">&ndash;&nbsp;getLoggedInUserTwitterInfoWithOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Get Twitter info for the logged in users.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultClient" title="defaultClient"></a>
+	<h3 class="subsubtitle method-title">defaultClient</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A convenient shared <code>SMClient</code> instance. This will be the first <code>SMClient</code> object created, unless overridden
+via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (SMClient *)defaultClient</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultClient:" title="setDefaultClient:"></a>
+	<h3 class="subsubtitle method-title">setDefaultClient:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Override the default client.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDefaultClient:(SMClient *)<em>client</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>client</em></dt>
+			<dd><p>The client to set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:" title="changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">changeLoggedInUserPasswordFrom:to:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reset a user&rsquo;s password securely.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changeLoggedInUserPasswordFrom:(NSString *)<em>oldPassword</em> to:(NSString *)<em>newPassword</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldPassword</em></dt>
+			<dd><p>The user&rsquo;s current password.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newPassword</em></dt>
+			<dd><p>The new password for the user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This would be hooked up to a password reset form. Changing a password via the regular datastore APIs
+will result in an error. This API requires the user to be logged in as well as to supply their old password.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/coreDataStoreWithManagedObjectModel:" title="coreDataStoreWithManagedObjectModel:"></a>
+	<h3 class="subsubtitle method-title">coreDataStoreWithManagedObjectModel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SMCoreDataStore *)coreDataStoreWithManagedObjectModel:(NSManagedObjectModel *)<em>managedObjectModel</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>managedObjectModel</em></dt>
+			<dd><p>An instance of <code>NSManagedObjectModel</code> set to the data model to be replicated on StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserWithFacebookToken:onSuccess:onFailure:" title="createUserWithFacebookToken:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createUserWithFacebookToken:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a user linked with a Facebook account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createUserWithFacebookToken:(NSString *)<em>fbToken</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fbToken</em></dt>
+			<dd><p>A Facebook access token obtained from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The username for this method is extracted from the Facebook account.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserWithFacebookToken:username:onSuccess:onFailure:" title="createUserWithFacebookToken:username:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createUserWithFacebookToken:username:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a user linked with a Facebook account</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createUserWithFacebookToken:(NSString *)<em>fbToken</em> username:(NSString *)<em>username</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fbToken</em></dt>
+			<dd><p>A Facebook access token obtained from Facebook</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to user, rather than getting one from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:" title="createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a user linked with a Twitter account</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createUserWithTwitterToken:(NSString *)<em>twitterToken</em> twitterSecret:(NSString *)<em>twitterSecret</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterToken</em></dt>
+			<dd><p>A Twitter token obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterSecret</em></dt>
+			<dd><p>A Twitter secret obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The username is extracted from the Twitter account.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:" title="createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createUserWithTwitterToken:twitterSecret:username:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a user linked with a Twitter account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createUserWithTwitterToken:(NSString *)<em>twitterToken</em> twitterSecret:(NSString *)<em>twitterSecret</em> username:(NSString *)<em>username</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterToken</em></dt>
+			<dd><p>A Twitter token obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterSecret</em></dt>
+			<dd><p>A Twitter secret obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to user, rather than getting one from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataStore" title="dataStore"></a>
+	<h3 class="subsubtitle method-title">dataStore</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (SMDataStore *)dataStore</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p>
+
+<p>A dataStore should be used to make direct REST calls to StackMob.  See <a href="../Classes/SMDataStore.html">SMDataStore</a> for basic CRUD methods.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLoggedInUserFacebookInfoWithOnSuccess:onFailure:" title="getLoggedInUserFacebookInfoWithOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">getLoggedInUserFacebookInfoWithOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get Facebook info for the logged in users.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getLoggedInUserFacebookInfoWithOnSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The logged in user must have a linked Facebook account, via either
+<a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">createUserWithFacebookToken:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLoggedInUserOnSuccess:onFailure:" title="getLoggedInUserOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">getLoggedInUserOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the full object associated with the logged in user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getLoggedInUserOnSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Useful on app startup to replace login when the user is already logged in.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLoggedInUserTwitterInfoWithOnSuccess:onFailure:" title="getLoggedInUserTwitterInfoWithOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">getLoggedInUserTwitterInfoWithOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get Twitter info for the logged in users.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getLoggedInUserTwitterInfoWithOnSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The logged in user must have a linked Twitter account, via either
+createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLoggedInUserWithOptions:onSuccess:onFailure:" title="getLoggedInUserWithOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">getLoggedInUserWithOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the full object associated with the logged in user.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getLoggedInUserWithOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Useful on app startup to replace login when the user is already logged in.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:" title="initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize specifying all parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIVersion:(NSString *)<em>appAPIVersion</em> apiHost:(NSString *)<em>apiHost</em> publicKey:(NSString *)<em>publicKey</em> userSchema:(NSString *)<em>userSchema</em> userIdName:(NSString *)<em>userIdName</em> passwordFieldName:(NSString *)<em>passwordFieldName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appAPIVersion</em></dt>
+			<dd><p>The API version of your StackMob application which this client instance should use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiHost</em></dt>
+			<dd><p>The host to connect to for API requests.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicKey</em></dt>
+			<dd><p>Your StackMob application&rsquo;s OAuth2 public key.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userSchema</em></dt>
+			<dd><p>The StackMob schema that has been flagged as a user object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userIdName</em></dt>
+			<dd><p>The StackMob primary key field name for the user object schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>passwordFieldName</em></dt>
+			<dd><p>The StackMob field name for the password.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>SMClient</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAPIVersion:publicKey:" title="initWithAPIVersion:publicKey:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIVersion:publicKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize with only the most basic parameters and defaults for the rest.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIVersion:(NSString *)<em>appAPIVersion</em> publicKey:(NSString *)<em>publicKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appAPIVersion</em></dt>
+			<dd><p>The API version of your StackMob application which this client instance should use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicKey</em></dt>
+			<dd><p>Your StackMob application&rsquo;s OAuth2 public key.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>SMClient</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isLoggedIn" title="isLoggedIn"></a>
+	<h3 class="subsubtitle method-title">isLoggedIn</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check whether the current user is logged in.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isLoggedIn</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the current user is logged in, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method first checks if a refresh token exists, and if that fails checks to see if the expiration date on the access token is later than the current time.  The reason we return <code>YES</code> to this method if a refresh token exists is because automatic refresh of a session using the refresh token is initiated if a request comes back unauthorized or the current access token has expired.  The developer does not have to worry about refreshing their own user sessions.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isLoggedOut" title="isLoggedOut"></a>
+	<h3 class="subsubtitle method-title">isLoggedOut</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check whether the user is logged out by returning the negation of <a href="#//api/name/isLoggedIn">isLoggedIn</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isLoggedOut</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the current user is logged out, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:" title="linkLoggedInUserWithFacebookToken:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Link the logged in user with a Facebook account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)linkLoggedInUserWithFacebookToken:(NSString *)<em>fbToken</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fbToken</em></dt>
+			<dd><p>A Facebook access token obtained from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:" title="linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Link the logged in user with a Twitter account.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)linkLoggedInUserWithTwitterToken:(NSString *)<em>twitterToken</em> twitterSecret:(NSString *)<em>twitterSecret</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterToken</em></dt>
+			<dd><p>A Twitter token obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterSecret</em></dt>
+			<dd><p>A Twitter secret obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithFacebookToken:onSuccess:onFailure:" title="loginWithFacebookToken:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithFacebookToken:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a Facebook token.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithFacebookToken:(NSString *)<em>fbToken</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fbToken</em></dt>
+			<dd><p>A Facebook access token obtained from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match a existing user object that has a linked Facebook account, via either <a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">createUserWithFacebookToken:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithFacebookToken:withOptions:onSuccess:onFailure:" title="loginWithFacebookToken:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithFacebookToken:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a Facebook token.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithFacebookToken:(NSString *)<em>fbToken</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fbToken</em></dt>
+			<dd><p>A Facebook access token obtained from Facebook.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match a existing user object that has a linked Facebook account, via either <a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">createUserWithFacebookToken:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithTwitterToken:twitterSecret:onSuccess:onFailure:" title="loginWithTwitterToken:twitterSecret:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithTwitterToken:twitterSecret:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with twitter credentials.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithTwitterToken:(NSString *)<em>twitterToken</em> twitterSecret:(NSString *)<em>twitterSecret</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterToken</em></dt>
+			<dd><p>A Twitter token obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterSecret</em></dt>
+			<dd><p>A Twitter secret obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match a existing user object that has a linked Twitter account, via either createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:" title="loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithTwitterToken:twitterSecret:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with twitter credentials.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithTwitterToken:(NSString *)<em>twitterToken</em> twitterSecret:(NSString *)<em>twitterSecret</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterToken</em></dt>
+			<dd><p>A Twitter token obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>twitterSecret</em></dt>
+			<dd><p>A Twitter secret obtained from Twitter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match a existing user object that has a linked Twitter account, via either
+createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithUsername:password:onSuccess:onFailure:" title="loginWithUsername:password:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithUsername:password:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a username/password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithUsername:(NSString *)<em>username</em> password:(NSString *)<em>password</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure. If the error code is <code>SMErrorTemporaryPasswordResetRequired</code>, you should prompt the user supply a new password and call <a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match an existing user object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithUsername:password:withOptions:onSuccess:onFailure:" title="loginWithUsername:password:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithUsername:password:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a username/password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithUsername:(NSString *)<em>username</em> password:(NSString *)<em>password</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>The password to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure. If the error code is <code>SMErrorTemporaryPasswordResetRequired</code>, you should prompt the user supply a new password and call <a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The credentials should match an existing user object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:" title="loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a username and temporary password, changing the users&rsquo;s password to the supplied new password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithUsername:(NSString *)<em>username</em> temporaryPassword:(NSString *)<em>tempPassword</em> settingNewPassword:(NSString *)<em>newPassword</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tempPassword</em></dt>
+			<dd><p>The temporary password received via email.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newPassword</em></dt>
+			<dd><p>The new password to be set, invalidating the old and temporary passwords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code> to the failure block.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:" title="loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">loginWithUsername:temporaryPassword:settingNewPassword:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Login a user to your app with a username and temporary password, changing the users&rsquo;s password to the supplied new password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loginWithUsername:(NSString *)<em>username</em> temporaryPassword:(NSString *)<em>tempPassword</em> settingNewPassword:(NSString *)<em>newPassword</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The username to log in with.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tempPassword</em></dt>
+			<dd><p>The temporary password received via email.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newPassword</em></dt>
+			<dd><p>The new password to be set, invalidating the old and temporary passwords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on successful login with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this api. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logoutOnSuccess:onFailure:" title="logoutOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">logoutOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Logout, clearing token validity locally and on the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)logoutOnSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshLoginWithOnSuccess:onFailure:" title="refreshLoginWithOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">refreshLoginWithOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Refresh the current login.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshLoginWithOnSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success with the user object for the logged in user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Only use this method if you plan to manually manage your session. Logins expire after an hour and needs to be refeshed. This is handled automatically when you make a request, but for highly concurrent systems you may want to call this manually.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendForgotPaswordEmailForUser:onSuccess:onFailure:" title="sendForgotPaswordEmailForUser:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">sendForgotPaswordEmailForUser:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Kick off the &ldquo;Forgot Password&rdquo; process.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendForgotPaswordEmailForUser:(NSString *)<em>username</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>username</em></dt>
+			<dd><p>The user to send the email to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This should be hooked up to a button on the login screen. An email will be sent to the user with a temporary
+password. They can then use that temporary password to login with <a href="#//api/name/loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:">loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateFacebookStatusWithMessage:onSuccess:onFailure:" title="updateFacebookStatusWithMessage:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateFacebookStatusWithMessage:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update the logged in users&rsquo;s Facebook status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateFacebookStatusWithMessage:(NSString *)<em>message</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The message to post.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The logged in user must have a linked Facebook account, via either
+<a href="#//api/name/createUserWithFacebookToken:onSuccess:onFailure:">createUserWithFacebookToken:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithFacebookToken:onSuccess:onFailure:">linkLoggedInUserWithFacebookToken:onSuccess:onFailure:</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateTwitterStatusWithMessage:onSuccess:onFailure:" title="updateTwitterStatusWithMessage:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateTwitterStatusWithMessage:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update the logged in users&rsquo;s Twitter status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateTwitterStatusWithMessage:(NSString *)<em>message</em> onSuccess:(SMResultSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>The message to post.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Completion block called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Completion block called on failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The logged in user must have a linked Twitter account, via either
+createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

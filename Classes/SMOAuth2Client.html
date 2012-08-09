@@ -1,0 +1,717 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SMOAuth2Client Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SMOAuth2Client Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/createMACHeaderForHttpMethod:path:">&nbsp;&nbsp;&nbsp;&nbsp;- createMACHeaderForHttpMethod:path:</option>
+	
+	<option value="//api/name/createMACHeaderForHttpMethod:path:timestamp:nonce:">&nbsp;&nbsp;&nbsp;&nbsp;- createMACHeaderForHttpMethod:path:timestamp:nonce:</option>
+	
+	<option value="//api/name/getPort">&nbsp;&nbsp;&nbsp;&nbsp;- getPort</option>
+	
+	<option value="//api/name/hasValidCredentials">&nbsp;&nbsp;&nbsp;&nbsp;- hasValidCredentials</option>
+	
+	<option value="//api/name/initWithAPIVersion:scheme:apiHost:publicKey:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:scheme:apiHost:publicKey:</option>
+	
+	<option value="//api/name/requestWithMethod:path:parameters:">&nbsp;&nbsp;&nbsp;&nbsp;- requestWithMethod:path:parameters:</option>
+	
+	<option value="//api/name/signRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- signRequest:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createMACHeaderForHttpMethod:path:">createMACHeaderForHttpMethod:path:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createMACHeaderForHttpMethod:path:timestamp:nonce:">createMACHeaderForHttpMethod:path:timestamp:nonce:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPort">getPort</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasValidCredentials">hasValidCredentials</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:scheme:apiHost:publicKey:">initWithAPIVersion:scheme:apiHost:publicKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithMethod:path:parameters:">requestWithMethod:path:parameters:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signRequest:">signRequest:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SMOAuth2Client Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SMOAuth2Client Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">AFHTTPClient</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SMOAuth2Client.h<br />SMOAuth2Client.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An interface for creating OAuth2 signed requests.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAPIVersion:scheme:apiHost:publicKey:">&ndash;&nbsp;initWithAPIVersion:scheme:apiHost:publicKey:</a></code>
+		<span class="tooltip"><p>Initialize method used by <a href="../Classes/SMUserSession.html">SMUserSession</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithMethod:path:parameters:">&ndash;&nbsp;requestWithMethod:path:parameters:</a></code>
+		<span class="tooltip"><p>The HTTP verb to use, either <code>POST</code>,<code>GET</code>, <code>PUT</code>, or <code>DELETE</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/signRequest:">&ndash;&nbsp;signRequest:</a></code>
+		<span class="tooltip"><p>Sets the Authorization header of the request using the client&rsquo;s credentials and a MAC header algorithm.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasValidCredentials">&ndash;&nbsp;hasValidCredentials</a></code>
+		<span class="tooltip"><p>Returns whether the client has non-nil values for both the accesToken and macKey.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPort">&ndash;&nbsp;getPort</a></code>
+		<span class="tooltip"><p>Return the port that the host is connected to.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createMACHeaderForHttpMethod:path:">&ndash;&nbsp;createMACHeaderForHttpMethod:path:</a></code>
+		<span class="tooltip"><p>Creates the MAC header for OAuth2 authorization.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createMACHeaderForHttpMethod:path:timestamp:nonce:">&ndash;&nbsp;createMACHeaderForHttpMethod:path:timestamp:nonce:</a></code>
+		<span class="tooltip"><p>Creates the MAC header for OAuth2 authorization.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createMACHeaderForHttpMethod:path:" title="createMACHeaderForHttpMethod:path:"></a>
+	<h3 class="subsubtitle method-title">createMACHeaderForHttpMethod:path:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates the MAC header for OAuth2 authorization.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)createMACHeaderForHttpMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The HTTP verb to use, either <code>POST</code>,<code>GET</code>, <code>PUT</code>, or <code>DELETE</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The REST path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string that is set in <a href="#//api/name/signRequest:">signRequest:</a> for the Authorization header.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The current timestamp and a random nonce are used.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createMACHeaderForHttpMethod:path:timestamp:nonce:" title="createMACHeaderForHttpMethod:path:timestamp:nonce:"></a>
+	<h3 class="subsubtitle method-title">createMACHeaderForHttpMethod:path:timestamp:nonce:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates the MAC header for OAuth2 authorization.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)createMACHeaderForHttpMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> timestamp:(double)<em>timestamp</em> nonce:(NSString *)<em>nonce</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The HTTP verb to use, either <code>POST</code>,<code>GET</code>, <code>PUT</code>, or <code>DELETE</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The REST path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timestamp</em></dt>
+			<dd><p>The timestamp to use for the authorization.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nonce</em></dt>
+			<dd><p>The nonce to use for the authorization.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string that is set in <a href="#//api/name/signRequest:">signRequest:</a> for the Authorization header.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getPort" title="getPort"></a>
+	<h3 class="subsubtitle method-title">getPort</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Return the port that the host is connected to.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)getPort</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The port that is being connected to.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasValidCredentials" title="hasValidCredentials"></a>
+	<h3 class="subsubtitle method-title">hasValidCredentials</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns whether the client has non-nil values for both the accesToken and macKey.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)hasValidCredentials</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> is the credentials are valid, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAPIVersion:scheme:apiHost:publicKey:" title="initWithAPIVersion:scheme:apiHost:publicKey:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIVersion:scheme:apiHost:publicKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize method used by <a href="../Classes/SMUserSession.html">SMUserSession</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIVersion:(NSString *)<em>version</em> scheme:(NSString *)<em>scheme</em> apiHost:(NSString *)<em>apiHost</em> publicKey:(NSString *)<em>publicKey</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>version</em></dt>
+			<dd><p>The API version of your StackMob application which this client instance should use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scheme</em></dt>
+			<dd><p>Either http or https</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiHost</em></dt>
+			<dd><p>The host to connect to for API requests.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicKey</em></dt>
+			<dd><p>Your StackMob application&rsquo;s OAuth2 public key.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>SMOAuth2Client</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWithMethod:path:parameters:" title="requestWithMethod:path:parameters:"></a>
+	<h3 class="subsubtitle method-title">requestWithMethod:path:parameters:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The HTTP verb to use, either <code>POST</code>,<code>GET</code>, <code>PUT</code>, or <code>DELETE</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSMutableURLRequest *)requestWithMethod:(NSString *)<em>method</em> path:(NSString *)<em>path</em> parameters:(NSDictionary *)<em>parameters</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The HTTP verb to use, either <code>POST</code>,<code>GET</code>, <code>PUT</code>, or <code>DELETE</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The REST path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p>A dictionary to be used as the body of the request.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A signed request to be placed on an operation queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/signRequest:" title="signRequest:"></a>
+	<h3 class="subsubtitle method-title">signRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Authorization header of the request using the client&rsquo;s credentials and a MAC header algorithm.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)signRequest:(NSMutableURLRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>An instance of <code>NSMutableURLRequest</code> to be signed with this client&rsquo;s credentials.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMOAuth2Client.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

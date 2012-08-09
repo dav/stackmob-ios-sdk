@@ -1,0 +1,823 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SMUserSession Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SMUserSession Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/accessTokenHasExpired">&nbsp;&nbsp;&nbsp;&nbsp;- accessTokenHasExpired</option>
+	
+	<option value="//api/name/clearSessionInfo">&nbsp;&nbsp;&nbsp;&nbsp;- clearSessionInfo</option>
+	
+	<option value="//api/name/doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:apiHost:publicKey:userSchema:</option>
+	
+	<option value="//api/name/oauthClientWithHTTPS:">&nbsp;&nbsp;&nbsp;&nbsp;- oauthClientWithHTTPS:</option>
+	
+	<option value="//api/name/parseTokenResults:">&nbsp;&nbsp;&nbsp;&nbsp;- parseTokenResults:</option>
+	
+	<option value="//api/name/refreshTokenOnSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- refreshTokenOnSuccess:onFailure:</option>
+	
+	<option value="//api/name/saveAccessTokenInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- saveAccessTokenInfo:</option>
+	
+	<option value="//api/name/signRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- signRequest:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/accessTokenHasExpired">accessTokenHasExpired</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearSessionInfo">clearSessionInfo</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:">doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:">initWithAPIVersion:apiHost:publicKey:userSchema:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/oauthClientWithHTTPS:">oauthClientWithHTTPS:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseTokenResults:">parseTokenResults:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshTokenOnSuccess:onFailure:">refreshTokenOnSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveAccessTokenInfo:">saveAccessTokenInfo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/signRequest:">signRequest:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SMUserSession Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SMUserSession Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SMUserSession.h<br />SMUserSession.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An <code>SMUserSession</code> holds all the OAuth2 credentials and configurations for the current client.  It is responsible for:</p>
+
+<ul>
+<li>Saving and clearing credentials.</li>
+<li>Re-authenticating a session using a refresh token.</li>
+<li>Declaring whether a given request should be https or not.</li>
+</ul>
+<div class="note"><p><strong>Note:</strong> You should not need to instantiate your own <code>SMUserSession</code> instance.  Once is initialized when creating an <a href="../Classes/SMClient.html">SMClient</a> and is used to monitor authentication for all requests sent through that client.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/accessTokenHasExpired">&ndash;&nbsp;accessTokenHasExpired</a></code>
+		<span class="tooltip"><p>Internal method used by <code>SMUserSession</code> to check if the expiration date on the current access token has expired.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearSessionInfo">&ndash;&nbsp;clearSessionInfo</a></code>
+		<span class="tooltip"><p>Clears out all OAuth2 associated keys.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/refreshTokenOnSuccess:onFailure:">&ndash;&nbsp;refreshTokenOnSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Makes a request to refresh the current user session using the refresh token.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:">&ndash;&nbsp;initWithAPIVersion:apiHost:publicKey:userSchema:</a></code>
+		<span class="tooltip"><p>Initialize a user session.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/oauthClientWithHTTPS:">&ndash;&nbsp;oauthClientWithHTTPS:</a></code>
+		<span class="tooltip"><p>Returns an instance of <a href="../Classes/SMOAuth2Client.html">SMOAuth2Client</a> configured to make requests over http or https.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:">&ndash;&nbsp;doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Sends a request to get an access token from the server for a given user session.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseTokenResults:">&ndash;&nbsp;parseTokenResults:</a></code>
+		<span class="tooltip"><p>Parses the access token information out of an /accessToken or /refreshToken response.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveAccessTokenInfo:">&ndash;&nbsp;saveAccessTokenInfo:</a></code>
+		<span class="tooltip"><p>Save the access token information from an /accessToken or /refreshToken response locally to the device.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/signRequest:">&ndash;&nbsp;signRequest:</a></code>
+		<span class="tooltip"><p>Signs the request.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/accessTokenHasExpired" title="accessTokenHasExpired"></a>
+	<h3 class="subsubtitle method-title">accessTokenHasExpired</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Internal method used by <code>SMUserSession</code> to check if the expiration date on the current access token has expired.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)accessTokenHasExpired</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the current access token has expired, otherwise <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearSessionInfo" title="clearSessionInfo"></a>
+	<h3 class="subsubtitle method-title">clearSessionInfo</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears out all OAuth2 associated keys.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearSessionInfo</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:" title="doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">doTokenRequestWithEndpoint:credentials:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends a request to get an access token from the server for a given user session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)doTokenRequestWithEndpoint:(NSString *)<em>endpoint</em> credentials:(NSDictionary *)<em>credentials</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(void ( ^ ) ( NSDictionary *userObject ))<em>successBlock</em> onFailure:(void ( ^ ) ( NSError *theError ))<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>endpoint</em></dt>
+			<dd><p>The endpoint to hit depending on whether we are asking for a new access token or refreshing a current session.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>credentials</em></dt>
+			<dd><p>The credentials needed to authenticate the user.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An instance of <a href="../Classes/SMRequestOptions.html">SMRequestOptions</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Upon success provides the user object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Upon failure to refresh the session, provides the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:" title="initWithAPIVersion:apiHost:publicKey:userSchema:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIVersion:apiHost:publicKey:userSchema:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize a user session.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIVersion:(NSString *)<em>version</em> apiHost:(NSString *)<em>apiHost</em> publicKey:(NSString *)<em>publicKey</em> userSchema:(NSString *)<em>userSchema</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>version</em></dt>
+			<dd><p>The API version of your StackMob application which this client instance should use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiHost</em></dt>
+			<dd><p>The host to connect to for API requests.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>publicKey</em></dt>
+			<dd><p>Your StackMob application&rsquo;s OAuth2 public key.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userSchema</em></dt>
+			<dd><p>The StackMob schema that has been flagged as a user object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of SMUserSession configured with the provided settings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/oauthClientWithHTTPS:" title="oauthClientWithHTTPS:"></a>
+	<h3 class="subsubtitle method-title">oauthClientWithHTTPS:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an instance of <a href="../Classes/SMOAuth2Client.html">SMOAuth2Client</a> configured to make requests over http or https.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)oauthClientWithHTTPS:(BOOL)<em>https</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>https</em></dt>
+			<dd><p><code>YES</code> is the client should be configured to make requests over https, <code>NO</code> for http.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <a href="../Classes/SMOAuth2Client.html">SMOAuth2Client</a> configured according to the value of https.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseTokenResults:" title="parseTokenResults:"></a>
+	<h3 class="subsubtitle method-title">parseTokenResults:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Parses the access token information out of an /accessToken or /refreshToken response.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)parseTokenResults:(NSDictionary *)<em>result</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>result</em></dt>
+			<dd><p>The <code>NSDictionary</code> to parse.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>NSDictionary</code> containing the access token information.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/refreshTokenOnSuccess:onFailure:" title="refreshTokenOnSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">refreshTokenOnSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Makes a request to refresh the current user session using the refresh token.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)refreshTokenOnSuccess:(void ( ^ ) ( NSDictionary *userObject ))<em>successBlock</em> onFailure:(void ( ^ ) ( NSError *theError ))<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>Upon success provides the user object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>Upon failure to refresh the session, provides the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveAccessTokenInfo:" title="saveAccessTokenInfo:"></a>
+	<h3 class="subsubtitle method-title">saveAccessTokenInfo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Save the access token information from an /accessToken or /refreshToken response locally to the device.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)saveAccessTokenInfo:(NSDictionary *)<em>result</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>result</em></dt>
+			<dd><p>The response to save.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/signRequest:" title="signRequest:"></a>
+	<h3 class="subsubtitle method-title">signRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Signs the request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURLRequest *)signRequest:(NSURLRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>The request to sign.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The signed request.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMUserSession.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

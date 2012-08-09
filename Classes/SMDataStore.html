@@ -1,0 +1,1404 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SMDataStore Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">StackMob iOS SDK </a></h1>
+				<a id="developerHome" href="../index.html">StackMob</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SMDataStore Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/createObject:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createObject:inSchema:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createObject:inSchema:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/deleteObjectId:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectId:inSchema:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/initWithAPIVersion:session:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:session:</option>
+	
+	<option value="//api/name/performCount:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCount:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/performCount:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCount:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/performQuery:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performQuery:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/performQuery:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performQuery:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/readObjectWithId:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- readObjectWithId:inSchema:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObjectWithId:inSchema:update:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialize">Initialize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_CRUD Operations">CRUD Operations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Performing Queries">Performing Queries</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createObject:inSchema:onSuccess:onFailure:">createObject:inSchema:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">createObject:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectId:inSchema:onSuccess:onFailure:">deleteObjectId:inSchema:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:session:">initWithAPIVersion:session:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCount:onSuccess:onFailure:">performCount:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCount:withOptions:onSuccess:onFailure:">performCount:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performQuery:onSuccess:onFailure:">performQuery:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performQuery:withOptions:onSuccess:onFailure:">performQuery:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readObjectWithId:inSchema:onSuccess:onFailure:">readObjectWithId:inSchema:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:">updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:">updateObjectWithId:inSchema:update:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SMDataStore Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SMDataStore Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SMDataStore.h<br />SMDataStore.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>SMDataStore</code> exposes an interface for performing CRUD operations on known StackMob objects and for executing a <a href="../Classes/SMQuery.html">SMQuery</a>.</p>
+
+<p>As a direct interface to StackMob, <code>SMDataStore</code> uses StackMob&rsquo;s terminology:
+&ndash; Operations are performed against a specific <em>schema</em> (usually also the name of a model class or of an entity in a managed object model).
+&ndash; Objects sent via the API are expressed as a dictionary of <em>fields</em>.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initialize" name="task_Initialize"></a>
+						<h3 class="subsubtitle task-title">Initialize</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAPIVersion:session:">&ndash;&nbsp;initWithAPIVersion:session:</a></code>
+		<span class="tooltip"><p>Initialize a data store.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="CRUD Operations" name="task_CRUD Operations"></a>
+						<h3 class="subsubtitle task-title">CRUD Operations</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createObject:inSchema:onSuccess:onFailure:">&ndash;&nbsp;createObject:inSchema:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a new object in your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;createObject:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Create a new object in your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/readObjectWithId:inSchema:onSuccess:onFailure:">&ndash;&nbsp;readObjectWithId:inSchema:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Read an existing object from your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Read an existing object from your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:">&ndash;&nbsp;updateObjectWithId:inSchema:update:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Update an existing object in your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">&ndash;&nbsp;updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Update an existing object in your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:">&ndash;&nbsp;updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Do an atomic update on a particular value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">&ndash;&nbsp;updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Do an atomic update on a particular value (with request options).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObjectId:inSchema:onSuccess:onFailure:">&ndash;&nbsp;deleteObjectId:inSchema:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Delete an existing object from your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Delete an existing object from your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Performing Queries" name="task_Performing Queries"></a>
+						<h3 class="subsubtitle task-title">Performing Queries</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performQuery:onSuccess:onFailure:">&ndash;&nbsp;performQuery:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Execute a query against your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performQuery:withOptions:onSuccess:onFailure:">&ndash;&nbsp;performQuery:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Execute a query against your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performCount:onSuccess:onFailure:">&ndash;&nbsp;performCount:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Count the results that would be returned by a query against your StackMob datastore.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performCount:withOptions:onSuccess:onFailure:">&ndash;&nbsp;performCount:withOptions:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Count the results that would be returned by a query against your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/createObject:inSchema:onSuccess:onFailure:" title="createObject:inSchema:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createObject:inSchema:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new object in your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createObject:(NSDictionary *)<em>theObject</em> inSchema:(NSString *)<em>schema</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>A dictionary describing the object to create on StackMob. Keys should map to valid StackMob fields. Values should be JSON serializable objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema in which to create this new object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully created. Passed the dictionary representation of the response from StackMob and the schema in which the new object was created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to create the specified object. Passed the error returned by StackMob, the dictionary sent with this create request, and the schema in which the object was to be created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:" title="createObject:inSchema:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createObject:inSchema:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Create a new object in your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)createObject:(NSDictionary *)<em>theObject</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObject</em></dt>
+			<dd><p>A dictionary describing the object to create on StackMob. Keys should map to valid StackMob fields. Values should be JSON serializable objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema in which to create this new object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully created. Passed the dictionary representation of the response from StackMob and the schema in which the new object was created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to create the specified object. Passed the error returned by StackMob, the dictionary sent with this create request, and the schema in which the object was to be created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObjectId:inSchema:onSuccess:onFailure:" title="deleteObjectId:inSchema:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">deleteObjectId:inSchema:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete an existing object from your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteObjectId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> onSuccess:(SMDataStoreObjectIdSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to delete.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully deleted. Passed the object id of the deleted object and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the object id sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:" title="deleteObjectId:inSchema:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete an existing object from your StackMob datastore (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteObjectId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreObjectIdSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to delete.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully deleted. Passed the object id of the deleted object and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the object id sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAPIVersion:session:" title="initWithAPIVersion:session:"></a>
+	<h3 class="subsubtitle method-title">initWithAPIVersion:session:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initialize a data store.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAPIVersion:(NSString *)<em>apiVersion</em> session:(SMUserSession *)<em>session</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>apiVersion</em></dt>
+			<dd><p>The API version of your StackMob application which this <code>SMDataStore</code> instance should use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>session</em></dt>
+			<dd><p>An instance of <a href="../Classes/SMUserSession.html">SMUserSession</a> configured with the proper credentials.  This is used to properly authenticate requests.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An instance of <code>SMDataStore</code> configured with the supplied apiVersion and session.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performCount:onSuccess:onFailure:" title="performCount:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performCount:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Count the results that would be returned by a query against your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performCount:(SMQuery *)<em>query</em> onSuccess:(SMCountSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>query</em></dt>
+			<dd><p>A <a href="../Classes/SMQuery.html">SMQuery</a> object describing the query to perform.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke when the count is complete.  Passed the number of objects returned that would by the query.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performCount:withOptions:onSuccess:onFailure:" title="performCount:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performCount:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Count the results that would be returned by a query against your StackMob datastore (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performCount:(SMQuery *)<em>query</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMCountSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>query</em></dt>
+			<dd><p>A <a href="../Classes/SMQuery.html">SMQuery</a> object describing the query to perform.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke when the count is complete.  Passed the number of objects that would be returned by the query.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performQuery:onSuccess:onFailure:" title="performQuery:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performQuery:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Execute a query against your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performQuery:(SMQuery *)<em>query</em> onSuccess:(SMResultsSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>query</em></dt>
+			<dd><p>A <a href="../Classes/SMQuery.html">SMQuery</a> object describing the query to perform.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the query succeeds. Passed an array of object dictionaries returned from StackMob (if any).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performQuery:withOptions:onSuccess:onFailure:" title="performQuery:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performQuery:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Execute a query against your StackMob datastore (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performQuery:(SMQuery *)<em>query</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultsSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>query</em></dt>
+			<dd><p>A <a href="../Classes/SMQuery.html">SMQuery</a> object describing the query to perform.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the query succeeds. Passed an array of object dictionaries returned from StackMob (if any).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/readObjectWithId:inSchema:onSuccess:onFailure:" title="readObjectWithId:inSchema:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">readObjectWithId:inSchema:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Read an existing object from your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)readObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to read.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully read. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the object id sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:" title="readObjectWithId:inSchema:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Read an existing object from your StackMob datastore (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)readObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to read.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully read. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the object id sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:" title="updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Do an atomic update on a particular value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateAtomicCounterWithId:(NSString *)<em>theObjectId</em> field:(NSString *)<em>field</em> inSchema:(NSString *)<em>schema</em> by:(int)<em>increment</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to update.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>the field in the schema that represents the counter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing the counter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>increment</em></dt>
+			<dd><p>The value (positive or negative) to increment the counter by.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully updated. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the dictionary sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:" title="updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Do an atomic update on a particular value (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateAtomicCounterWithId:(NSString *)<em>theObjectId</em> field:(NSString *)<em>field</em> inSchema:(NSString *)<em>schema</em> by:(int)<em>increment</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to update.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>field</em></dt>
+			<dd><p>the field in the schema that represents the counter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing the counter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>increment</em></dt>
+			<dd><p>The value (positive or negative) to increment the counter by.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully updated. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the dictionary sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:" title="updateObjectWithId:inSchema:update:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateObjectWithId:inSchema:update:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update an existing object in your StackMob datastore.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> update:(NSDictionary *)<em>updatedFields</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to update.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updatedFields</em></dt>
+			<dd><p>A dictionary describing the object. Keys should map to valid StackMob fields. Values should be JSON serializable objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully updated. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the dictionary sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:" title="updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Update an existing object in your StackMob datastore (with request options).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)updateObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> update:(NSDictionary *)<em>updatedFields</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theObjectId</em></dt>
+			<dd><p>The object id (the value of the primary key field) for the object to update.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>schema</em></dt>
+			<dd><p>The StackMob schema containing this object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updatedFields</em></dt>
+			<dd><p>A dictionary describing the object. Keys should map to valid StackMob fields. Values should be JSON serializable objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>An options object contains headers and other configuration for this request</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>A block to invoke after the object is successfully updated. Passed the dictionary representation of the response from StackMob and the object&rsquo;s schema.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>A block to invoke if the data store fails to read the specified object. Passed the error returned by StackMob, the dictionary sent with this request, and the schema in which the object was to be found.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
