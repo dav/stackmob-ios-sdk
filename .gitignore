@@ -17,3 +17,4 @@ profile
 .DS_Store
 .idea/*
 integration\ tests/StackMobCredentials.plist
+AppledocSettings.plist
