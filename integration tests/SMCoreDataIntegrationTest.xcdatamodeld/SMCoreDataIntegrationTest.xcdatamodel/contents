@@ -24,6 +24,7 @@
     <entity name="Superpower" representedClassName="Superpower" syncable="YES">
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="superpower_id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="person" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="superpower" inverseEntity="Person" syncable="YES"/>
     </entity>
@@ -31,6 +32,6 @@
         <element name="Favorite" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Interest" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Person" positionX="160" positionY="192" width="128" height="165"/>
-        <element name="Superpower" positionX="511" positionY="216" width="128" height="105"/>
+        <element name="Superpower" positionX="511" positionY="216" width="128" height="120"/>
     </elements>
 </model>

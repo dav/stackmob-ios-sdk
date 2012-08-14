@@ -24,5 +24,6 @@
 @dynamic name;
 @dynamic superpower_id;
 @dynamic person;
+@dynamic pic;
 
 @end

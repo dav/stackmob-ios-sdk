@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSNumber * level;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * superpower_id;
+@property (nonatomic, retain) NSString * pic;
 @property (nonatomic, retain) Person *person;
 
 @end
