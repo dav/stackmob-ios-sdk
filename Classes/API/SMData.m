@@ -85,18 +85,4 @@ static NSString * Base64EncodedStringFromData(NSData *data)
     return [[NSString alloc] initWithData:mutableData encoding:NSASCIIStringEncoding];
 }
 
-
-/*
-- (id)initWithContentsOfFile:(NSString *)path options:(NSDataReadingOptions)mask error:(NSError **)errorPtr
-{
-    self = [super initWithContentsOfFile:path options:mask error:errorPtr];
-    
-    if (self) {
-         
-    }
-    
-    return self;
-}
- */
-
 @end
