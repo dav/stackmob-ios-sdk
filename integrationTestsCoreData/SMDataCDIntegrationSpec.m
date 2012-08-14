@@ -52,20 +52,13 @@ describe(@"SMDataCDIntegration", ^{
             [superpower setPic:dataString];
             [superpower setSuperpower_id:[superpower sm_assignObjectId]];
         });
-        it(@"should persist to StackMob", ^{
+        it(@"should persist to StackMob and update after a refresh call", ^{
             [SMCoreDataIntegrationTestHelpers executeSynchronousSave:moc withBlock:^(NSError *error) {
-               [error shouldBeNil]; 
-            }];
-            
-            [SMCoreDataIntegrationTestHelpers executeSynchronousFetch:moc withRequest:[SMCoreDataIntegrationTestHelpers makeSuperpowerFetchRequest:nil] andBlock:^(NSArray *results, NSError *error) {
                 [error shouldBeNil];
-                [[theValue([results count]) should] equal:theValue(1)];
-                NSString *picString = [[results objectAtIndex:0] valueForKey:@"pic"];
-                NSLog(@"picstring is %@", [picString substringWithRange:NSMakeRange(0, 200)]);
+                [moc refreshObject:superpower mergeChanges:YES];
+                NSString *picString = [superpower valueForKey:@"pic"];
+                [[[picString substringToIndex:4] should] equal:@"http"];
             }];
-            
-            NSLog(@"picstring is now %@", [[superpower valueForKey:@"pic"] substringToIndex:20]);
-            
             [SMCoreDataIntegrationTestHelpers executeSynchronousDelete:moc withObject:[superpower objectID] andBlock:^(NSError *error) {
                 [error shouldBeNil];
             }];
