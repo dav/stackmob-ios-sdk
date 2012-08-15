@@ -22,8 +22,8 @@
 #import "StackMob.h"
 
 
-const NSString *SMIncrementalStoreType = @"SMIncrementalStore";
-const NSString *SM_DataStoreKey = @"SM_DataStoreKey";
+NSString *const SMIncrementalStoreType = @"SMIncrementalStore";
+NSString *const SM_DataStoreKey = @"SM_DataStoreKey";
 
 @interface SMIncrementalStore () {
     NSMutableDictionary *cache;
@@ -38,8 +38,6 @@ const NSString *SM_DataStoreKey = @"SM_DataStoreKey";
 - (id)handleFetchRequest:(NSPersistentStoreRequest *)request 
              withContext:(NSManagedObjectContext *)context 
                    error:(NSError *__autoreleasing *)error;
-
-- (id)fetchObjects:(NSFetchRequest *)fetchRequest withContext:(NSManagedObjectContext *)context;
 
 - (BOOL)relationshipsPresentInSerializedDict:(NSDictionary *)sm_dict forObject:(id)anObject;
 
