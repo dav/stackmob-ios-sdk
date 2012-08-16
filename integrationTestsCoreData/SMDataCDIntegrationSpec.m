@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,12 +15,12 @@
  */
 
 #import <Kiwi/Kiwi.h>
-#import "SMClient.h"
 #import "SMCoreDataStore.h"
 #import "SMIntegrationTestHelpers.h"
 #import "SMCoreDataIntegrationTestHelpers.h"
 #import "Superpower.h"
 #import "SMData.h"
+#import "StackMob.h"
 
 SPEC_BEGIN(SMDataCDIntegrationSpec)
 
@@ -43,10 +43,10 @@ describe(@"SMDataCDIntegration", ^{
             superpower = [NSEntityDescription insertNewObjectForEntityForName:@"Superpower" inManagedObjectContext:moc];
             NSError *error = nil;
             NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-            NSString* pathToImageFile = [bundle pathForResource:@"rogue" ofType:@"jpg"];
+            NSString* pathToImageFile = [bundle pathForResource:@"goatPic" ofType:@"jpeg"];
             NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile options:NSDataReadingMappedIfSafe error:&error];
             [error shouldBeNil];
-            dataString = [SMData stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpg"];
+            dataString = [SMData stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpeg"];
             [dataString shouldNotBeNil];
             [superpower setName:@"cool"];
             [superpower setPic:dataString];

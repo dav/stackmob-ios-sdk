@@ -18,6 +18,9 @@
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
 
+@class SMCustomCodeRequest;
+@class SMRequestOptions;
+
 /**
  An interface for creating OAuth2 signed requests.
  */
@@ -52,6 +55,8 @@
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method 
                                        path:(NSString *)path 
                                  parameters:(NSDictionary *)parameters;
+
+- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)request withOptions:(SMRequestOptions *)options;
 
 /**
  Sets the Authorization header of the request using the client's credentials and a MAC header algorithm.

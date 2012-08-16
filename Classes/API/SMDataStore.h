@@ -18,8 +18,15 @@
 #import <CoreData/CoreData.h>
 #import "SMClient.h"
 #import "SMQuery.h"
+
+#define POST @"POST"
+#define GET @"GET"
+#define PUT @"PUT"
+#define DELETE @"DELETE"
+
 @class SMUserSession;
 @class SMRequestOptions;
+@class SMCustomCodeRequest;
 
 /* SMDataStoreSuccessBlock
  
@@ -286,5 +293,14 @@ typedef void (^SMCountSuccessBlock)(NSNumber *count);
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
 - (void)performCount:(SMQuery *)query withOptions:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
+
+#pragma mark - Custom Code
+///-------------------------------
+/// @name Performing Custom Code Methods
+///-------------------------------
+
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock;
+
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest withOptions:(SMRequestOptions *)options onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock;
 
 @end

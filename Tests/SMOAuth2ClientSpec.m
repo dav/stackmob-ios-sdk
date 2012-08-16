@@ -118,4 +118,53 @@ describe(@"Generating a request", ^{
     });
 });
 
+describe(@"-customCodeRequest:withOptions", ^{
+    context(@"given a custom code request", ^{
+        __block SMCustomCodeRequest *request = nil;
+        __block SMClient *client = nil;
+        __block SMDataStore *dataStore = nil;
+        beforeEach(^{
+            client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"public key"];
+            dataStore = [[SMDataStore alloc] initWithAPIVersion:@"0" session:[client session]];
+            request = [[SMCustomCodeRequest alloc] initWithMethod:@"method" andHTTPVerb:@"verb" andRequestBody:@"body"]; 
+        });
+        it(@"customCodeRequest should set all the right fields with no parameters", ^{
+            NSURLRequest *aRequest = nil;
+            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request withOptions:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
+            [aRequest shouldNotBeNil];
+            
+            [[theValue([[aRequest allHTTPHeaderFields] count]) should] equal:theValue(4)];
+            
+            NSData *theData = [aRequest HTTPBody];
+            NSString *decodedString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
+            [[decodedString should] equal:@"body"];
+            
+            [[[aRequest HTTPMethod] should] equal:@"verb"];
+        
+            [[[aRequest URL] should] equal:[NSURL URLWithString:@"http://api.stackmob.com/method"]];
+        });
+        it(@"customCodeRequest should set all the right fields with parameters", ^{
+            
+            [request addQueryStringParameterWhere:@"a" equals:@"3"];
+            [request addQueryStringParameterWhere:@"a" equals:@"1"];
+            [request addQueryStringParameterWhere:@"bob" equals:@"5"];
+            
+            NSURLRequest *aRequest = nil;
+            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request withOptions:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
+            [aRequest shouldNotBeNil];
+            
+            [[theValue([[aRequest allHTTPHeaderFields] count]) should] equal:theValue(4)];
+            
+            NSData *theData = [aRequest HTTPBody];
+            NSString *decodedString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
+            [[decodedString should] equal:@"body"];
+            
+            [[[aRequest HTTPMethod] should] equal:@"verb"];
+            
+            [[[aRequest URL] should] equal:[NSURL URLWithString:@"http://api.stackmob.com/method?a=3&a=1&bob=5"]];
+        });
+
+    });
+});
+
 SPEC_END

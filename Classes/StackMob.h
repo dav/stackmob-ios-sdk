@@ -27,6 +27,7 @@
 
 #import "SMDataStore.h"
 #import "SMQuery.h"
+#import "SMCustomCodeRequest.h"
 #import "SMCoreDataStore.h"
 #import "SMIncrementalStore.h"
 

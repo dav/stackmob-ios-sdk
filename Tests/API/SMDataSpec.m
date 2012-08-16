@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +24,7 @@ describe(@"SMData init", ^{
     beforeEach(^{
         NSError *error = nil;
         NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-        NSString* pathToImageFile = [bundle pathForResource:@"rogue" ofType:@"jpg"];
+        NSString* pathToImageFile = [bundle pathForResource:@"goatPic" ofType:@"jpeg"];
         theData = [NSData dataWithContentsOfFile:pathToImageFile options:NSDataReadingMappedIfSafe error:&error];
         [error shouldBeNil];
     });
@@ -34,7 +34,7 @@ describe(@"SMData init", ^{
     describe(@"return a StackMob string version for NSData", ^{
         __block NSString *fieldValueForBinaryData = nil;
         beforeEach(^{
-            fieldValueForBinaryData = [SMData stringForBinaryData:theData withName:@"rogue.jpg" andContentType:@"image/jpg"]; 
+            fieldValueForBinaryData = [SMData stringForBinaryData:theData withName:@"goatPic.jpeg" andContentType:@"image/jpeg"]; 
         });
         it(@"data should not be nil", ^{
             [fieldValueForBinaryData shouldNotBeNil];

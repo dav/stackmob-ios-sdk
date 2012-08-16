@@ -21,6 +21,7 @@
 
 #define SM_TEST_API_VERSION @"0"
 #define SM_TEST_API_BASEURL @"http://api.stackmob.com"
+#define SM_TEST_CUSTOM_CODE 1
 
 //typedef void (^SynchronousQueryBlock)(NSArray *results, NSError *error);
 //void synchronousQuery(SMDataStore *sm, SMQuery *query, SynchronousQueryBlock block);

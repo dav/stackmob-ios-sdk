@@ -25,6 +25,9 @@
 #import "SMRequestOptions.h"
 #import "SMClient.h"
 #import "SMUserSession.h"
+#import "SMCustomCodeRequest.h"
+
+
 
 @interface SMDataStore ()
 
@@ -216,6 +219,26 @@
     AFFailureBlock urlFailureBlock = [self AFFailureBlockForFailureBlock:failureBlock];
     [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     
+}
+
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock
+{
+    [self performCustomCodeRequest:customCodeRequest withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+}
+
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest withOptions:(SMRequestOptions *)options onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock
+{
+    
+    NSMutableURLRequest *request = [[self.session oauthClientWithHTTPS:options.isSecure] customCodeRequest:customCodeRequest withOptions:options];
+    
+    AFSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        successBlock((NSArray *)JSON);
+    };
+    AFFailureBlock urlFailureBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Custom Code Request failed with error: %@, response: %@, JSON: %@", error, response, JSON);
+        failureBlock(error);
+    };   
+    [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
 }
 
 @end

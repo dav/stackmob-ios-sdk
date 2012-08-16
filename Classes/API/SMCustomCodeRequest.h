@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,5 +17,15 @@
 #import <Foundation/Foundation.h>
 
 @interface SMCustomCodeRequest : NSObject
+
+@property (nonatomic, strong) NSMutableArray *queryStringParameters;
+@property (nonatomic, strong) NSMutableDictionary *requestHeaders;
+@property (nonatomic, strong) NSString *method;
+@property (nonatomic, strong) NSString *requestBody;
+@property (nonatomic, strong) NSString *httpVerb;
+
+- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb;
+- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb andRequestBody:(NSString *)body;
+- (void)addQueryStringParameterWhere:(NSString *)key equals:(NSString *)value;
 
 @end

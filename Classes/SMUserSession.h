@@ -21,6 +21,7 @@ typedef void (^AFSuccessBlock)(NSURLRequest *request, NSHTTPURLResponse *respons
 typedef void (^AFFailureBlock)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON);
 
 @class SMOAuth2Client;
+@class SMRequestOptions;
 
 /**
  An `SMUserSession` holds all the OAuth2 credentials and configurations for the current client.  It is responsible for:

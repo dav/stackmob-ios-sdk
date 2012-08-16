@@ -162,7 +162,7 @@ describe(@"CRUD", ^{
     describe(@"-updateSchema:withFields:result:", ^{
         context(@"given a valid object id and schema", ^{
             __block NSDictionary *updatedFields = nil;
-            beforeEach(^(){
+            beforeEach(^{
                 updatedFields = [NSDictionary dictionaryWithObjectsAndKeys:
                                  @"New and Improved!", @"subtitle",
                                  nil];
@@ -323,5 +323,29 @@ describe(@"performing counts", ^{
         pending(@"passes an error object to the result block", ^{});
     });        
 });
+
+describe(@"perform custom code request", ^{
+    context(@"given a custom code request", ^{
+        __block SMCustomCodeRequest *request = nil;
+        __block SMClient *client = nil;
+        __block SMDataStore *dataStore = nil;
+        beforeEach(^{
+            client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"public key"];
+            dataStore = [[SMDataStore alloc] initWithAPIVersion:@"0" session:[client session]];
+            request = [[SMCustomCodeRequest alloc] initWithMethod:@"method" andHTTPVerb:@"verb" andRequestBody:@"body"]; 
+        });
+        it(@"should perform the request", ^{
+            [[dataStore.session.regularOAuthClient should] receive:@selector(customCodeRequest:withOptions:)];
+            [[dataStore should] receive:@selector(queueRequest:withRetry:onSuccess:onFailure:)];
+            [dataStore performCustomCodeRequest:request onSuccess:^(NSArray *results) {
+            
+            } onFailure:^(NSError *error) {
+                
+            }];
+        });
+    });
+});
+
+
 
 SPEC_END
