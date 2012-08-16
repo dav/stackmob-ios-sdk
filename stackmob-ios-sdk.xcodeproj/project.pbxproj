@@ -16,6 +16,7 @@
 				DEDDE22815DD95C40055FAFF /* Copy Headers */,
 				DEDDE22715DD95440055FAFF /* Merge libs */,
 				DEDDE28615DD9F0F0055FAFF /* Copy Files To Build Dir */,
+				DEDDE2C215DDAFB30055FAFF /* Zip It Up */,
 			);
 			dependencies = (
 				DEDDE22215DD95020055FAFF /* PBXTargetDependency */,
@@ -902,7 +903,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# make a new output folder\nmkdir -p ${PROJECT_DIR}/build/stackmob-ios-sdk-v${SDK_VERSION}\n# combine lib files for various platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libstackmob-ios-sdk.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libstackmob-ios-sdk.a\" -output \"${PROJECT_DIR}/build/stackmob-ios-sdk-v${SDK_VERSION}/stackmob-ios-sdk-v${SDK_VERSION}.a\"\n";
+			shellScript = "# make a new output folder\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\n# combine lib files for various platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libstackmob-ios-sdk.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libstackmob-ios-sdk.a\" -output \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/libstackmob-v${SDK_VERSION}.a\"\n";
 		};
 		DEDDE22915DD95D90055FAFF /* Copy Pods */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -944,7 +945,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/Pods\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/stackmob-ios-sdk-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/stackmob-ios-sdk-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/stackmob-ios-sdk-v${SDK_VERSION}/Pods/\"";
+			shellScript = "mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods/\"";
+		};
+		DEDDE2C215DDAFB30055FAFF /* Zip It Up */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Zip It Up";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "zip -r \"${PROJECT_DIR}/build/${SDK_VERSION}/stackmob-ios-sdk-v${SDK_VERSION}.zip\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1323,6 +1338,7 @@
 				DEDDE22015DD94DC0055FAFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
