@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8CCCE4E51580389800C38962"
-               BuildableName = "libstackmob-ios-sdk.a"
+               BuildableName = "libstackmob-ios-sdk-dev.a"
                BlueprintName = "stackmob-ios-sdk"
                ReferencedContainer = "container:stackmob-ios-sdk.xcodeproj">
             </BuildableReference>
