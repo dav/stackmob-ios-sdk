@@ -332,7 +332,7 @@ describe(@"perform custom code request", ^{
         beforeEach(^{
             client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"public key"];
             dataStore = [[SMDataStore alloc] initWithAPIVersion:@"0" session:[client session]];
-            request = [[SMCustomCodeRequest alloc] initWithMethod:@"method" andHTTPVerb:@"verb" andRequestBody:@"body"]; 
+            request = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:@"method" body:@"body"]; 
         });
         it(@"should perform the request", ^{
             [[dataStore.session.regularOAuthClient should] receive:@selector(customCodeRequest:withOptions:)];

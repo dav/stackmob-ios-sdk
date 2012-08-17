@@ -24,8 +24,10 @@
 @property (nonatomic, strong) NSString *requestBody;
 @property (nonatomic, strong) NSString *httpVerb;
 
-- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb;
-- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb andRequestBody:(NSString *)body;
+- (id)initPostRequestWithMethod:(NSString *)method body:(NSString *)body;
+- (id)initPutRequestWithMethod:(NSString *)method body:(NSString *)body;
+- (id)initGetRequestWithMethod:(NSString *)method;
+- (id)initDeleteRequestWithMethod:(NSString *)method;
 - (void)addQueryStringParameterWhere:(NSString *)key equals:(NSString *)value;
 
 @end

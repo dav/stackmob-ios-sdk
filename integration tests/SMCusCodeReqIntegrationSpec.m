@@ -20,12 +20,12 @@
 #import "SMCustomCodeRequest.h"
 
 #define CC_NO_PARAM_METHOD_NAME @"hello_world"
+#define CC_PARAM_METHOD_NAME @"hello_world_params"
 
 SPEC_BEGIN(SMCusCodeReqIntegrationSpec)
 
 describe(@"SMCusCodeReqIntegration", ^{
     __block SMClient *client = nil;
-    __block NSArray *queryStringParameters = nil;
     __block NSArray *verbsToTest = nil;
     context(@"given a custom code request", ^{
         beforeEach(^{
@@ -36,38 +36,175 @@ describe(@"SMCusCodeReqIntegration", ^{
         context(@"with no parameters or body", ^{
             __block SMCustomCodeRequest *aRequest = nil;
             __block BOOL callSuccess = NO;
+            __block id theResults = nil;
             beforeEach(^{
                 aRequest = nil;
                 callSuccess = NO; 
+                theResults = nil;
             });
-            // for each verb, test the method with the given parameters
-            it(@"should pass for each verb", ^{
-                [verbsToTest enumerateObjectsUsingBlock:^(id verb, NSUInteger idx, BOOL *stop){
-                    aRequest = nil;
-                    callSuccess = NO;
-                    aRequest = [[SMCustomCodeRequest alloc] initWithMethod:CC_NO_PARAM_METHOD_NAME andHTTPVerb:verb andRequestBody:nil];
-                    syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                        [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
-                            callSuccess = YES;
-                            syncReturn(semaphore);
-                        } onFailure:^(NSError *error) {
-                            syncReturn(semaphore);
-                        }];
-                    });
-                    [[theValue(callSuccess) should] beYes];
-                }];
+            it(@"should pass for GET", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:CC_NO_PARAM_METHOD_NAME];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
+                [[theResults objectForKey:@"body"] shouldBeNil];
             });
+            it(@"should pass for DELETE", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initDeleteRequestWithMethod:CC_NO_PARAM_METHOD_NAME];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
+                [[theResults objectForKey:@"body"] shouldBeNil];
+            });
+                 
         });
-        /*
-        context(@"with parameters", ^{
-            [client shouldNotBeNil];
+        context(@"with a body and no parameters", ^{
             __block SMCustomCodeRequest *aRequest = nil;
-            // for each verb, test the method with the given parameters
-            [verbsToTest enumerateObjectsUsingBlock:^(id verb, NSUInteger idx, BOOL *stop){
-                aRequest = [[SMCustomCodeRequest alloc] initWithMethod:CC_METHOD_NAME andHTTPVerb:verb andRequestBody:nil];
-            }];
+            __block BOOL callSuccess = NO;
+            __block id theResults = nil;
+            beforeEach(^{
+                aRequest = nil;
+                callSuccess = NO; 
+                theResults = nil;
+            });
+            it(@"should pass for POST", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:CC_NO_PARAM_METHOD_NAME body:@"the body"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
+                [[[theResults objectForKey:@"body"] should]  equal:@"the body"];
+            });
+            it(@"should pass for PUT", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initPutRequestWithMethod:CC_NO_PARAM_METHOD_NAME body:@"the body"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
+                [[[theResults objectForKey:@"body"] should]  equal:@"the body"];
+            });
         });
-         */
+        context(@"with parameters and no body", ^{
+            __block SMCustomCodeRequest *aRequest = nil;
+            __block BOOL callSuccess = NO;
+            __block id theResults = nil;
+            beforeEach(^{
+                aRequest = nil;
+                callSuccess = NO; 
+                theResults = nil;
+            });
+            it(@"should pass for GET", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:CC_PARAM_METHOD_NAME];
+                [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
+                [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"param1"] should] equal:@"yo"];
+                [[[theResults objectForKey:@"param2"] should]  equal:@"3"];
+            });
+            it(@"should pass for DELETE", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initDeleteRequestWithMethod:CC_PARAM_METHOD_NAME];
+                [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
+                [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"param1"] should] equal:@"yo"];
+                [[[theResults objectForKey:@"param2"] should]  equal:@"3"];
+            });
+        });
+        context(@"with parameters and a body", ^{
+            __block SMCustomCodeRequest *aRequest = nil;
+            __block BOOL callSuccess = NO;
+            __block id theResults = nil;
+            beforeEach(^{
+                aRequest = nil;
+                callSuccess = NO; 
+                theResults = nil;
+            });
+            it(@"should pass for POST", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:CC_PARAM_METHOD_NAME body:@"this is my body"];
+                [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
+                [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"param1"] should] equal:@"yo"];
+                [[[theResults objectForKey:@"param2"] should]  equal:@"3"];
+                [[[theResults objectForKey:@"body"] should]  equal:@"this is my body"];
+            });
+            it(@"should pass for PUT", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initPutRequestWithMethod:CC_PARAM_METHOD_NAME body:@"this is my body"];
+                [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
+                [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                        callSuccess = YES;
+                        theResults = results;
+                        syncReturn(semaphore);
+                    } onFailure:^(NSError *error) {
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(callSuccess) should] beYes];
+                [[[theResults objectForKey:@"param1"] should] equal:@"yo"];
+                [[[theResults objectForKey:@"param2"] should]  equal:@"3"];
+                [[[theResults objectForKey:@"body"] should]  equal:@"this is my body"];
+            });
+        });
+
     });
 });
 

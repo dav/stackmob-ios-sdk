@@ -25,21 +25,35 @@ describe(@"SMCustomCodeRequest", ^{
       context(@"method and verb", ^{
           beforeEach(^{
               request = nil;
-              request = [[SMCustomCodeRequest alloc] initWithMethod:@"my-cool-method" andHTTPVerb:@"PUT"]; 
           });
-          it(@"should properly initialize with a method and verb", ^{
+          it(@"should properly initialize with a method and verb for GET", ^{
+              request = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:@"my-cool-method"];
               [request shouldNotBeNil];
               [[request.method should] equal:@"my-cool-method"];
-              [[request.httpVerb should] equal:@"PUT"];
+              [[request.httpVerb should] equal:@"GET"];
+              [request.requestBody shouldBeNil];
+          });
+          it(@"should properly initialize with a method and verb for DELETE", ^{
+              request = [[SMCustomCodeRequest alloc] initDeleteRequestWithMethod:@"my-cool-method"];
+              [request shouldNotBeNil];
+              [[request.method should] equal:@"my-cool-method"];
+              [[request.httpVerb should] equal:@"DELETE"];
               [request.requestBody shouldBeNil];
           });
       });
       context(@"method, verb and body", ^{
           beforeEach(^{
               request = nil;
-              request = [[SMCustomCodeRequest alloc] initWithMethod:@"my-cool-method" andHTTPVerb:@"PUT" andRequestBody:@"this is my body"]; 
           });
-          it(@"should properly initialize with a method and verb", ^{
+          it(@"should properly initialize with a method verb and body for POST", ^{
+              request = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:@"my-cool-method" body:@"this is my body"];
+              [request shouldNotBeNil];
+              [[request.method should] equal:@"my-cool-method"];
+              [[request.httpVerb should] equal:@"POST"];
+              [[request.requestBody should] equal:@"this is my body"];
+          });
+          it(@"should properly initialize with a method verb and body for PUT", ^{
+              request = [[SMCustomCodeRequest alloc] initPutRequestWithMethod:@"my-cool-method" body:@"this is my body"];
               [request shouldNotBeNil];
               [[request.method should] equal:@"my-cool-method"];
               [[request.httpVerb should] equal:@"PUT"];
@@ -51,7 +65,7 @@ describe(@"SMCustomCodeRequest", ^{
         __block SMCustomCodeRequest *request = nil;
         beforeEach(^{
             request = nil;
-            request = [[SMCustomCodeRequest alloc] initWithMethod:@"my-cool-method" andHTTPVerb:@"PUT"]; 
+            request = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:@"cool" body:@"body"]; 
         });
         it(@"should set query parameters", ^{
             [request addQueryStringParameterWhere:@"a" equals:@"3"];

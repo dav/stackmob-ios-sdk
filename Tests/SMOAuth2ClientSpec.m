@@ -126,7 +126,7 @@ describe(@"-customCodeRequest:withOptions", ^{
         beforeEach(^{
             client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"public key"];
             dataStore = [[SMDataStore alloc] initWithAPIVersion:@"0" session:[client session]];
-            request = [[SMCustomCodeRequest alloc] initWithMethod:@"method" andHTTPVerb:@"verb" andRequestBody:@"body"]; 
+            request = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:@"method" body:@"body"]; 
         });
         it(@"customCodeRequest should set all the right fields with no parameters", ^{
             NSURLRequest *aRequest = nil;
@@ -139,7 +139,7 @@ describe(@"-customCodeRequest:withOptions", ^{
             NSString *decodedString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
             [[decodedString should] equal:@"body"];
             
-            [[[aRequest HTTPMethod] should] equal:@"verb"];
+            [[[aRequest HTTPMethod] should] equal:@"POST"];
         
             [[[aRequest URL] should] equal:[NSURL URLWithString:@"http://api.stackmob.com/method"]];
         });
@@ -159,7 +159,7 @@ describe(@"-customCodeRequest:withOptions", ^{
             NSString *decodedString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
             [[decodedString should] equal:@"body"];
             
-            [[[aRequest HTTPMethod] should] equal:@"verb"];
+            [[[aRequest HTTPMethod] should] equal:@"POST"];
             
             [[[aRequest URL] should] equal:[NSURL URLWithString:@"http://api.stackmob.com/method?a=3&a=1&bob=5"]];
         });

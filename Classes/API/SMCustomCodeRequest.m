@@ -16,20 +16,15 @@
 
 #import "SMCustomCodeRequest.h"
 
-@implementation SMCustomCodeRequest
+@interface SMCustomCodeRequest (hidden)
 
-@synthesize queryStringParameters = _queryStringParameters;
-@synthesize method = _method;
-@synthesize requestBody = _requestBody;
-@synthesize requestHeaders = _requestHeaders;
-@synthesize httpVerb = _httpVerb;
+- (id)initWithMethod:(NSString *)method body:(NSString *)body httpVerb:(NSString *)verb;
 
-- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb
-{
-    return [self initWithMethod:method andHTTPVerb:(NSString *)verb andRequestBody:nil];
-}
+@end
 
-- (id)initWithMethod:(NSString *)method andHTTPVerb:(NSString *)verb andRequestBody:(NSString *)body
+@implementation SMCustomCodeRequest (hidden)
+
+- (id)initWithMethod:(NSString *)method body:(NSString *)body httpVerb:(NSString *)verb;
 {
     self = [super init];
     if (self) {
@@ -40,6 +35,36 @@
     }
     
     return self;
+}
+
+@end
+
+@implementation SMCustomCodeRequest
+
+@synthesize queryStringParameters = _queryStringParameters;
+@synthesize method = _method;
+@synthesize requestBody = _requestBody;
+@synthesize requestHeaders = _requestHeaders;
+@synthesize httpVerb = _httpVerb;
+
+- (id)initPostRequestWithMethod:(NSString *)method body:(NSString *)body
+{
+    return [self initWithMethod:method body:body httpVerb:@"POST"];
+}
+
+- (id)initPutRequestWithMethod:(NSString *)method body:(NSString *)body
+{
+    return [self initWithMethod:method body:body httpVerb:@"PUT"];
+}
+
+- (id)initGetRequestWithMethod:(NSString *)method
+{
+    return [self initWithMethod:method body:nil httpVerb:@"GET"];
+}
+
+- (id)initDeleteRequestWithMethod:(NSString *)method
+{
+    return [self initWithMethod:method body:nil httpVerb:@"DELETE"];
 }
 
 - (void)addQueryStringParameterWhere:(NSString *)key equals:(NSString *)value
