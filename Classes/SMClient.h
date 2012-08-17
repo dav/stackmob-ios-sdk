@@ -181,7 +181,7 @@ typedef void (^SMFailureBlock)(NSError *error);
  */
 - (void)loginWithUsername:(NSString *)username
                  password:(NSString *)password
-              withOptions:(SMRequestOptions *)options
+              options:(SMRequestOptions *)options
                 onSuccess:(SMResultSuccessBlock)successBlock
                 onFailure:(SMFailureBlock)failureBlock;
 
@@ -217,7 +217,7 @@ typedef void (^SMFailureBlock)(NSError *error);
 - (void)loginWithUsername:(NSString *)username
         temporaryPassword:(NSString *)tempPassword
        settingNewPassword:(NSString *)newPassword
-              withOptions:(SMRequestOptions *)options
+              options:(SMRequestOptions *)options
                 onSuccess:(SMResultSuccessBlock)successBlock
                 onFailure:(SMFailureBlock)failureBlock;
 
@@ -385,7 +385,7 @@ typedef void (^SMFailureBlock)(NSError *error);
  @param failureBlock Completion block called on failure.
  */
 - (void)loginWithFacebookToken:(NSString *)fbToken
-                   withOptions:(SMRequestOptions *)options
+                   options:(SMRequestOptions *)options
                      onSuccess:(SMResultSuccessBlock)successBlock
                      onFailure:(SMFailureBlock)failureBlock;
 
@@ -493,7 +493,7 @@ typedef void (^SMFailureBlock)(NSError *error);
  */
 - (void)loginWithTwitterToken:(NSString *)twitterToken
                 twitterSecret:(NSString *)twitterSecret
-                  withOptions:(SMRequestOptions *)options
+                  options:(SMRequestOptions *)options
                     onSuccess:(SMResultSuccessBlock)successBlock
                     onFailure:(SMFailureBlock)failureBlock;
 

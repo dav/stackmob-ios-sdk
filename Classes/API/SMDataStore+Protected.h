@@ -56,11 +56,11 @@
 - (void)readObjectWithId:(NSString *)theObjectId 
                 inSchema:(NSString *)schema 
               parameters:(NSDictionary *)parameters 
-             withOptions:(SMRequestOptions *)options 
+             options:(SMRequestOptions *)options 
                onSuccess:(SMDataStoreSuccessBlock)successBlock 
                onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock;
 
-- (void)queueRequest:(NSURLRequest *)request withRetry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure;
+- (void)queueRequest:(NSURLRequest *)request retry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure;
 
 
 @end

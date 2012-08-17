@@ -17,8 +17,8 @@
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
 
-extern const NSString *SMIncrementalStoreType;
-extern const NSString *SM_DataStoreKey;
+extern NSString *const SMIncrementalStoreType;
+extern NSString *const SM_DataStoreKey;
 
 /**
  `SMIncrementalStore` is the foundation used to integrate StackMob into Core Data.
