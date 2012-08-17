@@ -29,7 +29,6 @@ describe(@"with fixtures", ^{
     __block NSDictionary *fixtures;
     
     __block NSManagedObjectContext *moc;
-    __block NSPredicate *predicate;
     [SMCoreDataIntegrationTestHelpers registerForMOCNotificationsWithContext:moc];
     
     beforeEach(^{
