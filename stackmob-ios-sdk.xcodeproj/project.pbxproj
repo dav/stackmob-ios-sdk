@@ -73,6 +73,7 @@
 		DE13865015DC8DC400610EE1 /* SMCoreDataStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC570FA15D065FC00D9E44E /* SMCoreDataStoreTest.m */; };
 		DE13865115DC8DC700610EE1 /* SMIncrementalStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A715CB5EA200E491C4 /* SMIncrementalStoreTest.m */; };
 		DE13865215DC8DCD00610EE1 /* SMIncrementalStoreFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A615CB5EA200E491C4 /* SMIncrementalStoreFetchTest.m */; };
+		DE23237615DF0F5200A85961 /* SMResponseBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = DE23237415DF0F5200A85961 /* SMResponseBlocks.h */; };
 		DE655D7F15D1B6E2009CA786 /* SMVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = DE655D7D15D1B6E2009CA786 /* SMVersion.h */; };
 		DE7E72AD15DB2AC1003919C5 /* SMCustomCodeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7E72AB15DB2AC1003919C5 /* SMCustomCodeRequest.h */; };
 		DE7E72AE15DB2AC1003919C5 /* SMCustomCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E72AC15DB2AC1003919C5 /* SMCustomCodeRequest.m */; };
@@ -179,6 +180,7 @@
 		DE13864015DC7BAB00610EE1 /* Base64EncodedStringFromData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64EncodedStringFromData.h; sourceTree = "<group>"; };
 		DE13864115DC7BAB00610EE1 /* Base64EncodedStringFromData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64EncodedStringFromData.m; sourceTree = "<group>"; };
 		DE13864C15DC8D2700610EE1 /* goatPic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goatPic.jpeg; sourceTree = "<group>"; };
+		DE23237415DF0F5200A85961 /* SMResponseBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMResponseBlocks.h; sourceTree = "<group>"; };
 		DE655D7D15D1B6E2009CA786 /* SMVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVersion.h; sourceTree = "<group>"; };
 		DE7E72AB15DB2AC1003919C5 /* SMCustomCodeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCustomCodeRequest.h; sourceTree = "<group>"; };
 		DE7E72AC15DB2AC1003919C5 /* SMCustomCodeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCustomCodeRequest.m; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 				DEB9D31415D99D96004FCE08 /* SMData.m */,
 				DE7E72AB15DB2AC1003919C5 /* SMCustomCodeRequest.h */,
 				DE7E72AC15DB2AC1003919C5 /* SMCustomCodeRequest.m */,
+				DE23237415DF0F5200A85961 /* SMResponseBlocks.h */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				DEB9D31515D99D96004FCE08 /* SMData.h in Headers */,
 				DE7E72AD15DB2AC1003919C5 /* SMCustomCodeRequest.h in Headers */,
 				DE13864215DC7BAB00610EE1 /* Base64EncodedStringFromData.h in Headers */,
+				DE23237615DF0F5200A85961 /* SMResponseBlocks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

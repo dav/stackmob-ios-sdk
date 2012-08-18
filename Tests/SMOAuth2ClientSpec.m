@@ -130,7 +130,7 @@ describe(@"-customCodeRequest:withOptions", ^{
         });
         it(@"customCodeRequest should set all the right fields with no parameters", ^{
             NSURLRequest *aRequest = nil;
-            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request withOptions:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
+            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request options:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
             [aRequest shouldNotBeNil];
             
             [[theValue([[aRequest allHTTPHeaderFields] count]) should] equal:theValue(4)];
@@ -150,7 +150,7 @@ describe(@"-customCodeRequest:withOptions", ^{
             [request addQueryStringParameterWhere:@"bob" equals:@"5"];
             
             NSURLRequest *aRequest = nil;
-            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request withOptions:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
+            aRequest = [dataStore.session.regularOAuthClient customCodeRequest:request options:[SMRequestOptions optionsWithHeaders:[NSDictionary dictionaryWithObject:@"blah" forKey:@"newHeader"]]];
             [aRequest shouldNotBeNil];
             
             [[theValue([[aRequest allHTTPHeaderFields] count]) should] equal:theValue(4)];

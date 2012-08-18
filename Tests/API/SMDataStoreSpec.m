@@ -335,8 +335,8 @@ describe(@"perform custom code request", ^{
             request = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:@"method" body:@"body"]; 
         });
         it(@"should perform the request", ^{
-            [[dataStore.session.regularOAuthClient should] receive:@selector(customCodeRequest:withOptions:)];
-            [[dataStore should] receive:@selector(queueRequest:withRetry:onSuccess:onFailure:)];
+            [[dataStore.session.regularOAuthClient should] receive:@selector(customCodeRequest:options:)];
+            [[dataStore should] receive:@selector(queueRequest:options:onSuccess:onFailure:)];
             [dataStore performCustomCodeRequest:request onSuccess:^(NSArray *results) {
             
             } onFailure:^(NSError *error) {

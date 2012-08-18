@@ -74,6 +74,7 @@ describe(@"SMCustomCodeRequest", ^{
             [[theValue([request.queryStringParameters count]) should] equal:theValue(3)];
         });
     });
+    
 });
 
 SPEC_END

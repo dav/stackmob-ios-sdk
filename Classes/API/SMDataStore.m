@@ -26,6 +26,7 @@
 #import "SMClient.h"
 #import "SMUserSession.h"
 #import "SMCustomCodeRequest.h"
+#import "SMResponseBlocks.h"
 
 
 
@@ -68,9 +69,9 @@
         [options.headers enumerateKeysAndObjectsUsingBlock:^(id headerField, id headerValue, BOOL *stop) {
             [request setValue:headerValue forHTTPHeaderField:headerField]; 
         }];
-        AFSuccessBlock urlSuccessBlock = [self AFSuccessBlockForSchema:schema withSuccessBlock:successBlock];
-        AFFailureBlock urlFailureBlock = [self AFFailureBlockForObject:theObject ofSchema:schema withFailureBlock:failureBlock];
-        [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+        SMFullResponseSuccessBlock urlSuccessBlock = [self SMFullResponseSuccessBlockForSchema:schema withSuccessBlock:successBlock];
+        SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForObject:theObject ofSchema:schema withFailureBlock:failureBlock];
+        [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     }
 }
 
@@ -108,9 +109,9 @@
         }];
         
 
-        AFSuccessBlock urlSuccessBlock = [self AFSuccessBlockForSchema:schema withSuccessBlock:successBlock];
-        AFFailureBlock urlFailureBlock = [self AFFailureBlockForObject:updatedFields ofSchema:schema withFailureBlock:failureBlock];
-        [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+        SMFullResponseSuccessBlock urlSuccessBlock = [self SMFullResponseSuccessBlockForSchema:schema withSuccessBlock:successBlock];
+        SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForObject:updatedFields ofSchema:schema withFailureBlock:failureBlock];
+        [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     }
 }
 
@@ -156,9 +157,9 @@
             [request setValue:headerValue forHTTPHeaderField:headerField]; 
         }];
         
-        AFSuccessBlock urlSuccessBlock = [self AFSuccessBlockForObjectId:theObjectId ofSchema:schema withSuccessBlock:successBlock];
-        AFFailureBlock urlFailureBlock = [self AFFailureBlockForObjectId:theObjectId ofSchema:schema withFailureBlock:failureBlock];
-        [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+        SMFullResponseSuccessBlock urlSuccessBlock = [self SMFullResponseSuccessBlockForObjectId:theObjectId ofSchema:schema withSuccessBlock:successBlock];
+        SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForObjectId:theObjectId ofSchema:schema withFailureBlock:failureBlock];
+        [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     }
 }
 
@@ -184,14 +185,14 @@
 {
     NSMutableURLRequest *request = [self requestFromQuery:query withOptions:options];
     
-    AFSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    SMFullResponseSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         successBlock((NSArray *)JSON);
     };
-    AFFailureBlock urlFailureBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    SMFullResponseFailureBlock urlFailureBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Query failed with error: %@, response: %@, JSON: %@", error, response, JSON);
         failureBlock(error);
     };   
-    [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+    [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
 }
 
 - (void)performCount:(SMQuery *)query onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
@@ -206,7 +207,7 @@
     countQuery.requestHeaders = [query.requestHeaders copy];
     [countQuery fromIndex:0 toIndex:0];
     NSMutableURLRequest *request = [self requestFromQuery:countQuery withOptions:options];
-    AFSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    SMFullResponseSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSString *rangeHeader = [response.allHeaderFields valueForKey:@"Content-Range"];
         //No range header means we've got all the results right here (1 or 0)
         int count = [self countFromRangeHeader:rangeHeader results:JSON];
@@ -216,29 +217,27 @@
             successBlock([NSNumber numberWithInt:count]);
         }
     };
-    AFFailureBlock urlFailureBlock = [self AFFailureBlockForFailureBlock:failureBlock];
-    [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+    SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForFailureBlock:failureBlock];
+    [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     
 }
 
-- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock
 {
-    [self performCustomCodeRequest:customCodeRequest withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self performCustomCodeRequest:customCodeRequest options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest withOptions:(SMRequestOptions *)options onSuccess:(void (^)(id results))successBlock onFailure:(SMFailureBlock)failureBlock
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock
 {
     
-    NSMutableURLRequest *request = [[self.session oauthClientWithHTTPS:options.isSecure] customCodeRequest:customCodeRequest withOptions:options];
+    NSMutableURLRequest *request = [[self.session oauthClientWithHTTPS:options.isSecure] customCodeRequest:customCodeRequest options:options];
     
-    AFSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        successBlock((NSArray *)JSON);
-    };
-    AFFailureBlock urlFailureBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Custom Code Request failed with error: %@, response: %@, JSON: %@", error, response, JSON);
-        failureBlock(error);
-    };   
-    [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+    [self queueRequest:request options:options onSuccess:successBlock onFailure:failureBlock];
+}
+
+- (void)retryCustomCodeRequest:(NSURLRequest *)request options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock
+{
+    [self queueRequest:request options:options onSuccess:successBlock onFailure:failureBlock];
 }
 
 @end

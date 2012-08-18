@@ -15,6 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "SMResponseBlocks.h"
 
 /**
  `SMRequestOptions` is a class designed to supply various choices to requests, including:
@@ -27,9 +28,45 @@
  */
 @interface SMRequestOptions : NSObject
 
-@property(nonatomic, retain) NSDictionary *headers;
+///-------------------------------
+/// @name Properties
+///-------------------------------
+
+/**
+ Optional request headers where the key is the header field name.
+ */
+@property(nonatomic, strong) NSDictionary *headers;
+
+/**
+ Whether the request should be sent over HTTPS. Default is `NO`.
+ */
 @property(nonatomic, readwrite) BOOL isSecure;
+
+/**
+ In the case that a 401 `SMErrorUnauthorized` response is returned, whether to try and refresh the session. Default is `YES`.
+ */
 @property(nonatomic, readwrite) BOOL tryRefreshToken;
+
+/**
+ In the case that a 503 `SMErrorServiceUnavailable` response is returned, the number of times to retry.  The default is 3 times.
+ 
+ The default retry action is to send the original request, resigned with up to date arguments. If a retryBlock has been added it is used in place of the default.
+ */
+@property(nonatomic, readwrite) NSInteger numberOfRetries;
+
+/**
+ An optional block to call if the response returns a 503 `SMErrorServiceUnavailable`. Use addSMErrorServiceUnavailableRetryBlock: to set.
+ 
+ `SMFailureRetryBlock` is defined as:
+ 
+    typedef void (^SMFailureRetryBlock)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON, SMRequestOptions *options, SMFullResponseSuccessBlock successBlock, SMFullResponseFailureBlock failureBlock);
+ 
+ */
+@property (nonatomic, strong) SMFailureRetryBlock retryBlock;
+
+///-------------------------------
+/// @name Initialize
+///-------------------------------
 
 /**
  Empty options with no special settings
@@ -55,6 +92,9 @@
 + (SMRequestOptions *)optionsWithHTTPS;
 
 #pragma mark - Expanding relationships
+///-------------------------------
+/// @name Expanding Relationships
+///-------------------------------
 
 /**
  Expand relationships by `depth` levels.
@@ -67,6 +107,9 @@
 
 
 #pragma mark - Limiting returned properties
+///-------------------------------
+/// @name Limiting Returned Properties
+///-------------------------------
 
 /**
  Return a subset of the schema's fields.
@@ -76,5 +119,19 @@
  @param fields An array containing the names of the fields to return.
  */
 - (void)restrictReturnedFieldsTo:(NSArray *)fields;
+
+/**
+ Adds a retry block to be used in the event of a 503 `SMErrorServiceUnavailable` response.
+ 
+ @param retryBlock An instance of SMFailureRetryBlock.
+ 
+ When designing your retry block, consider the following:
+ 
+ * The parameter `options` passed to the block will contain the original request SMRequestOptions instance, with numberOfRetries decremented by 1. This instance should be passed to any subsequent requests so that the retry block is called a finite amount of times.
+ * To resend the request, call `retryCustomCodeRequest:options:onSuccess:onFailure:` on your SMClient `dataStore` instance.  The default values passed to this method should be the parameters passed to the block, unless you are intentionally redefining one of them.
+ 
+ @param retryBlock The block to be used in place of the default retry action, which is resigning and resending the original request.
+ */
+- (void)addSMErrorServiceUnavailableRetryBlock:(SMFailureRetryBlock)retryBlock;
 
 @end

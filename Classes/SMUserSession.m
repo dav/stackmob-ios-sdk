@@ -112,10 +112,10 @@
     [options.headers enumerateKeysAndObjectsUsingBlock:^(id headerField, id headerValue, BOOL *stop) {
         [request setValue:headerValue forHTTPHeaderField:headerField]; 
     }];
-    AFSuccessBlock successHandler = ^void(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {   
+    SMFullResponseSuccessBlock successHandler = ^void(NSURLRequest *req, NSHTTPURLResponse *response, id JSON) {   
         successBlock([self parseTokenResults:JSON]);
     };
-    AFFailureBlock failureHandler = ^void(NSURLRequest *req, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    SMFullResponseFailureBlock failureHandler = ^void(NSURLRequest *req, NSHTTPURLResponse *response, NSError *error, id JSON) {
         self.refreshing = NO;
         int statusCode = response.statusCode;
         NSString *domain = HTTPErrorDomain;

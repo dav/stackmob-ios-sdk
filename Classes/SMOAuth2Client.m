@@ -61,7 +61,7 @@
     return request;
 }
 
-- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)aRequest withOptions:(SMRequestOptions *)options
+- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)aRequest options:(SMRequestOptions *)options
 {
     NSURL *url = [NSURL URLWithString:aRequest.method relativeToURL:self.baseURL];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];

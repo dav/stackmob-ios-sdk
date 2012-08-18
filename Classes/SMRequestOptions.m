@@ -21,12 +21,16 @@
 @synthesize headers = _SM_headers;
 @synthesize isSecure = _SM_isSecure;
 @synthesize tryRefreshToken = _SM_tryRefreshToken;
+@synthesize numberOfRetries = _SM_numberOfRetries;
+@synthesize retryBlock = _SM_retryBlock;
 
 
 + (SMRequestOptions *)options
 {
     SMRequestOptions *opts = [[SMRequestOptions alloc] init];
     opts.tryRefreshToken = YES;
+    opts.numberOfRetries = 3;
+    opts.retryBlock = nil;
     return opts;
 }
 
@@ -67,6 +71,11 @@
 - (void)restrictReturnedFieldsTo:(NSArray *)fields
 {
     [self.headers setValue:[fields componentsJoinedByString:@","] forKey:@"X-StackMob-Select"];
+}
+
+- (void)addSMErrorServiceUnavailableRetryBlock:(SMFailureRetryBlock)retryBlock
+{
+    self.retryBlock = retryBlock;
 }
 
 @end

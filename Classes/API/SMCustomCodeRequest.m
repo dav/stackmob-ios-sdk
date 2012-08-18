@@ -44,7 +44,6 @@
 @synthesize queryStringParameters = _queryStringParameters;
 @synthesize method = _method;
 @synthesize requestBody = _requestBody;
-@synthesize requestHeaders = _requestHeaders;
 @synthesize httpVerb = _httpVerb;
 
 - (id)initPostRequestWithMethod:(NSString *)method body:(NSString *)body

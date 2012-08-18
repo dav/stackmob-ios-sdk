@@ -46,6 +46,8 @@
                 publicKey:(NSString *)publicKey;
 
 /**
+ Creates a signed request using the given parameters.
+ 
  @param method The HTTP verb to use, either `POST`,`GET`, `PUT`, or `DELETE`.
  @param path The REST path.
  @param parameters A dictionary to be used as the body of the request.
@@ -56,7 +58,15 @@
                                        path:(NSString *)path 
                                  parameters:(NSDictionary *)parameters;
 
-- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)request withOptions:(SMRequestOptions *)options;
+/**
+ Creates a signed request for a custom code method using the given parameters.
+ 
+ @param request An instance of SMCustomCodeRequest representing the request to sign.
+ @param options Options to be applied to the request.
+ 
+ @return A signed request to be placed on an operation queue.
+ */
+- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)request options:(SMRequestOptions *)options;
 
 /**
  Sets the Authorization header of the request using the client's credentials and a MAC header algorithm.

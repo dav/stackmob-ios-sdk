@@ -21,15 +21,14 @@
 
 #define CC_NO_PARAM_METHOD_NAME @"hello_world"
 #define CC_PARAM_METHOD_NAME @"hello_world_params"
+#define CC_503_METHOD_NAME @"hello_world_503"
 
 SPEC_BEGIN(SMCusCodeReqIntegrationSpec)
 
 describe(@"SMCusCodeReqIntegration", ^{
     __block SMClient *client = nil;
-    __block NSArray *verbsToTest = nil;
     context(@"given a custom code request", ^{
         beforeEach(^{
-            verbsToTest = [NSArray arrayWithObjects:@"POST", @"GET", @"PUT", @"DELETE", nil];
             client =  [SMIntegrationTestHelpers defaultClient];
             [client shouldNotBeNil];
         });
@@ -45,11 +44,11 @@ describe(@"SMCusCodeReqIntegration", ^{
             it(@"should pass for GET", ^{
                 aRequest = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:CC_NO_PARAM_METHOD_NAME];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -60,11 +59,11 @@ describe(@"SMCusCodeReqIntegration", ^{
             it(@"should pass for DELETE", ^{
                 aRequest = [[SMCustomCodeRequest alloc] initDeleteRequestWithMethod:CC_NO_PARAM_METHOD_NAME];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -86,11 +85,11 @@ describe(@"SMCusCodeReqIntegration", ^{
             it(@"should pass for POST", ^{
                 aRequest = [[SMCustomCodeRequest alloc] initPostRequestWithMethod:CC_NO_PARAM_METHOD_NAME body:@"the body"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -101,11 +100,11 @@ describe(@"SMCusCodeReqIntegration", ^{
             it(@"should pass for PUT", ^{
                 aRequest = [[SMCustomCodeRequest alloc] initPutRequestWithMethod:CC_NO_PARAM_METHOD_NAME body:@"the body"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -128,11 +127,11 @@ describe(@"SMCusCodeReqIntegration", ^{
                 [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
                 [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -145,11 +144,11 @@ describe(@"SMCusCodeReqIntegration", ^{
                 [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
                 [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -172,11 +171,11 @@ describe(@"SMCusCodeReqIntegration", ^{
                 [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
                 [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -190,11 +189,11 @@ describe(@"SMCusCodeReqIntegration", ^{
                 [aRequest addQueryStringParameterWhere:@"param1" equals:@"yo"];
                 [aRequest addQueryStringParameterWhere:@"param2" equals:@"3"];
                 syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
-                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(id results) {
+                    [[client dataStore] performCustomCodeRequest:aRequest onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
                         callSuccess = YES;
-                        theResults = results;
+                        theResults = (NSDictionary *)JSON;
                         syncReturn(semaphore);
-                    } onFailure:^(NSError *error) {
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                         syncReturn(semaphore);
                     }];
                 });
@@ -204,7 +203,58 @@ describe(@"SMCusCodeReqIntegration", ^{
                 [[[theResults objectForKey:@"body"] should]  equal:@"this is my body"];
             });
         });
-
+        // NOT TESTABLE YET
+        /*
+        context(@"with a 503 response code", ^{
+            __block SMCustomCodeRequest *aRequest = nil;
+            __block BOOL failSuccess = NO;
+            __block id theResults = nil;
+            __block BOOL retryBlockCalled = NO;
+            __block SMRequestOptions *options = nil;
+            beforeEach(^{
+                aRequest = nil;
+                options = nil;
+                failSuccess = NO; 
+                retryBlockCalled = NO;
+                theResults = nil;
+            });
+            it(@"should retry when returned a 503", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:CC_503_METHOD_NAME];
+                options = [SMRequestOptions options];
+                [[options should] receive:@selector(setNumberOfRetries:)];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest options:options onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                        syncReturn(semaphore);
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                        failSuccess = YES;
+                        [[[[error userInfo] valueForKey:NSLocalizedDescriptionKey] should] equal:@"Expected status code in (200-299), got 503"];
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(failSuccess) should] beYes];
+                [[theValue(retryBlockCalled) should] beNo];
+            });
+            it(@"should call a retry block if provided when returned a 503", ^{
+                aRequest = [[SMCustomCodeRequest alloc] initGetRequestWithMethod:CC_503_METHOD_NAME];
+                options = [SMRequestOptions options];
+                [options addSMErrorServiceUnavailableRetryBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON, SMRequestOptions *options, SMFullResponseSuccessBlock successBlock, SMFullResponseFailureBlock failureBlock) {
+                    retryBlockCalled = YES;
+                    [[client dataStore] retryCustomCodeRequest:request options:options onSuccess:successBlock onFailure:failureBlock];
+                }];
+                syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
+                    [[client dataStore] performCustomCodeRequest:aRequest options:options onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                        syncReturn(semaphore);
+                    } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+                        failSuccess = YES;
+                        [[[[error userInfo] valueForKey:NSLocalizedDescriptionKey] should] equal:@"Expected status code in (200-299), got 503"];
+                        syncReturn(semaphore);
+                    }];
+                });
+                [[theValue(failSuccess) should] beYes];
+                [[theValue(retryBlockCalled) should] beYes];
+            });
+        });
+         */
     });
 });
 
