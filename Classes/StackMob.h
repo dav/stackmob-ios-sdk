@@ -43,3 +43,5 @@
 #import "NSEntityDescription+StackMobSerialization.h"
 #import "SMIncrementalStore+Query.h"
 
+#import "SMBinaryDataConversion.h"
+

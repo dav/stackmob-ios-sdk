@@ -96,7 +96,7 @@ typedef void (^AFFailureBlock)(NSURLRequest *request, NSHTTPURLResponse *respons
  */
 - (void)doTokenRequestWithEndpoint:(NSString *)endpoint
                        credentials:(NSDictionary *)credentials
-                       withOptions:(SMRequestOptions *)options
+                       options:(SMRequestOptions *)options
                          onSuccess:(void (^)(NSDictionary *userObject))successBlock
                          onFailure:(void (^)(NSError *theError))failureBlock;
 

@@ -124,7 +124,7 @@
     } 
 }
 
-- (void)readObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema parameters:(NSDictionary *)parameters withOptions:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
+- (void)readObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema parameters:(NSDictionary *)parameters options:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
     if (theObjectId == nil || schema == nil) {
         if (failureBlock) {
@@ -139,7 +139,7 @@
         }];
         AFSuccessBlock urlSuccessBlock = [self AFSuccessBlockForSchema:schema withSuccessBlock:successBlock];
         AFFailureBlock urlFailureBlock = [self AFFailureBlockForObjectId:theObjectId ofSchema:schema withFailureBlock:failureBlock];
-        [self queueRequest:request withRetry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+        [self queueRequest:request retry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     }
 }
 
@@ -152,14 +152,14 @@
         }
     } else {
         [self.session refreshTokenOnSuccess:^(NSDictionary *userObject) {
-            [self queueRequest:[self.session signRequest:request] withRetry:NO onSuccess:onSuccess onFailure:onFailure];
+            [self queueRequest:[self.session signRequest:request] retry:NO onSuccess:onSuccess onFailure:onFailure];
         } onFailure:^(NSError *theError) {
-            [self queueRequest:[self.session signRequest:request] withRetry:NO onSuccess:onSuccess onFailure:onFailure];
+            [self queueRequest:[self.session signRequest:request] retry:NO onSuccess:onSuccess onFailure:onFailure];
         }];
     }
 }
 
-- (void)queueRequest:(NSURLRequest *)request withRetry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure
+- (void)queueRequest:(NSURLRequest *)request retry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure
 {
     if (![self.session accessTokenHasExpired] && self.session.refreshToken != nil && retry) {
         [self refreshAndRetry:request onSuccess:onSuccess onFailure:onFailure];

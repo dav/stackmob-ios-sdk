@@ -15,16 +15,16 @@
  */
 
 #import <Kiwi/Kiwi.h>
+#import "StackMob.h"
 #import "SMClient.h"
 #import "SMCoreDataStore.h"
 #import "SMIntegrationTestHelpers.h"
 #import "SMCoreDataIntegrationTestHelpers.h"
 #import "Superpower.h"
-#import "SMData.h"
 
-SPEC_BEGIN(SMDataCDIntegrationSpec)
+SPEC_BEGIN(SMBinDataConvertCDIntegrationSpec)
 
-describe(@"SMDataCDIntegration", ^{
+describe(@"SMBinDataConvertCDIntegration", ^{
     __block SMClient *client = nil;
     __block SMCoreDataStore *coreDataStore = nil;
     __block NSManagedObjectModel *mom = nil;
@@ -43,13 +43,13 @@ describe(@"SMDataCDIntegration", ^{
             superpower = [NSEntityDescription insertNewObjectForEntityForName:@"Superpower" inManagedObjectContext:moc];
             NSError *error = nil;
             NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-            NSString* pathToImageFile = [bundle pathForResource:@"rogue" ofType:@"jpg"];
+            NSString* pathToImageFile = [bundle pathForResource:@"goatPic" ofType:@"jpeg"];
             NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile options:NSDataReadingMappedIfSafe error:&error];
             [error shouldBeNil];
-            dataString = [SMData stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpg"];
+            dataString = [SMBinaryDataConversion stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpeg"];
             [dataString shouldNotBeNil];
             [superpower setName:@"cool"];
-            [superpower setPic:dataString];
+            [superpower setValue:dataString forKey:@"pic"];
             [superpower setSuperpower_id:[superpower sm_assignObjectId]];
         });
         it(@"should persist to StackMob and update after a refresh call", ^{
@@ -64,7 +64,6 @@ describe(@"SMDataCDIntegration", ^{
             }];
         });
     });
-    
 });
 
 SPEC_END
