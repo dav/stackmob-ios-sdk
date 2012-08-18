@@ -57,7 +57,7 @@
 - (void)readObjectWithId:(NSString *)theObjectId 
                 inSchema:(NSString *)schema 
               parameters:(NSDictionary *)parameters 
-             withOptions:(SMRequestOptions *)options 
+             options:(SMRequestOptions *)options 
                onSuccess:(SMDataStoreSuccessBlock)successBlock 
                onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock;
 

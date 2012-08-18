@@ -93,14 +93,14 @@
         }
     } else {
         self.refreshing = YES;//Don't ever trigger two refreshToken calls
-        [self doTokenRequestWithEndpoint:@"refreshToken" credentials:[NSDictionary dictionaryWithObjectsAndKeys:self.refreshToken, @"refresh_token", nil] withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock]; 
+        [self doTokenRequestWithEndpoint:@"refreshToken" credentials:[NSDictionary dictionaryWithObjectsAndKeys:self.refreshToken, @"refresh_token", nil] options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock]; 
     }
     
 }
 
 - (void)doTokenRequestWithEndpoint:(NSString *)endpoint
                        credentials:(NSDictionary *)credentials 
-                       withOptions:(SMRequestOptions *)options
+                       options:(SMRequestOptions *)options
                          onSuccess:(void (^)(NSDictionary *userObject))successBlock
                          onFailure:(void (^)(NSError *theError))failureBlock
 {

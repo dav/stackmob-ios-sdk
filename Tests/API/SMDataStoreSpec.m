@@ -337,9 +337,9 @@ describe(@"perform custom code request", ^{
         it(@"should perform the request", ^{
             [[dataStore.session.regularOAuthClient should] receive:@selector(customCodeRequest:options:)];
             [[dataStore should] receive:@selector(queueRequest:options:onSuccess:onFailure:)];
-            [dataStore performCustomCodeRequest:request onSuccess:^(NSArray *results) {
-            
-            } onFailure:^(NSError *error) {
+            [dataStore performCustomCodeRequest:request onSuccess:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+                
+            } onFailure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
                 
             }];
         });

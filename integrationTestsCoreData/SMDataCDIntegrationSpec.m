@@ -49,7 +49,7 @@ describe(@"SMDataCDIntegration", ^{
             dataString = [SMData stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpeg"];
             [dataString shouldNotBeNil];
             [superpower setName:@"cool"];
-            [superpower setPic:dataString];
+            [superpower setValue:dataString forKey:@"pic"];
             [superpower setSuperpower_id:[superpower sm_assignObjectId]];
         });
         it(@"should persist to StackMob and update after a refresh call", ^{

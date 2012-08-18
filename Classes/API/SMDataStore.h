@@ -86,7 +86,7 @@
  */
 - (void)createObject:(NSDictionary *)theObject
             inSchema:(NSString *)schema
-         withOptions:(SMRequestOptions *)options
+         options:(SMRequestOptions *)options
            onSuccess:(SMDataStoreSuccessBlock)successBlock
            onFailure:(SMDataStoreFailureBlock)failureBlock;
 
@@ -114,7 +114,7 @@
  */
 - (void)readObjectWithId:(NSString *)theObjectId
                 inSchema:(NSString *)schema
-             withOptions:(SMRequestOptions *)options
+             options:(SMRequestOptions *)options
                onSuccess:(SMDataStoreSuccessBlock)successBlock
                onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock;
 
@@ -146,7 +146,7 @@
 - (void)updateObjectWithId:(NSString *)theObjectId
                   inSchema:(NSString *)schema
                     update:(NSDictionary *)updatedFields
-               withOptions:(SMRequestOptions *)options
+               options:(SMRequestOptions *)options
                  onSuccess:(SMDataStoreSuccessBlock)successBlock
                  onFailure:(SMDataStoreFailureBlock)failureBlock;
 
@@ -182,7 +182,7 @@
                             field:(NSString *)field
                          inSchema:(NSString *)schema
                                by:(int)increment
-                      withOptions:(SMRequestOptions *)options
+                      options:(SMRequestOptions *)options
                         onSuccess:(SMDataStoreSuccessBlock)successBlock
                         onFailure:(SMDataStoreFailureBlock)failureBlock;
 
@@ -210,7 +210,7 @@
  */
 - (void)deleteObjectId:(NSString *)theObjectId
               inSchema:(NSString *)schema
-           withOptions:(SMRequestOptions *)options
+           options:(SMRequestOptions *)options
              onSuccess:(SMDataStoreObjectIdSuccessBlock)successBlock
              onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock;
 
@@ -238,7 +238,7 @@
  @param successBlock A block to invoke after the query succeeds. Passed an array of object dictionaries returned from StackMob (if any).
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
-- (void)performQuery:(SMQuery *)query withOptions:(SMRequestOptions *)options onSuccess:(SMResultsSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
+- (void)performQuery:(SMQuery *)query options:(SMRequestOptions *)options onSuccess:(SMResultsSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
 
 /** 
  Count the results that would be returned by a query against your StackMob datastore.
@@ -257,7 +257,7 @@
  @param successBlock A block to invoke when the count is complete.  Passed the number of objects that would be returned by the query.
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
-- (void)performCount:(SMQuery *)query withOptions:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
+- (void)performCount:(SMQuery *)query options:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
 
 #pragma mark - Custom Code
 ///-------------------------------

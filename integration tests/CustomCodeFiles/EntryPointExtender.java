@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,4 +14,22 @@
  * limitations under the License.
  */
 
-#define SDK_VERSION @"1.0.0beta.1"
+package com.stackmob.example;
+
+import com.stackmob.core.customcode.CustomCodeMethod;
+import com.stackmob.core.jar.JarEntryObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EntryPointExtender extends JarEntryObject {
+
+  @Override
+  public List<CustomCodeMethod> methods() {
+    List<CustomCodeMethod> list = new ArrayList<CustomCodeMethod>();
+    list.add(new HelloWorld());
+    list.add(new HelloWorldParams());
+    return list;
+  }
+
+}

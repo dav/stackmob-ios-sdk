@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,13 +21,7 @@
 
 #define SM_TEST_API_VERSION @"0"
 #define SM_TEST_API_BASEURL @"http://api.stackmob.com"
-#define SM_TEST_CUSTOM_CODE 1
-
-//typedef void (^SynchronousQueryBlock)(NSArray *results, NSError *error);
-//void synchronousQuery(SMDataStore *sm, SMQuery *query, SynchronousQueryBlock block);
-
-//void syncWithSemaphore(void (^block)(dispatch_semaphore_t semaphore));
-//void syncReturn(dispatch_semaphore_t semaphore);
+#define TEST_CUSTOM_CODE 0
 
 @interface SMIntegrationTestHelpers : NSObject
 

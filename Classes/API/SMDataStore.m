@@ -54,10 +54,10 @@
 
 - (void)createObject:(NSDictionary *)theObject inSchema:(NSString *)schema onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
 {
-    [self createObject:theObject inSchema:schema withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self createObject:theObject inSchema:schema options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)createObject:(NSDictionary *)theObject inSchema:(NSString *)schema withOptions:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
+- (void)createObject:(NSDictionary *)theObject inSchema:(NSString *)schema options:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
 {
     if (theObject == nil || schema == nil) {
         if (failureBlock) {
@@ -80,20 +80,20 @@
                onSuccess:(SMDataStoreSuccessBlock)successBlock
                onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
-    [self readObjectWithId:theObjectId inSchema:schema withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self readObjectWithId:theObjectId inSchema:schema options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)readObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema withOptions:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
+- (void)readObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema options:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
-    [self readObjectWithId:theObjectId inSchema:schema parameters:nil withOptions:options onSuccess:successBlock onFailure:failureBlock];
+    [self readObjectWithId:theObjectId inSchema:schema parameters:nil options:options onSuccess:successBlock onFailure:failureBlock];
 }
 
 - (void)updateObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema update:(NSDictionary *)updatedFields onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
 {
-    [self updateObjectWithId:theObjectId inSchema:schema update:updatedFields withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self updateObjectWithId:theObjectId inSchema:schema update:updatedFields options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)updateObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema update:(NSDictionary *)updatedFields withOptions:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
+- (void)updateObjectWithId:(NSString *)theObjectId inSchema:(NSString *)schema update:(NSDictionary *)updatedFields options:(SMRequestOptions *)options onSuccess:(SMDataStoreSuccessBlock)successBlock onFailure:(SMDataStoreFailureBlock)failureBlock
 {
     if (theObjectId == nil || schema == nil) {
         if (failureBlock) {
@@ -122,27 +122,27 @@
                         onSuccess:(SMDataStoreSuccessBlock)successBlock
                         onFailure:(SMDataStoreFailureBlock)failureBlock
 {
-    [self updateAtomicCounterWithId:theObjectId field:field inSchema:schema by:increment withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self updateAtomicCounterWithId:theObjectId field:field inSchema:schema by:increment options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
 - (void)updateAtomicCounterWithId:(NSString *)theObjectId
                             field:(NSString *)field
                          inSchema:(NSString *)schema
                                by:(int)increment
-                      withOptions:(SMRequestOptions *)options
+                      options:(SMRequestOptions *)options
                         onSuccess:(SMDataStoreSuccessBlock)successBlock
                         onFailure:(SMDataStoreFailureBlock)failureBlock
 {
     NSDictionary *args = [[NSDictionary dictionary] dictionaryByAppendingCounterUpdateForField:field by:increment];
-    [self updateObjectWithId:theObjectId inSchema:schema update:args withOptions:options onSuccess:successBlock onFailure:failureBlock];
+    [self updateObjectWithId:theObjectId inSchema:schema update:args options:options onSuccess:successBlock onFailure:failureBlock];
 }
 
 - (void)deleteObjectId:(NSString *)theObjectId inSchema:(NSString *)schema onSuccess:(SMDataStoreObjectIdSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
-    [self deleteObjectId:theObjectId inSchema:schema withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self deleteObjectId:theObjectId inSchema:schema options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)deleteObjectId:(NSString *)theObjectId inSchema:(NSString *)schema withOptions:(SMRequestOptions *)options onSuccess:(SMDataStoreObjectIdSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
+- (void)deleteObjectId:(NSString *)theObjectId inSchema:(NSString *)schema options:(SMRequestOptions *)options onSuccess:(SMDataStoreObjectIdSuccessBlock)successBlock onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
     if (theObjectId == nil || schema == nil) {
         if (failureBlock) {
@@ -163,7 +163,7 @@
     }
 }
 
-- (NSMutableURLRequest *)requestFromQuery:(SMQuery *)query withOptions:(SMRequestOptions *)options
+- (NSMutableURLRequest *)requestFromQuery:(SMQuery *)query options:(SMRequestOptions *)options
 {
     NSDictionary *requestHeaders    = [query requestHeaders];
     NSDictionary *requestParameters = [query requestParameters];
@@ -178,12 +178,12 @@
 
 - (void)performQuery:(SMQuery *)query onSuccess:(SMResultsSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
 {
-    [self performQuery:query withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
+    [self performQuery:query options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];
 }
 
-- (void)performQuery:(SMQuery *)query withOptions:(SMRequestOptions *)options onSuccess:(SMResultsSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
+- (void)performQuery:(SMQuery *)query options:(SMRequestOptions *)options onSuccess:(SMResultsSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
 {
-    NSMutableURLRequest *request = [self requestFromQuery:query withOptions:options];
+    NSMutableURLRequest *request = [self requestFromQuery:query options:options];
     
     SMFullResponseSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         successBlock((NSArray *)JSON);
@@ -197,16 +197,16 @@
 
 - (void)performCount:(SMQuery *)query onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
 {
-    [self performCount:query withOptions:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];    
+    [self performCount:query options:[SMRequestOptions options] onSuccess:successBlock onFailure:failureBlock];    
 }
 
-- (void)performCount:(SMQuery *)query withOptions:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
+- (void)performCount:(SMQuery *)query options:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock
 {
     SMQuery *countQuery = [[SMQuery alloc] initWithSchema:query.schemaName];
     countQuery.requestParameters = query.requestParameters;
     countQuery.requestHeaders = [query.requestHeaders copy];
     [countQuery fromIndex:0 toIndex:0];
-    NSMutableURLRequest *request = [self requestFromQuery:countQuery withOptions:options];
+    NSMutableURLRequest *request = [self requestFromQuery:countQuery options:options];  
     SMFullResponseSuccessBlock urlSuccessBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSString *rangeHeader = [response.allHeaderFields valueForKey:@"Content-Range"];
         //No range header means we've got all the results right here (1 or 0)
@@ -217,6 +217,7 @@
             successBlock([NSNumber numberWithInt:count]);
         }
     };
+    
     SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForFailureBlock:failureBlock];
     [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     

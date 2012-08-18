@@ -25,6 +25,8 @@
 
 SPEC_BEGIN(SMCusCodeReqIntegrationSpec)
 
+#if TEST_CUSTOM_CODE
+
 describe(@"SMCusCodeReqIntegration", ^{
     __block SMClient *client = nil;
     context(@"given a custom code request", ^{
@@ -54,7 +56,7 @@ describe(@"SMCusCodeReqIntegration", ^{
                 });
                 [[theValue(callSuccess) should] beYes];
                 [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
-                [[theResults objectForKey:@"body"] shouldBeNil];
+                [[[theResults objectForKey:@"body"] should] equal:@""];
             });
             it(@"should pass for DELETE", ^{
                 aRequest = [[SMCustomCodeRequest alloc] initDeleteRequestWithMethod:CC_NO_PARAM_METHOD_NAME];
@@ -69,7 +71,7 @@ describe(@"SMCusCodeReqIntegration", ^{
                 });
                 [[theValue(callSuccess) should] beYes];
                 [[[theResults objectForKey:@"msg"] should] equal:@"Hello, world!"];
-                [[theResults objectForKey:@"body"] shouldBeNil];
+                [[[theResults objectForKey:@"body"] should] equal:@""];
             });
                  
         });
@@ -257,5 +259,7 @@ describe(@"SMCusCodeReqIntegration", ^{
          */
     });
 });
+
+#endif
 
 SPEC_END

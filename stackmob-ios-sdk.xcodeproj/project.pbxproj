@@ -6,6 +6,26 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		DEDDE21D15DD94DC0055FAFF /* Package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DEDDE21E15DD94DC0055FAFF /* Build configuration list for PBXAggregateTarget "Package" */;
+			buildPhases = (
+				DEDDE28515DD9DB60055FAFF /* Build Targets */,
+				DEDDE22915DD95D90055FAFF /* Copy Pods */,
+				DEDDE22815DD95C40055FAFF /* Copy Headers */,
+				DEDDE22715DD95440055FAFF /* Merge libs */,
+				DEDDE28615DD9F0F0055FAFF /* Copy Files To Build Dir */,
+				DEDDE2C215DDAFB30055FAFF /* Zip It Up */,
+			);
+			dependencies = (
+				DEDDE22215DD95020055FAFF /* PBXTargetDependency */,
+			);
+			name = Package;
+			productName = Package;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		11678F47A9EA44B2AD2C372D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1E56D1B3EB4DE7BDACFF7A /* libPods.a */; };
 		56404F3815CCF4B5009CCAC1 /* SMModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 56404F3615CCF4B5009CCAC1 /* SMModel.h */; };
@@ -117,8 +137,123 @@
 		DEBBBCF515CC447C00650D75 /* SMUserSession.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCDA15CC447C00650D75 /* SMUserSession.h */; };
 		DEBBBCF615CC447C00650D75 /* SMUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBBBCDB15CC447C00650D75 /* SMUserSession.m */; };
 		DEBBBCF815CC447C00650D75 /* StackMob.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCDD15CC447C00650D75 /* StackMob.h */; };
+		DEDDE18C15DD8D3A0055FAFF /* NSDictionary+AtomicCounter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC315CC447C00650D75 /* NSDictionary+AtomicCounter.h */; };
+		DEDDE18D15DD8D3A0055FAFF /* NSEntityDescription+StackMobSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC515CC447C00650D75 /* NSEntityDescription+StackMobSerialization.h */; };
+		DEDDE18E15DD8D3A0055FAFF /* NSManagedObject+StackMobSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC715CC447C00650D75 /* NSManagedObject+StackMobSerialization.h */; };
+		DEDDE18F15DD8D3A0055FAFF /* SMDataStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCCB15CC447C00650D75 /* SMDataStore.h */; };
+		DEDDE19015DD8D3A0055FAFF /* SMDataStore+Protected.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC915CC447C00650D75 /* SMDataStore+Protected.h */; };
+		DEDDE19115DD8D3A0055FAFF /* SMJSONRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCCD15CC447C00650D75 /* SMJSONRequestOperation.h */; };
+		DEDDE19215DD8D3A0055FAFF /* SMModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 56404F3615CCF4B5009CCAC1 /* SMModel.h */; };
+		DEDDE19315DD8D3A0055FAFF /* SMQuery.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCD015CC447C00650D75 /* SMQuery.h */; };
+		DEDDE19415DD8D3A0055FAFF /* SMClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCD215CC447C00650D75 /* SMClient.h */; };
+		DEDDE19515DD8D3A0055FAFF /* SMError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCD415CC447C00650D75 /* SMError.h */; };
+		DEDDE19615DD8D3A0055FAFF /* SMOAuth2Client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCD615CC447C00650D75 /* SMOAuth2Client.h */; };
+		DEDDE19715DD8D3A0055FAFF /* SMRequestOptions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCD815CC447C00650D75 /* SMRequestOptions.h */; };
+		DEDDE19815DD8D3A0055FAFF /* SMUserSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCDA15CC447C00650D75 /* SMUserSession.h */; };
+		DEDDE19915DD8D3A0055FAFF /* StackMob.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCDD15CC447C00650D75 /* StackMob.h */; };
+		DEDDE19A15DD8D3A0055FAFF /* SMVersion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE655D7D15D1B6E2009CA786 /* SMVersion.h */; };
+		DEDDE19B15DD8D3A0055FAFF /* NSArray+Enumerable.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCB915CC441900650D75 /* NSArray+Enumerable.h */; };
+		DEDDE19C15DD8D3A0055FAFF /* Synchronization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCBB15CC441900650D75 /* Synchronization.h */; };
+		DEDDE19D15DD8D3A0055FAFF /* SMCoreDataStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCA515CC440600650D75 /* SMCoreDataStore.h */; };
+		DEDDE19E15DD8D3A0055FAFF /* SMIncrementalStore+Query.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCA715CC440600650D75 /* SMIncrementalStore+Query.h */; };
+		DEDDE19F15DD8D3A0055FAFF /* SMIncrementalStore.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCA915CC440600650D75 /* SMIncrementalStore.h */; };
+		DEDDE22A15DD96120055FAFF /* NSDictionary+AtomicCounter.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCC315CC447C00650D75 /* NSDictionary+AtomicCounter.h */; };
+		DEDDE22B15DD96120055FAFF /* NSEntityDescription+StackMobSerialization.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCC515CC447C00650D75 /* NSEntityDescription+StackMobSerialization.h */; };
+		DEDDE22C15DD96120055FAFF /* NSManagedObject+StackMobSerialization.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCC715CC447C00650D75 /* NSManagedObject+StackMobSerialization.h */; };
+		DEDDE22D15DD96120055FAFF /* SMDataStore.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCCB15CC447C00650D75 /* SMDataStore.h */; };
+		DEDDE22E15DD96120055FAFF /* SMDataStore+Protected.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCC915CC447C00650D75 /* SMDataStore+Protected.h */; };
+		DEDDE22F15DD96120055FAFF /* SMJSONRequestOperation.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCCD15CC447C00650D75 /* SMJSONRequestOperation.h */; };
+		DEDDE23015DD96120055FAFF /* SMModel.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 56404F3615CCF4B5009CCAC1 /* SMModel.h */; };
+		DEDDE23115DD96120055FAFF /* SMQuery.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCD015CC447C00650D75 /* SMQuery.h */; };
+		DEDDE23215DD96120055FAFF /* SMClient.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCD215CC447C00650D75 /* SMClient.h */; };
+		DEDDE23315DD96120055FAFF /* SMError.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCD415CC447C00650D75 /* SMError.h */; };
+		DEDDE23415DD96120055FAFF /* SMOAuth2Client.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCD615CC447C00650D75 /* SMOAuth2Client.h */; };
+		DEDDE23515DD96120055FAFF /* SMRequestOptions.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCD815CC447C00650D75 /* SMRequestOptions.h */; };
+		DEDDE23615DD96120055FAFF /* SMUserSession.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCDA15CC447C00650D75 /* SMUserSession.h */; };
+		DEDDE23715DD96120055FAFF /* StackMob.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCDD15CC447C00650D75 /* StackMob.h */; };
+		DEDDE23815DD96120055FAFF /* SMVersion.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE655D7D15D1B6E2009CA786 /* SMVersion.h */; };
+		DEDDE23915DD96120055FAFF /* NSArray+Enumerable.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCB915CC441900650D75 /* NSArray+Enumerable.h */; };
+		DEDDE23A15DD96120055FAFF /* Synchronization.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCBB15CC441900650D75 /* Synchronization.h */; };
+		DEDDE23B15DD96120055FAFF /* SMCoreDataStore.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA515CC440600650D75 /* SMCoreDataStore.h */; };
+		DEDDE23C15DD96120055FAFF /* SMIncrementalStore+Query.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA715CC440600650D75 /* SMIncrementalStore+Query.h */; };
+		DEDDE23D15DD96120055FAFF /* SMIncrementalStore.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA915CC440600650D75 /* SMIncrementalStore.h */; };
+		DEEB1E6715DF2DBD00DB318C /* SMClientIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8474D159A74D000FF37A3 /* SMClientIntegrationSpec.m */; };
+		DEEB1E6915DF396000DB318C /* CRUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33B0641591355A00BE2570 /* CRUDTests.m */; };
+		DEEB1E6A15DF396600DB318C /* QueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 619EDF11159292AC0075BB93 /* QueryTests.m */; };
 		DEF9B4C515992FA100B1D5AE /* SMUserSessionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF9B4C415992FA100B1D5AE /* SMUserSessionSpec.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEDDE22115DD95020055FAFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CCCE4DD1580389800C38962 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CCCE4E51580389800C38962;
+			remoteInfo = "stackmob-ios-sdk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEDDE18A15DD8CE60055FAFF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Headers;
+			dstSubfolderSpec = 16;
+			files = (
+				DEDDE18C15DD8D3A0055FAFF /* NSDictionary+AtomicCounter.h in CopyFiles */,
+				DEDDE18D15DD8D3A0055FAFF /* NSEntityDescription+StackMobSerialization.h in CopyFiles */,
+				DEDDE18E15DD8D3A0055FAFF /* NSManagedObject+StackMobSerialization.h in CopyFiles */,
+				DEDDE18F15DD8D3A0055FAFF /* SMDataStore.h in CopyFiles */,
+				DEDDE19015DD8D3A0055FAFF /* SMDataStore+Protected.h in CopyFiles */,
+				DEDDE19115DD8D3A0055FAFF /* SMJSONRequestOperation.h in CopyFiles */,
+				DEDDE19215DD8D3A0055FAFF /* SMModel.h in CopyFiles */,
+				DEDDE19315DD8D3A0055FAFF /* SMQuery.h in CopyFiles */,
+				DEDDE19415DD8D3A0055FAFF /* SMClient.h in CopyFiles */,
+				DEDDE19515DD8D3A0055FAFF /* SMError.h in CopyFiles */,
+				DEDDE19615DD8D3A0055FAFF /* SMOAuth2Client.h in CopyFiles */,
+				DEDDE19715DD8D3A0055FAFF /* SMRequestOptions.h in CopyFiles */,
+				DEDDE19815DD8D3A0055FAFF /* SMUserSession.h in CopyFiles */,
+				DEDDE19915DD8D3A0055FAFF /* StackMob.h in CopyFiles */,
+				DEDDE19A15DD8D3A0055FAFF /* SMVersion.h in CopyFiles */,
+				DEDDE19B15DD8D3A0055FAFF /* NSArray+Enumerable.h in CopyFiles */,
+				DEDDE19C15DD8D3A0055FAFF /* Synchronization.h in CopyFiles */,
+				DEDDE19D15DD8D3A0055FAFF /* SMCoreDataStore.h in CopyFiles */,
+				DEDDE19E15DD8D3A0055FAFF /* SMIncrementalStore+Query.h in CopyFiles */,
+				DEDDE19F15DD8D3A0055FAFF /* SMIncrementalStore.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEDDE22815DD95C40055FAFF /* Copy Headers */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Headers;
+			dstSubfolderSpec = 16;
+			files = (
+				DEDDE22A15DD96120055FAFF /* NSDictionary+AtomicCounter.h in Copy Headers */,
+				DEDDE22B15DD96120055FAFF /* NSEntityDescription+StackMobSerialization.h in Copy Headers */,
+				DEDDE22C15DD96120055FAFF /* NSManagedObject+StackMobSerialization.h in Copy Headers */,
+				DEDDE22D15DD96120055FAFF /* SMDataStore.h in Copy Headers */,
+				DEDDE22E15DD96120055FAFF /* SMDataStore+Protected.h in Copy Headers */,
+				DEDDE22F15DD96120055FAFF /* SMJSONRequestOperation.h in Copy Headers */,
+				DEDDE23015DD96120055FAFF /* SMModel.h in Copy Headers */,
+				DEDDE23115DD96120055FAFF /* SMQuery.h in Copy Headers */,
+				DEDDE23215DD96120055FAFF /* SMClient.h in Copy Headers */,
+				DEDDE23315DD96120055FAFF /* SMError.h in Copy Headers */,
+				DEDDE23415DD96120055FAFF /* SMOAuth2Client.h in Copy Headers */,
+				DEDDE23515DD96120055FAFF /* SMRequestOptions.h in Copy Headers */,
+				DEDDE23615DD96120055FAFF /* SMUserSession.h in Copy Headers */,
+				DEDDE23715DD96120055FAFF /* StackMob.h in Copy Headers */,
+				DEDDE23815DD96120055FAFF /* SMVersion.h in Copy Headers */,
+				DEDDE23915DD96120055FAFF /* NSArray+Enumerable.h in Copy Headers */,
+				DEDDE23A15DD96120055FAFF /* Synchronization.h in Copy Headers */,
+				DEDDE23B15DD96120055FAFF /* SMCoreDataStore.h in Copy Headers */,
+				DEDDE23C15DD96120055FAFF /* SMIncrementalStore+Query.h in Copy Headers */,
+				DEDDE23D15DD96120055FAFF /* SMIncrementalStore.h in Copy Headers */,
+			);
+			name = "Copy Headers";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C66BB747CC543ECA80B6D69 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -605,6 +740,7 @@
 				8CCCE4E31580389800C38962 /* Frameworks */,
 				8CCCE4E41580389800C38962 /* Headers */,
 				53A8BE67F9DA45B59A60DBFE /* Copy Pods Resources */,
+				DEDDE18A15DD8CE60055FAFF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -679,6 +815,7 @@
 				8CCCE4F51580389800C38962 /* stackmob-ios-sdkTests */,
 				8C33B04715912B1F00BE2570 /* integration tests */,
 				DE0CC7B715CB6A9000E491C4 /* integrationTestsCoreData */,
+				DEDDE21D15DD94DC0055FAFF /* Package */,
 			);
 		};
 /* End PBXProject section */
@@ -807,6 +944,76 @@
 			shellScript = "# Run the unit tests in this test bundle.\n#\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DEDDE22715DD95440055FAFF /* Merge libs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Merge libs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# make a new output folder\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\n# combine lib files for various platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libstackmob-ios-sdk.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libstackmob-ios-sdk.a\" -output \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/libstackmob-v${SDK_VERSION}.a\"\n";
+		};
+		DEDDE22915DD95D90055FAFF /* Copy Pods */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"";
+		};
+		DEDDE28515DD9DB60055FAFF /* Build Targets */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Targets";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#build the targets\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphonesimulator -configuration Release build\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphoneos -configuration Release build";
+		};
+		DEDDE28615DD9F0F0055FAFF /* Copy Files To Build Dir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Files To Build Dir";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods/\"";
+		};
+		DEDDE2C215DDAFB30055FAFF /* Zip It Up */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Zip It Up";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "zip -r \"${PROJECT_DIR}/build/${SDK_VERSION}/stackmob-ios-sdk-v${SDK_VERSION}.zip\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -819,6 +1026,9 @@
 				DE0CC7B015CB605900E491C4 /* Person.m in Sources */,
 				DE0CC7B115CB605900E491C4 /* Superpower.m in Sources */,
 				DE13863715DC6C2300610EE1 /* SMCusCodeReqIntegrationSpec.m in Sources */,
+				DEEB1E6715DF2DBD00DB318C /* SMClientIntegrationSpec.m in Sources */,
+				DEEB1E6915DF396000DB318C /* CRUDTests.m in Sources */,
+				DEEB1E6A15DF396600DB318C /* QueryTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +1098,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEDDE22215DD95020055FAFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CCCE4E51580389800C38962 /* stackmob-ios-sdk */;
+			targetProxy = DEDDE22115DD95020055FAFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8C33B04F15912B1F00BE2570 /* InfoPlist.strings */ = {
@@ -1109,6 +1327,22 @@
 			};
 			name = Release;
 		};
+		DEDDE21F15DD94DC0055FAFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDK_VERSION = 1.0.0beta.1;
+			};
+			name = Debug;
+		};
+		DEDDE22015DD94DC0055FAFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDK_VERSION = 1.0.0beta.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1153,6 +1387,15 @@
 			buildConfigurations = (
 				DE0CC7C715CB6A9000E491C4 /* Debug */,
 				DE0CC7C815CB6A9000E491C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEDDE21E15DD94DC0055FAFF /* Build configuration list for PBXAggregateTarget "Package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEDDE21F15DD94DC0055FAFF /* Debug */,
+				DEDDE22015DD94DC0055FAFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

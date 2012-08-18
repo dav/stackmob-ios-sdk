@@ -39,9 +39,9 @@ NSString *const SM_DataStoreKey = @"SM_DataStoreKey";
              withContext:(NSManagedObjectContext *)context 
                    error:(NSError *__autoreleasing *)error;
 
-- (BOOL)relationshipsPresentInSerializedDict:(NSDictionary *)sm_dict forObject:(id)anObject;
+- (BOOL)relationshipsPresentInSerializedDict:(NSDictionary *)sm_dict object:(id)anObject;
 
-- (NSDictionary *)sm_responseSerializationForDictionary:(NSDictionary *)theObject withSchemaEntityDescription:(NSEntityDescription *)entityDescription andManagedObjectContext:(NSManagedObjectContext *)context;
+- (NSDictionary *)sm_responseSerializationForDictionary:(NSDictionary *)theObject schemaEntityDescription:(NSEntityDescription *)entityDescription managedObjectContext:(NSManagedObjectContext *)context;
 
 @end
 
@@ -167,11 +167,11 @@ You should implement this method conservatively, and expect that unknown request
             DLog(@"serialized object is %@", objDict);
             // add relationship headers if needed
             NSMutableDictionary *headerDict = [NSMutableDictionary dictionary];
-            if ([self relationshipsPresentInSerializedDict:objDict forObject:obj]) {
+            if ([self relationshipsPresentInSerializedDict:objDict object:obj]) {
                 [headerDict setObject:[obj sm_relationshipHeader] forKey:@"X-StackMob-Relations"];
             }
             
-            [self.smDataStore createObject:objDict inSchema:schemaName withOptions:[SMRequestOptions optionsWithHeaders:headerDict] onSuccess:^(NSDictionary *theObject, NSString *schema) {
+            [self.smDataStore createObject:objDict inSchema:schemaName options:[SMRequestOptions optionsWithHeaders:headerDict] onSuccess:^(NSDictionary *theObject, NSString *schema) {
                 DLog(@"SMIncrementalStore inserted object with id %@ on schema %@", theObject, schema);
                 success = YES;
                 // TO-DO OFFLINE-SUPPORT
@@ -202,9 +202,9 @@ You should implement this method conservatively, and expect that unknown request
             NSString *schemaName = [obj sm_schema];
             DLog(@"serialized object is %@", objDict);
             // if there are relationships present in the update, send as a POST
-            if ([self relationshipsPresentInSerializedDict:objDict forObject:obj]) {
+            if ([self relationshipsPresentInSerializedDict:objDict object:obj]) {
                 NSDictionary *headerDict = [NSDictionary dictionaryWithObject:[obj sm_relationshipHeader] forKey:@"X-StackMob-Relations"];
-                [self.smDataStore createObject:objDict inSchema:schemaName withOptions:[SMRequestOptions optionsWithHeaders:headerDict] onSuccess:^(NSDictionary *theObject, NSString *schema) {
+                [self.smDataStore createObject:objDict inSchema:schemaName options:[SMRequestOptions optionsWithHeaders:headerDict] onSuccess:^(NSDictionary *theObject, NSString *schema) {
                     DLog(@"SMIncrementalStore inserted object with id %@ on schema %@", theObject, schema);
                     success = YES;
                     // TO-DO OFFLINE-SUPPORT
@@ -383,7 +383,7 @@ You should implement this method conservatively, and expect that unknown request
     
     syncWithSemaphore(^(dispatch_semaphore_t semaphore) {
         [self.smDataStore readObjectWithId:objStringId inSchema:schemaName onSuccess:^(NSDictionary *theObject, NSString *schema) {
-            objectFields = [self sm_responseSerializationForDictionary:theObject withSchemaEntityDescription:objEntity andManagedObjectContext:context];
+            objectFields = [self sm_responseSerializationForDictionary:theObject schemaEntityDescription:objEntity managedObjectContext:context];
             success = YES;
             syncReturn(semaphore);
         } onFailure:^(NSError *theError, NSString *theObjectId, NSString *schema) {
@@ -617,7 +617,7 @@ You should implement this method conservatively, and expect that unknown request
 /*
  Returns whether relationship references are present in the StackMob dictionary representation of a Core Data NSManagedObject.
  */
-- (BOOL)relationshipsPresentInSerializedDict:(NSDictionary *)sm_dict forObject:(id)anObject
+- (BOOL)relationshipsPresentInSerializedDict:(NSDictionary *)sm_dict object:(id)anObject
 {
     NSEntityDescription *objectEntityDescription = [anObject entity];
     if ([[objectEntityDescription relationshipsByName] count] > 0) {
@@ -638,7 +638,7 @@ You should implement this method conservatively, and expect that unknown request
  
  Used for newValuesForObjectWithID:.
  */
-- (NSDictionary *)sm_responseSerializationForDictionary:(NSDictionary *)theObject withSchemaEntityDescription:(NSEntityDescription *)entityDescription andManagedObjectContext:(NSManagedObjectContext *)context
+- (NSDictionary *)sm_responseSerializationForDictionary:(NSDictionary *)theObject schemaEntityDescription:(NSEntityDescription *)entityDescription managedObjectContext:(NSManagedObjectContext *)context
 {
     __block NSMutableDictionary *serializedDictionary = [NSMutableDictionary dictionary];
     
