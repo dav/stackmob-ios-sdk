@@ -14,25 +14,7 @@
  * limitations under the License.
  */
 
-#import "SMData.h"
-#import <CommonCrypto/CommonHMAC.h>
-
-@implementation SMData
-
-static NSString* Base64EncodedStringFromData(NSData *data);
-
-+ (NSString *)stringForBinaryData:(NSData *)data withName:(NSString *)name andContentType:(NSString *)contentType
-{
-    
-    return [NSString stringWithFormat:@"Content-Type: %@\n"
-            "Content-Disposition: attachment; filename=%@\n"
-            "Content-Transfer-Encoding: %@\n\n"
-            "%@",
-            contentType,
-            name,
-            @"base64",
-            Base64EncodedStringFromData(data)];
-}
+#import "Base64EncodedStringFromData.h"
 
 // The function below was inspired on
 //
@@ -58,7 +40,7 @@ static NSString* Base64EncodedStringFromData(NSData *data);
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-static NSString * Base64EncodedStringFromData(NSData *data) 
+NSString * Base64EncodedStringFromData(NSData *data) 
 {
     NSUInteger length = [data length];
     NSMutableData *mutableData = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
@@ -85,4 +67,3 @@ static NSString * Base64EncodedStringFromData(NSData *data)
     return [[NSString alloc] initWithData:mutableData encoding:NSASCIIStringEncoding];
 }
 
-@end

@@ -14,23 +14,6 @@
  * limitations under the License.
  */
 
-#import "SMBinaryDataConversion.h"
-#import <CommonCrypto/CommonHMAC.h>
-#import "Base64EncodedStringFromData.h"
+#import <Foundation/Foundation.h>
 
-@implementation SMBinaryDataConversion
-
-+ (NSString *)stringForBinaryData:(NSData *)data withName:(NSString *)name andContentType:(NSString *)contentType
-{
-    
-    return [NSString stringWithFormat:@"Content-Type: %@\n"
-            "Content-Disposition: attachment; filename=%@\n"
-            "Content-Transfer-Encoding: %@\n\n"
-            "%@",
-            contentType,
-            name,
-            @"base64",
-            Base64EncodedStringFromData(data)];
-}
-
-@end
+NSString * Base64EncodedStringFromData(NSData *data) ;
