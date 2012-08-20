@@ -58,8 +58,6 @@
 		DE05E13D15E2BE8F00224E4E /* goatPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DE05E13C15E2BE8A00224E4E /* goatPic.jpeg */; };
 		DE05E13E15E2BE9000224E4E /* goatPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DE05E13C15E2BE8A00224E4E /* goatPic.jpeg */; };
 		DE05E13F15E2BE9200224E4E /* goatPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DE05E13C15E2BE8A00224E4E /* goatPic.jpeg */; };
-		DE05E16315E2C02200224E4E /* Base64EncodedStringFromData.h in Headers */ = {isa = PBXBuildFile; fileRef = DE05E14115E2C02200224E4E /* Base64EncodedStringFromData.h */; };
-		DE05E16415E2C02200224E4E /* Base64EncodedStringFromData.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05E14215E2C02200224E4E /* Base64EncodedStringFromData.m */; };
 		DE05E16515E2C02200224E4E /* NSDictionary+AtomicCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = DE05E14315E2C02200224E4E /* NSDictionary+AtomicCounter.h */; };
 		DE05E16615E2C02200224E4E /* NSDictionary+AtomicCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE05E14415E2C02200224E4E /* NSDictionary+AtomicCounter.m */; };
 		DE05E16715E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = DE05E14515E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h */; };
@@ -129,6 +127,25 @@
 		DE13865015DC8DC400610EE1 /* SMCoreDataStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC570FA15D065FC00D9E44E /* SMCoreDataStoreTest.m */; };
 		DE13865115DC8DC700610EE1 /* SMIncrementalStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A715CB5EA200E491C4 /* SMIncrementalStoreTest.m */; };
 		DE13865215DC8DCD00610EE1 /* SMIncrementalStoreFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A615CB5EA200E491C4 /* SMIncrementalStoreFetchTest.m */; };
+		DE8D51CF15E2CB11002F582A /* NSDictionary+AtomicCounter.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14315E2C02200224E4E /* NSDictionary+AtomicCounter.h */; };
+		DE8D51D015E2CB11002F582A /* NSEntityDescription+StackMobSerialization.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14515E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h */; };
+		DE8D51D115E2CB11002F582A /* NSManagedObject+StackMobSerialization.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14715E2C02200224E4E /* NSManagedObject+StackMobSerialization.h */; };
+		DE8D51D215E2CB11002F582A /* SMBinaryDataConversion.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14915E2C02200224E4E /* SMBinaryDataConversion.h */; };
+		DE8D51D315E2CB11002F582A /* SMClient.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14B15E2C02200224E4E /* SMClient.h */; };
+		DE8D51D415E2CB11002F582A /* SMCustomCodeRequest.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14D15E2C02200224E4E /* SMCustomCodeRequest.h */; };
+		DE8D51D515E2CB11002F582A /* SMDataStore+Protected.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E14F15E2C02200224E4E /* SMDataStore+Protected.h */; };
+		DE8D51D615E2CB11002F582A /* SMDataStore.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15115E2C02200224E4E /* SMDataStore.h */; };
+		DE8D51D715E2CB11002F582A /* SMError.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15315E2C02200224E4E /* SMError.h */; };
+		DE8D51D815E2CB11002F582A /* SMJSONRequestOperation.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15515E2C02200224E4E /* SMJSONRequestOperation.h */; };
+		DE8D51D915E2CB11002F582A /* SMModel.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15715E2C02200224E4E /* SMModel.h */; };
+		DE8D51DA15E2CB11002F582A /* SMOAuth2Client.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15815E2C02200224E4E /* SMOAuth2Client.h */; };
+		DE8D51DB15E2CB11002F582A /* SMQuery.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15A15E2C02200224E4E /* SMQuery.h */; };
+		DE8D51DC15E2CB11002F582A /* SMRequestOptions.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15C15E2C02200224E4E /* SMRequestOptions.h */; };
+		DE8D51DD15E2CB11002F582A /* SMResponseBlocks.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15E15E2C02200224E4E /* SMResponseBlocks.h */; };
+		DE8D51DE15E2CB11002F582A /* SMUserSession.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E15F15E2C02200224E4E /* SMUserSession.h */; };
+		DE8D51DF15E2CB11002F582A /* SMVersion.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E16115E2C02200224E4E /* SMVersion.h */; };
+		DE8D51E015E2CB11002F582A /* StackMob.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE05E16215E2C02200224E4E /* StackMob.h */; };
+		DE8D51E115E2CB11002F582A /* Base64EncodedStringFromData.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = DE13864015DC7BAB00610EE1 /* Base64EncodedStringFromData.h */; };
 		DEBBBCAF15CC440600650D75 /* SMCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA515CC440600650D75 /* SMCoreDataStore.h */; };
 		DEBBBCB015CC440600650D75 /* SMCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBBBCA615CC440600650D75 /* SMCoreDataStore.m */; };
 		DEBBBCB115CC440600650D75 /* SMIncrementalStore+Query.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA715CC440600650D75 /* SMIncrementalStore+Query.h */; };
@@ -186,6 +203,25 @@
 			dstPath = Headers;
 			dstSubfolderSpec = 16;
 			files = (
+				DE8D51CF15E2CB11002F582A /* NSDictionary+AtomicCounter.h in Copy Headers */,
+				DE8D51D015E2CB11002F582A /* NSEntityDescription+StackMobSerialization.h in Copy Headers */,
+				DE8D51D115E2CB11002F582A /* NSManagedObject+StackMobSerialization.h in Copy Headers */,
+				DE8D51D215E2CB11002F582A /* SMBinaryDataConversion.h in Copy Headers */,
+				DE8D51D315E2CB11002F582A /* SMClient.h in Copy Headers */,
+				DE8D51D415E2CB11002F582A /* SMCustomCodeRequest.h in Copy Headers */,
+				DE8D51D515E2CB11002F582A /* SMDataStore+Protected.h in Copy Headers */,
+				DE8D51D615E2CB11002F582A /* SMDataStore.h in Copy Headers */,
+				DE8D51D715E2CB11002F582A /* SMError.h in Copy Headers */,
+				DE8D51D815E2CB11002F582A /* SMJSONRequestOperation.h in Copy Headers */,
+				DE8D51D915E2CB11002F582A /* SMModel.h in Copy Headers */,
+				DE8D51DA15E2CB11002F582A /* SMOAuth2Client.h in Copy Headers */,
+				DE8D51DB15E2CB11002F582A /* SMQuery.h in Copy Headers */,
+				DE8D51DC15E2CB11002F582A /* SMRequestOptions.h in Copy Headers */,
+				DE8D51DD15E2CB11002F582A /* SMResponseBlocks.h in Copy Headers */,
+				DE8D51DE15E2CB11002F582A /* SMUserSession.h in Copy Headers */,
+				DE8D51DF15E2CB11002F582A /* SMVersion.h in Copy Headers */,
+				DE8D51E015E2CB11002F582A /* StackMob.h in Copy Headers */,
+				DE8D51E115E2CB11002F582A /* Base64EncodedStringFromData.h in Copy Headers */,
 				DEDDE23915DD96120055FAFF /* NSArray+Enumerable.h in Copy Headers */,
 				DEDDE23A15DD96120055FAFF /* Synchronization.h in Copy Headers */,
 				DEDDE23B15DD96120055FAFF /* SMCoreDataStore.h in Copy Headers */,
@@ -230,8 +266,6 @@
 		CC1E56D1B3EB4DE7BDACFF7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56AD6E0A6D94C02B2D62C21 /* Pods-integrationTestsCoreData.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-integrationTestsCoreData.xcconfig"; path = "Pods/Pods-integrationTestsCoreData.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DE05E13C15E2BE8A00224E4E /* goatPic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goatPic.jpeg; sourceTree = "<group>"; };
-		DE05E14115E2C02200224E4E /* Base64EncodedStringFromData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64EncodedStringFromData.h; sourceTree = "<group>"; };
-		DE05E14215E2C02200224E4E /* Base64EncodedStringFromData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64EncodedStringFromData.m; sourceTree = "<group>"; };
 		DE05E14315E2C02200224E4E /* NSDictionary+AtomicCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AtomicCounter.h"; sourceTree = "<group>"; };
 		DE05E14415E2C02200224E4E /* NSDictionary+AtomicCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+AtomicCounter.m"; sourceTree = "<group>"; };
 		DE05E14515E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+StackMobSerialization.h"; sourceTree = "<group>"; };
@@ -503,8 +537,6 @@
 		DE05E14015E2C02200224E4E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DE05E14115E2C02200224E4E /* Base64EncodedStringFromData.h */,
-				DE05E14215E2C02200224E4E /* Base64EncodedStringFromData.m */,
 				DE05E14315E2C02200224E4E /* NSDictionary+AtomicCounter.h */,
 				DE05E14415E2C02200224E4E /* NSDictionary+AtomicCounter.m */,
 				DE05E14515E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h */,
@@ -633,7 +665,6 @@
 				DEBBBCBD15CC441900650D75 /* NSArray+Enumerable.h in Headers */,
 				DEBBBCBF15CC441900650D75 /* Synchronization.h in Headers */,
 				DE13864215DC7BAB00610EE1 /* Base64EncodedStringFromData.h in Headers */,
-				DE05E16315E2C02200224E4E /* Base64EncodedStringFromData.h in Headers */,
 				DE05E16515E2C02200224E4E /* NSDictionary+AtomicCounter.h in Headers */,
 				DE05E16715E2C02200224E4E /* NSEntityDescription+StackMobSerialization.h in Headers */,
 				DE05E16915E2C02200224E4E /* NSManagedObject+StackMobSerialization.h in Headers */,
@@ -943,7 +974,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods/\"";
+			shellScript = "// make directories for Headers and Pods\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\n\n// copy Headers and Pods from builds\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods/\"\n\n// copy readme and changelog\ncp \"${PROJECT_DIR}/README.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp \"${PROJECT_DIR}/CHANGELOG.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"";
 		};
 		DEDDE2C215DDAFB30055FAFF /* Zip It Up */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -987,7 +1018,6 @@
 				DEBBBCBE15CC441900650D75 /* NSArray+Enumerable.m in Sources */,
 				DEBBBCC015CC441900650D75 /* Synchronization.m in Sources */,
 				DE13864315DC7BAB00610EE1 /* Base64EncodedStringFromData.m in Sources */,
-				DE05E16415E2C02200224E4E /* Base64EncodedStringFromData.m in Sources */,
 				DE05E16615E2C02200224E4E /* NSDictionary+AtomicCounter.m in Sources */,
 				DE05E16815E2C02200224E4E /* NSEntityDescription+StackMobSerialization.m in Sources */,
 				DE05E16A15E2C02200224E4E /* NSManagedObject+StackMobSerialization.m in Sources */,
@@ -1277,7 +1307,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDK_VERSION = 1.0.0beta.1;
+				SDK_VERSION = 1.0.0beta.2;
 			};
 			name = Debug;
 		};
@@ -1285,7 +1315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDK_VERSION = 1.0.0beta.1;
+				SDK_VERSION = 1.0.0beta.2;
 			};
 			name = Release;
 		};

@@ -23,24 +23,24 @@
  
  Once you have your content in NSData form, pass it to the stringForBinaryData:name:contentType: method.
  
- NSBundle *bundle = [NSBundle bundleForClass:[self class]];
- NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];
- NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];
+    NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile];
  
- NSString *picData = [SMData stringForBinaryData:theData name:@"whateverNameYouWant" contentType:@"image/jpg"];
+    NSString *picData = [SMData stringForBinaryData:theData name:@"whateverNameYouWant" contentType:@"image/jpg"];
  
  You can now set the string value, save the managed object context, and refresh your in-memory copy of the object to grab the url pointing to your data.
  
- [newManagedObject setValue:picData forKey:@"pic"];
+    [newManagedObject setValue:picData forKey:@"pic"];
  
- NSError *error = nil;
- // context is your managed object context
- if (![context save:&error]) {
- NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
- abort();
- } else {
- [context refreshObject:newManagedObject mergeChanges:YES];
- }
+    NSError *error = nil;
+    // context is your managed object context
+    if (![context save:&error]) {
+    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    abort();
+    } else {
+    [context refreshObject:newManagedObject mergeChanges:YES];
+    }
  
  `[newManagedObject valueForKey:@"pic"]` now returns the s3 url for the data.
  

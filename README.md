@@ -1,4 +1,4 @@
-stackmob-ios-sdk
+StackMob iOS SDK
 ================
 
 [https://www.stackmob.com](https://www.stackmob.com)
@@ -25,7 +25,7 @@ We need to create a Podfile to contain our project's configuration for CocoaPods
 Your Podfile defines your app's dependencies on other libraries. Add StackMob to it.
 
 		platform :ios
-		pod 'StackMob', '>= 1.0.0'
+		pod 'StackMob', '1.0.0beta.2'
 
 Now you can use CocoaPods to install your dependencies.
 
