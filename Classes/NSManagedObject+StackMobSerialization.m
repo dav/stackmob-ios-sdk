@@ -133,7 +133,7 @@
 
 - (NSString *)sm_relationshipHeader 
 {
-    NSArray *headerValues = [[self entity] sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:nil withKeyPath:nil];    
+    NSArray *headerValues = [[self entity] sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:nil keyPath:nil];    
     
     return [headerValues componentsJoinedByString:@"&"];
 }

@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
+package com.stackmob.example;
 
-#import "StackMob.h"
-#import "Synchronization.h"
+import com.stackmob.core.customcode.CustomCodeMethod;
+import com.stackmob.core.jar.JarEntryObject;
 
-#define SM_TEST_API_VERSION @"0"
-#define SM_TEST_API_BASEURL @"http://api.stackmob.com"
-#define TEST_CUSTOM_CODE 0
+import java.util.ArrayList;
+import java.util.List;
 
-@interface SMIntegrationTestHelpers : NSObject
+public class EntryPointExtender extends JarEntryObject {
 
-+ (SMClient *)defaultClient;
-+ (SMDataStore *)dataStore;
+  @Override
+  public List<CustomCodeMethod> methods() {
+    List<CustomCodeMethod> list = new ArrayList<CustomCodeMethod>();
+    list.add(new HelloWorld());
+    list.add(new HelloWorldParams());
+    return list;
+  }
 
-+ (NSDictionary *)loadFixturesNamed:(NSArray *)fixtureNames;
-+ (void)destroyAllForFixturesNamed:(NSArray *)fixtureNames;
-
-+ (NSArray *)loadFixture:(NSString *)fixtureName; 
-+ (void)destroyFixture:(NSString *)fixtureName;
-
-@end
+}

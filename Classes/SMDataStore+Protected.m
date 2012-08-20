@@ -26,7 +26,7 @@
     return [NSError errorWithDomain:HTTPErrorDomain code:response.statusCode userInfo:JSON];
 }
 
-- (AFSuccessBlock)AFSuccessBlockForSchema:(NSString *)schema withSuccessBlock:(SMDataStoreSuccessBlock)successBlock
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSchema:(NSString *)schema withSuccessBlock:(SMDataStoreSuccessBlock)successBlock
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
@@ -36,7 +36,7 @@
     };
 }
 
-- (AFSuccessBlock)AFSuccessBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withSuccessBlock:(SMDataStoreObjectIdSuccessBlock)successBlock 
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withSuccessBlock:(SMDataStoreObjectIdSuccessBlock)successBlock 
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
@@ -46,7 +46,7 @@
     };
 }
 
-- (AFSuccessBlock)AFSuccessBlockForSuccessBlock:(SMSuccessBlock)successBlock 
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSuccessBlock:(SMSuccessBlock)successBlock 
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
@@ -56,7 +56,7 @@
     };
 }
 
-- (AFSuccessBlock)AFSuccessBlockForResultSuccessBlock:(SMResultSuccessBlock)successBlock 
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultSuccessBlock:(SMResultSuccessBlock)successBlock 
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
@@ -66,7 +66,7 @@
     };
 }
 
-- (AFSuccessBlock)AFSuccessBlockForResultsSuccessBlock:(SMResultsSuccessBlock)successBlock 
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultsSuccessBlock:(SMResultsSuccessBlock)successBlock 
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
@@ -77,7 +77,7 @@
 }
 
 
-- (AFFailureBlock)AFFailureBlockForObject:(NSDictionary *)theObject ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreFailureBlock)failureBlock
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObject:(NSDictionary *)theObject ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreFailureBlock)failureBlock
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
@@ -87,7 +87,7 @@
     };
 }
 
-- (AFFailureBlock)AFFailureBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreObjectIdFailureBlock)failureBlock
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
@@ -97,7 +97,7 @@
     };
 }
 
-- (AFFailureBlock)AFFailureBlockForFailureBlock:(SMFailureBlock)failureBlock
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForFailureBlock:(SMFailureBlock)failureBlock
 {
     return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
@@ -137,13 +137,14 @@
         [options.headers enumerateKeysAndObjectsUsingBlock:^(id headerField, id headerValue, BOOL *stop) {
             [request setValue:headerValue forHTTPHeaderField:headerField]; 
         }];
-        AFSuccessBlock urlSuccessBlock = [self AFSuccessBlockForSchema:schema withSuccessBlock:successBlock];
-        AFFailureBlock urlFailureBlock = [self AFFailureBlockForObjectId:theObjectId ofSchema:schema withFailureBlock:failureBlock];
-        [self queueRequest:request retry:options.tryRefreshToken onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
+        
+        SMFullResponseSuccessBlock urlSuccessBlock = [self SMFullResponseSuccessBlockForSchema:schema withSuccessBlock:successBlock];
+        SMFullResponseFailureBlock urlFailureBlock = [self SMFullResponseFailureBlockForObjectId:theObjectId ofSchema:schema withFailureBlock:failureBlock];
+        [self queueRequest:request options:options onSuccess:urlSuccessBlock onFailure:urlFailureBlock];
     }
 }
 
-- (void)refreshAndRetry:(NSURLRequest *)request onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure
+- (void)refreshAndRetry:(NSURLRequest *)request onSuccess:(SMFullResponseSuccessBlock)onSuccess onFailure:(SMFullResponseFailureBlock)onFailure
 {
     if (self.session.refreshing) {
         if (onFailure) {
@@ -151,22 +152,41 @@
             onFailure(request, nil, error, nil);
         }
     } else {
+        __block SMRequestOptions *options = [SMRequestOptions options];
+        [options setTryRefreshToken:NO];
         [self.session refreshTokenOnSuccess:^(NSDictionary *userObject) {
-            [self queueRequest:[self.session signRequest:request] retry:NO onSuccess:onSuccess onFailure:onFailure];
+            [self queueRequest:[self.session signRequest:request] options:options onSuccess:onSuccess onFailure:onFailure];
         } onFailure:^(NSError *theError) {
-            [self queueRequest:[self.session signRequest:request] retry:NO onSuccess:onSuccess onFailure:onFailure];
+            [self queueRequest:[self.session signRequest:request] options:options onSuccess:onSuccess onFailure:onFailure];
         }];
     }
 }
 
-- (void)queueRequest:(NSURLRequest *)request retry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure
+- (void)queueRequest:(NSURLRequest *)request options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)onSuccess onFailure:(SMFullResponseFailureBlock)onFailure
 {
-    if (![self.session accessTokenHasExpired] && self.session.refreshToken != nil && retry) {
+    if (![self.session accessTokenHasExpired] && self.session.refreshToken != nil && options.tryRefreshToken) {
         [self refreshAndRetry:request onSuccess:onSuccess onFailure:onFailure];
-    } else {
-        AFFailureBlock retryBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-            if ([response statusCode] == SMErrorUnauthorized && retry) {
+    } 
+    else {
+        SMFullResponseFailureBlock retryBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            if ([response statusCode] == SMErrorUnauthorized && options.tryRefreshToken) {
                 [self refreshAndRetry:request onSuccess:onSuccess onFailure:onFailure];
+            } else if ([response statusCode] == SMErrorServiceUnavailable && options.numberOfRetries > 0) {
+                NSString *retryAfter = [[response allHeaderFields] valueForKey:@"Retry-After"];
+                if (retryAfter) {
+                    [options setNumberOfRetries:(options.numberOfRetries - 1)];
+                    double delayInSeconds = [retryAfter intValue] / 1000.00;
+                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                        if (options.retryBlock) {
+                            options.retryBlock(request, response, error, JSON, options, onSuccess, onFailure);
+                        } else {
+                            [self queueRequest:[self.session signRequest:request] options:options onSuccess:onSuccess onFailure:onFailure];
+                        }
+                    });
+                } else {
+                    onFailure(request, response, error, JSON);
+                }
             } else {
                 onFailure(request, response, error, JSON);
             }
@@ -178,5 +198,7 @@
     }
     
 }
+
+
 
 @end

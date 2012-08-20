@@ -21,13 +21,13 @@
  
  ## Example s3 Integration ##
  
- Once you have your content in NSData form, pass it to the stringForBinaryData:withName:andContentType: method.
+ Once you have your content in NSData form, pass it to the stringForBinaryData:name:contentType: method.
  
  NSBundle *bundle = [NSBundle bundleForClass:[self class]];
  NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];
  NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile];
  
- NSString *picData = [SMData stringForBinaryData:theData withName:@"whateverNameYouWant" andContentType:@"image/jpg"];
+ NSString *picData = [SMData stringForBinaryData:theData name:@"whateverNameYouWant" contentType:@"image/jpg"];
  
  You can now set the string value, save the managed object context, and refresh your in-memory copy of the object to grab the url pointing to your data.
  
@@ -58,6 +58,6 @@
  
  @return A string formatted for StackMob to persist data to s3.
  */
-+ (NSString *)stringForBinaryData:(NSData *)data withName:(NSString *)name andContentType:(NSString *)contentType;
++ (NSString *)stringForBinaryData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType;
 
 @end

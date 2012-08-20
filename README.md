@@ -46,6 +46,10 @@ Open the new workspace and we can start developing using the StackMob library
 
 ## Testing
 
+</br>
+<p>In order to test you must download the full source code: `git clone git@github.com:stackmob/stackmob-ios-sdk.git`.</p>
+
+
 [Kiwi](https://github.com/allending/Kiwi) specs run just like OCUnit tests. In Xcode `⌘U` will run all the tests for the currently selected scheme.
 
 		describe(@"a public method or feature", ^{
@@ -81,8 +85,21 @@ Unit tests do not make network requests against StackMob. The project includes a
 3. Set the public for the StackMob account you want the tests to use.
 4. Create a schema (using the StackMob web console) called `places`. Add
    a geopoint field called `location` and set all Schema Permissions to `Open`.
-5. Create a schema (using the StackMob web console) called `oauth2test`. Add a string field called `name` and set all Schema Permissions to `Allow to any logged in user`.  
+5. Create a schema (using the StackMob web console) called `oauth2test`. Add a string field called `name` and set all Schema Permissions to `Allow to any logged in user`.
 6. Test the "integration tests" scheme.
+
+#### Optional: Test Custom Code Methods
+</br>
+By default, custom code tests are turned off.  This is because they require you to have specific custom code methods uploaded for your application. To test custom code, do the following:
+
+1. Clone the custom code example repository: `$ git clone git@github.com:stackmob/stackmob-customcode-example.git`.
+2. From the root folder navigate to `/java/src/main/java/com/stackmob/example/`.
+3. Replace the contents of the `/example` folder with the files provided by stackmob-ios-sdk.  They can be found by navigating from the root of your local stackmob-ios-sdk folder to `/integration tests/CustomCodeFiles`.  The files are `EntryPointExtender.java`, `HelloWorld.java`, and `HelloWorldParams.java`.
+4. Naviagate back to the root of your local stackmob-customcode-example folder and execute the command `$ mvn clean package`.
+5. Go to your dashboard on `stackmob.com` and click on `Manage Custom Code` in the left sidebar.
+6. Upload new code and choose the `.jar` file located, from the root of your local stackmob-customcode-example folder, in `/java/target/`.  It's the only `.jar` file there, and NOT the `.one-jar.jar`.  You should get feedback from the browser that the methods `hello_world` and `hello_world_params` have successfully been uploaded - it reports the version and create date.
+7. Once you upload the custom code files you are ready to test.  In Xcode, navigate to the file `SMIntegrationTestHelpers.h` in the folder `Integration Tests`.  You will see `#define TEST_CUSTOM_CODE 0`.  Just change that to a `1` and when you test the "integration tests" scheme you will run the custom code tests found in `SMCusCodeReqIntegrationSpec.m`.
+
 
 
 ## Submitting pull requests

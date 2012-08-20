@@ -16,6 +16,7 @@
 
 #import "SMDataStore.h"
 #import "SMUserSession.h"
+#import "SMResponseBlocks.h"
 
 /**
  Supplemental methods for SMDataStore.  In essence they add an extra layer of logic to existing SMDataStore methods for special conditions. 
@@ -26,28 +27,28 @@
 @interface SMDataStore (SpecialCondition)
 
 
-- (AFSuccessBlock)AFSuccessBlockForSchema:(NSString *)schema withSuccessBlock:(SMDataStoreSuccessBlock)successBlock;
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSchema:(NSString *)schema withSuccessBlock:(SMDataStoreSuccessBlock)successBlock;
 
 
-- (AFSuccessBlock)AFSuccessBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withSuccessBlock:(SMDataStoreObjectIdSuccessBlock)successBlock;
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withSuccessBlock:(SMDataStoreObjectIdSuccessBlock)successBlock;
 
 
-- (AFSuccessBlock)AFSuccessBlockForSuccessBlock:(SMSuccessBlock)successBlock ;
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSuccessBlock:(SMSuccessBlock)successBlock ;
 
 
-- (AFSuccessBlock)AFSuccessBlockForResultSuccessBlock:(SMResultSuccessBlock)successBlock;
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultSuccessBlock:(SMResultSuccessBlock)successBlock;
 
 
-- (AFSuccessBlock)AFSuccessBlockForResultsSuccessBlock:(SMResultsSuccessBlock)successBlock;
+- (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultsSuccessBlock:(SMResultsSuccessBlock)successBlock;
 
 
-- (AFFailureBlock)AFFailureBlockForObject:(NSDictionary *)theObject ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreFailureBlock)failureBlock;
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObject:(NSDictionary *)theObject ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreFailureBlock)failureBlock;
 
 
-- (AFFailureBlock)AFFailureBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreObjectIdFailureBlock)failureBlock;
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreObjectIdFailureBlock)failureBlock;
 
 
-- (AFFailureBlock)AFFailureBlockForFailureBlock:(SMFailureBlock)failureBlock;
+- (SMFullResponseFailureBlock)SMFullResponseFailureBlockForFailureBlock:(SMFailureBlock)failureBlock;
 
 
 - (int)countFromRangeHeader:(NSString *)rangeHeader results:(NSArray *)results;
@@ -60,7 +61,7 @@
                onSuccess:(SMDataStoreSuccessBlock)successBlock 
                onFailure:(SMDataStoreObjectIdFailureBlock)failureBlock;
 
-- (void)queueRequest:(NSURLRequest *)request retry:(BOOL)retry onSuccess:(AFSuccessBlock)onSuccess onFailure:(AFFailureBlock)onFailure;
+- (void)queueRequest:(NSURLRequest *)request options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)onSuccess onFailure:(SMFullResponseFailureBlock)onFailure;
 
 
 @end

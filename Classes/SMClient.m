@@ -436,7 +436,7 @@ static SMClient *defaultClient = nil;
     } 
 }
 
-- (void)getLoggedInUserTwitterInfoWithOnSuccess:(SMResultSuccessBlock)successBlock
+- (void)getLoggedInUserTwitterInfoOnSuccess:(SMResultSuccessBlock)successBlock
                                       onFailure:(SMFailureBlock)failureBlock
 {
     [self.dataStore readObjectWithId:@"getTwitterUserInfo" inSchema:self.userSchema onSuccess:^(NSDictionary *theObject, NSString *schema) {

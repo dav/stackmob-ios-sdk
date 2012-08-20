@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,6 +21,7 @@
 #import "SMIntegrationTestHelpers.h"
 #import "SMCoreDataIntegrationTestHelpers.h"
 #import "Superpower.h"
+#import "SMBinaryDataConversion.h"
 
 SPEC_BEGIN(SMBinDataConvertCDIntegrationSpec)
 
@@ -46,7 +47,7 @@ describe(@"SMBinDataConvertCDIntegration", ^{
             NSString* pathToImageFile = [bundle pathForResource:@"goatPic" ofType:@"jpeg"];
             NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile options:NSDataReadingMappedIfSafe error:&error];
             [error shouldBeNil];
-            dataString = [SMBinaryDataConversion stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpeg"];
+            dataString = [SMBinaryDataConversion stringForBinaryData:theData name:@"whatever" contentType:@"image/jpeg"];
             [dataString shouldNotBeNil];
             [superpower setName:@"cool"];
             [superpower setValue:dataString forKey:@"pic"];

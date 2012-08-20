@@ -25,7 +25,7 @@ beforeEach(^{
     dataStore = [[SMDataStore alloc] initWithAPIVersion:@"0" session:[client session]]; 
 });
 
-describe(@"AFSuccessBlockForSchema:withSuccessBlock:", ^{
+describe(@"SMFullResponseSuccessBlockForSchema:withSuccessBlock:", ^{
     it(@"returns a block which calls the success block with appropriate arguments", ^{
         NSDictionary *responseObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                         @"The Great American Novel", @"name", 
@@ -43,14 +43,14 @@ describe(@"AFSuccessBlockForSchema:withSuccessBlock:", ^{
             completionBlockDidExecute = YES;
         };
         
-        AFSuccessBlock success = [dataStore AFSuccessBlockForSchema:@"book" withSuccessBlock:successBlock];
+        SMFullResponseSuccessBlock success = [dataStore SMFullResponseSuccessBlockForSchema:@"book" withSuccessBlock:successBlock];
         success(request, response, responseObject);
         
         [[theValue(completionBlockDidExecute) should] beYes];
     });
 });
 
-describe(@"-AFFailureBlockForObject:ofSchema:withFailureBlock:", ^{
+describe(@"-SMFullResponseFailureBlockForObject:ofSchema:withFailureBlock:", ^{
     it(@"returns a block which calls the failure block with appropriate arguments", ^{
         NSDictionary *requestObject = [NSDictionary dictionaryWithObjectsAndKeys:
                                         @"1234", @"book_id", 
@@ -66,7 +66,7 @@ describe(@"-AFFailureBlockForObject:ofSchema:withFailureBlock:", ^{
             completionBlockDidExecute = YES;
         };
         
-        AFFailureBlock failure = [dataStore AFFailureBlockForObject:requestObject ofSchema:@"book" withFailureBlock:failureBlock];
+        SMFullResponseFailureBlock failure = [dataStore SMFullResponseFailureBlockForObject:requestObject ofSchema:@"book" withFailureBlock:failureBlock];
         NSError *error = [NSError errorWithDomain:@"com.stackmob" code:0 userInfo:nil];
         failure(request, response, error, nil);
         

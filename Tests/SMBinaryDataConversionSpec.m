@@ -34,7 +34,7 @@ describe(@"SMBinaryDataConversion init", ^{
     describe(@"return a StackMob string version for NSData", ^{
         __block NSString *fieldValueForBinaryData = nil;
         beforeEach(^{
-            fieldValueForBinaryData = [SMBinaryDataConversion stringForBinaryData:theData withName:@"goatPic.jpeg" andContentType:@"image/jpeg"]; 
+            fieldValueForBinaryData = [SMBinaryDataConversion stringForBinaryData:theData name:@"goatPic.jpeg" contentType:@"image/jpeg"]; 
         });
         it(@"data should not be nil", ^{
             [fieldValueForBinaryData shouldNotBeNil];

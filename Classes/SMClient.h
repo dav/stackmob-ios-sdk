@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "SMResponseBlocks.h"
 
 @class SMRequestOptions;
 @class SMDataStore;
@@ -26,23 +27,6 @@
 #define DEFAULT_USER_SCHEMA @"user"
 #define DEFAULT_USER_ID_NAME @"username"
 #define DEFAULT_PASSWORD_FIELD_NAME @"password"
-
-/** SMSuccessBlock
- */
-typedef void (^SMSuccessBlock)();
-
-/** SMResultSuccessBlock
- */
-typedef void (^SMResultSuccessBlock)(NSDictionary *result);
-
-/** SMResultsSuccessBlock
- */
-typedef void (^SMResultsSuccessBlock)(NSArray *results);
-
-/** SMFailureBlock
- The block parameters expected for any failure block.
- */
-typedef void (^SMFailureBlock)(NSError *error);
 
 /**
  An `SMClient` provides a high level interface to interacting with StackMob. A new client must be given at the very least an API version and public key in order to communicate with your StackMob application.
@@ -520,7 +504,7 @@ typedef void (^SMFailureBlock)(NSError *error);
  @param successBlock Completion block called on success.
  @param failureBlock Completion block called on failure.
  */
-- (void)getLoggedInUserTwitterInfoWithOnSuccess:(SMResultSuccessBlock)successBlock
+- (void)getLoggedInUserTwitterInfoOnSuccess:(SMResultSuccessBlock)successBlock
                                       onFailure:(SMFailureBlock)failureBlock;
 
 

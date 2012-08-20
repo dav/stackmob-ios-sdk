@@ -18,44 +18,16 @@
 #import <CoreData/CoreData.h>
 #import "SMClient.h"
 #import "SMQuery.h"
+#import "SMResponseBlocks.h"
+
+#define POST @"POST"
+#define GET @"GET"
+#define PUT @"PUT"
+#define DELETE @"DELETE"
+
 @class SMUserSession;
 @class SMRequestOptions;
-
-/* SMDataStoreSuccessBlock
- 
- @param theObject An updated dictionary representation of the requested object.
- @param schema The schema to which the object belongs.
- */
-typedef void (^SMDataStoreSuccessBlock)(NSDictionary* theObject, NSString *schema);
-
-/* SMDataStoreObjectIdSuccessBlock
- 
- @param theObjectId The object id used in this operation.
- @param schema The schema to which the object belongs.
- */
-typedef void (^SMDataStoreObjectIdSuccessBlock)(NSString* theObjectId, NSString *schema);
-
-/* SMDataStoreFailureBlock
- 
- @param theError An error object describing the failure.
- @param theObject The dictionary representation of the object sent as part of the failed operation.
- @param schema The schema to which the object belongs.
- */
-typedef void (^SMDataStoreFailureBlock)(NSError *theError, NSDictionary* theObject, NSString *schema);
-
-/* SMDataStoreObjectIdFailureBlock
- 
- @param theError An error object describing the failure.
- @param theObjectId The object id sent as part of the failed operation.
- @param schema The schema to which the object belongs.
- */
-typedef void (^SMDataStoreObjectIdFailureBlock)(NSError *theError, NSString* theObjectId, NSString *schema);
-
-/* SMCountSuccessBlock
- 
- @param count The number of objects returned by the query.
- */
-typedef void (^SMCountSuccessBlock)(NSNumber *count);
+@class SMCustomCodeRequest;
 
 /**
  `SMDataStore` exposes an interface for performing CRUD operations on known StackMob objects and for executing a SMQuery.
@@ -286,5 +258,38 @@ typedef void (^SMCountSuccessBlock)(NSNumber *count);
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
 - (void)performCount:(SMQuery *)query options:(SMRequestOptions *)options onSuccess:(SMCountSuccessBlock)successBlock onFailure:(SMFailureBlock)failureBlock;
+
+#pragma mark - Custom Code
+///-------------------------------
+/// @name Performing Custom Code Methods
+///-------------------------------
+
+/**
+ Calls performCustomCodeRequest:options:onSuccess:onFailure: with `[SMRequestOptions options]` for the parameter `options`.
+ */
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock;
+/**
+ Execute a custom code method on StackMob.
+ 
+ See [Getting Started With Custom Code](https://stackmob.com/devcenter/docs/Getting-Started:-Custom-Code-SDK) for more information.
+ 
+ @param customCodeRequest The request to execute.
+ @param options The options for this request.
+ @param successBlock The block to call upon success.
+ @param failureBlock The block to call upon failure.
+ */
+- (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock;
+
+/**
+ Retry executing a custom code method on StackMob.
+ 
+ This method should only be called by developers defining their own custom code retry blocks.  See SMRequestOptions method `addSMErrorServiceUnavailableRetryBlock:`.
+ 
+ @param request The request to execute.
+ @param options The options for this request.
+ @param successBlock The block to call upon success.
+ @param failureBlock The block to call upon failure.
+ */
+- (void)retryCustomCodeRequest:(NSURLRequest *)request options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock;
 
 @end

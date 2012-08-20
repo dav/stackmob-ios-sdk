@@ -27,6 +27,7 @@
 
 #import "SMDataStore.h"
 #import "SMQuery.h"
+#import "SMCustomCodeRequest.h"
 #import "SMCoreDataStore.h"
 #import "SMIncrementalStore.h"
 
@@ -42,6 +43,7 @@
 #import "NSManagedObject+StackMobSerialization.h"
 #import "NSEntityDescription+StackMobSerialization.h"
 #import "SMIncrementalStore+Query.h"
+#import "SMResponseBlocks.h"
 
 #import "SMBinaryDataConversion.h"
 

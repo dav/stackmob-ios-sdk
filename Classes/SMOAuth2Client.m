@@ -17,6 +17,8 @@
 #import "SMOAuth2Client.h"
 #import <CommonCrypto/CommonHMAC.h>
 #import "SMVersion.h"
+#import "SMCustomCodeRequest.h"
+#import "SMRequestOptions.h"
 #import "Base64EncodedStringFromData.h"
 
 @implementation SMOAuth2Client
@@ -55,6 +57,34 @@
     if ([method isEqualToString:@"POST"] || [method isEqualToString:@"PUT"]) {
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
+    [self signRequest:request];
+    return request;
+}
+
+- (NSMutableURLRequest *)customCodeRequest:(SMCustomCodeRequest *)aRequest options:(SMRequestOptions *)options
+{
+    NSURL *url = [NSURL URLWithString:aRequest.method relativeToURL:self.baseURL];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    
+    [request setHTTPMethod:aRequest.httpVerb];
+    
+    NSString *acceptHeader = [NSString stringWithFormat:@"application/vnd.stackmob+json; version=%@", self.version];
+    [request setValue:acceptHeader forHTTPHeaderField:@"Accept"];
+    [request setValue:self.publicKey forHTTPHeaderField:@"X-StackMob-API-Key"];
+    [request setValue:[NSString stringWithFormat:@"StackMob/%@ (%@/%@; %@;)", SDK_VERSION, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[NSLocale currentLocale] localeIdentifier]] forHTTPHeaderField:@"User-Agent"];
+    [options.headers enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [request setValue:(NSString *)obj forHTTPHeaderField:(NSString *)key];
+    }];
+	
+    if ([aRequest.queryStringParameters count] > 0) {
+        url = [NSURL URLWithString:[[url absoluteString] stringByAppendingFormat:[aRequest.method rangeOfString:@"?"].location == NSNotFound ? @"?%@" : @"&%@", [aRequest.queryStringParameters componentsJoinedByString:@"&"]]];
+        [request setURL:url];
+    }
+    
+    if (aRequest.requestBody) {
+        [request setHTTPBody:[aRequest.requestBody dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
     [self signRequest:request];
     return request;
 }

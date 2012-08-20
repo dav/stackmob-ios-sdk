@@ -40,7 +40,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-NSString * Base64EncodedStringFromData(NSData *data) 
+
+NSString * Base64EncodedStringFromData(NSData *data)
 {
     NSUInteger length = [data length];
     NSMutableData *mutableData = [NSMutableData dataWithLength:((length + 2) / 3) * 4];

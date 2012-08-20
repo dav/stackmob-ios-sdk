@@ -16,11 +16,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
-
-typedef void (^AFSuccessBlock)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON);
-typedef void (^AFFailureBlock)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON);
+#import "SMResponseBlocks.h"
 
 @class SMOAuth2Client;
+@class SMRequestOptions;
 
 /**
  An `SMUserSession` holds all the OAuth2 credentials and configurations for the current client.  It is responsible for:

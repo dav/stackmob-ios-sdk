@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
+#import "SMBinaryDataConversion.h"
+#import <CommonCrypto/CommonHMAC.h>
+#import "Base64EncodedStringFromData.h"
 
-#import "StackMob.h"
-#import "Synchronization.h"
+@implementation SMBinaryDataConversion
 
-#define SM_TEST_API_VERSION @"0"
-#define SM_TEST_API_BASEURL @"http://api.stackmob.com"
-#define TEST_CUSTOM_CODE 0
-
-@interface SMIntegrationTestHelpers : NSObject
-
-+ (SMClient *)defaultClient;
-+ (SMDataStore *)dataStore;
-
-+ (NSDictionary *)loadFixturesNamed:(NSArray *)fixtureNames;
-+ (void)destroyAllForFixturesNamed:(NSArray *)fixtureNames;
-
-+ (NSArray *)loadFixture:(NSString *)fixtureName; 
-+ (void)destroyFixture:(NSString *)fixtureName;
++ (NSString *)stringForBinaryData:(NSData *)data name:(NSString *)name contentType:(NSString *)contentType
+{
+    
+    return [NSString stringWithFormat:@"Content-Type: %@\n"
+            "Content-Disposition: attachment; filename=%@\n"
+            "Content-Transfer-Encoding: %@\n\n"
+            "%@",
+            contentType,
+            name,
+            @"base64",
+            Base64EncodedStringFromData(data)];
+}
 
 @end

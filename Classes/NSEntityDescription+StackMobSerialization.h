@@ -64,6 +64,6 @@
  
  @return An `NSArray` containing each piece of the relationship header, which is then joined by & to form an `NSString` and added to the request headers.
  */
-- (NSArray *)sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:(NSMutableSet *)processedEntities withKeyPath:(NSString *)path;
+- (NSArray *)sm_relationshipHeaderValuesByTraversingRelationshipsExcludingEntities:(NSMutableSet *)processedEntities keyPath:(NSString *)path;
 
 @end
