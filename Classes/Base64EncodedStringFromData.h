@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +14,6 @@
  * limitations under the License.
  */
 
-#import "Superpower.h"
-#import "Person.h"
+#import <Foundation/Foundation.h>
 
-
-@implementation Superpower
-
-@dynamic level;
-@dynamic name;
-@dynamic superpower_id;
-@dynamic person;
-@dynamic pic;
-
-@end
+NSString * Base64EncodedStringFromData(NSData *data) ;

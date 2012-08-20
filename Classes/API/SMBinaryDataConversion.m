@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2012 StackMob
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,16 +14,23 @@
  * limitations under the License.
  */
 
-#import "Superpower.h"
-#import "Person.h"
+#import "SMBinaryDataConversion.h"
+#import <CommonCrypto/CommonHMAC.h>
+#import "Base64EncodedStringFromData.h"
 
+@implementation SMBinaryDataConversion
 
-@implementation Superpower
-
-@dynamic level;
-@dynamic name;
-@dynamic superpower_id;
-@dynamic person;
-@dynamic pic;
++ (NSString *)stringForBinaryData:(NSData *)data withName:(NSString *)name andContentType:(NSString *)contentType
+{
+    
+    return [NSString stringWithFormat:@"Content-Type: %@\n"
+            "Content-Disposition: attachment; filename=%@\n"
+            "Content-Transfer-Encoding: %@\n\n"
+            "%@",
+            contentType,
+            name,
+            @"base64",
+            Base64EncodedStringFromData(data)];
+}
 
 @end

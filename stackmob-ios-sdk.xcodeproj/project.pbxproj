@@ -85,9 +85,18 @@
 		DE0CC7D615CB6C6400E491C4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3E7071158AEBB000E22505 /* CoreLocation.framework */; };
 		DE0CC7F015CB6E4200E491C4 /* libstackmob-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCE4E61580389800C38962 /* libstackmob-ios-sdk.a */; };
 		DE655D7F15D1B6E2009CA786 /* SMVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = DE655D7D15D1B6E2009CA786 /* SMVersion.h */; };
-		DE655DA815D1D0FE009CA786 /* SMIncrementalStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A715CB5EA200E491C4 /* SMIncrementalStoreTest.m */; };
-		DE655DAA15D1D101009CA786 /* SMIncrementalStoreFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A615CB5EA200E491C4 /* SMIncrementalStoreFetchTest.m */; };
 		DE8FEEFF15D4721D0068A91E /* QueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 619EDF11159292AC0075BB93 /* QueryTests.m */; };
+		DEABA5A115E0248600F03FE3 /* goatPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEABA5A015E0248600F03FE3 /* goatPic.jpeg */; };
+		DEABA5A515E0251000F03FE3 /* SMBinaryDataConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = DEABA5A315E0251000F03FE3 /* SMBinaryDataConversion.h */; };
+		DEABA5A615E0251000F03FE3 /* SMBinaryDataConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = DEABA5A415E0251000F03FE3 /* SMBinaryDataConversion.m */; };
+		DEABA5A815E025EA00F03FE3 /* SMBinaryDataConversionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DEABA5A715E025EA00F03FE3 /* SMBinaryDataConversionSpec.m */; };
+		DEABA5AA15E026A300F03FE3 /* SMBinDataConvertCDIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DEABA5A915E026A300F03FE3 /* SMBinDataConvertCDIntegrationSpec.m */; };
+		DEABA5AB15E027B600F03FE3 /* goatPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEABA5A015E0248600F03FE3 /* goatPic.jpeg */; };
+		DEABA5AC15E0295200F03FE3 /* SMCoreDataStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC570FA15D065FC00D9E44E /* SMCoreDataStoreTest.m */; };
+		DEABA5AD15E0295500F03FE3 /* SMIncrementalStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A715CB5EA200E491C4 /* SMIncrementalStoreTest.m */; };
+		DEABA5AE15E0295A00F03FE3 /* SMIncrementalStoreFetchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0CC7A615CB5EA200E491C4 /* SMIncrementalStoreFetchTest.m */; };
+		DEABA5B115E02C5900F03FE3 /* Base64EncodedStringFromData.h in Headers */ = {isa = PBXBuildFile; fileRef = DEABA5AF15E02C5900F03FE3 /* Base64EncodedStringFromData.h */; };
+		DEABA5B215E02C5900F03FE3 /* Base64EncodedStringFromData.m in Sources */ = {isa = PBXBuildFile; fileRef = DEABA5B015E02C5900F03FE3 /* Base64EncodedStringFromData.m */; };
 		DEBBBCAF15CC440600650D75 /* SMCoreDataStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA515CC440600650D75 /* SMCoreDataStore.h */; };
 		DEBBBCB015CC440600650D75 /* SMCoreDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBBBCA615CC440600650D75 /* SMCoreDataStore.m */; };
 		DEBBBCB115CC440600650D75 /* SMIncrementalStore+Query.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCA715CC440600650D75 /* SMIncrementalStore+Query.h */; };
@@ -124,7 +133,6 @@
 		DEBBBCF615CC447C00650D75 /* SMUserSession.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBBBCDB15CC447C00650D75 /* SMUserSession.m */; };
 		DEBBBCF815CC447C00650D75 /* StackMob.h in Headers */ = {isa = PBXBuildFile; fileRef = DEBBBCDD15CC447C00650D75 /* StackMob.h */; };
 		DEC4F85A15C356390032C503 /* CRUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33B0641591355A00BE2570 /* CRUDTests.m */; };
-		DEC5710115D07FAC00D9E44E /* SMCoreDataStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC570FA15D065FC00D9E44E /* SMCoreDataStoreTest.m */; };
 		DEC6DAB8159BEA05008C1238 /* SMClientIntegrationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8474D159A74D000FF37A3 /* SMClientIntegrationSpec.m */; };
 		DEDDE18C15DD8D3A0055FAFF /* NSDictionary+AtomicCounter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC315CC447C00650D75 /* NSDictionary+AtomicCounter.h */; };
 		DEDDE18D15DD8D3A0055FAFF /* NSEntityDescription+StackMobSerialization.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEBBBCC515CC447C00650D75 /* NSEntityDescription+StackMobSerialization.h */; };
@@ -299,6 +307,13 @@
 		DE0CC7C015CB6A9000E491C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE0CC7C515CB6A9000E491C4 /* integrationTestsCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "integrationTestsCoreData-Prefix.pch"; sourceTree = "<group>"; };
 		DE655D7D15D1B6E2009CA786 /* SMVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVersion.h; sourceTree = "<group>"; };
+		DEABA5A015E0248600F03FE3 /* goatPic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goatPic.jpeg; sourceTree = "<group>"; };
+		DEABA5A315E0251000F03FE3 /* SMBinaryDataConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMBinaryDataConversion.h; sourceTree = "<group>"; };
+		DEABA5A415E0251000F03FE3 /* SMBinaryDataConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBinaryDataConversion.m; sourceTree = "<group>"; };
+		DEABA5A715E025EA00F03FE3 /* SMBinaryDataConversionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBinaryDataConversionSpec.m; sourceTree = "<group>"; };
+		DEABA5A915E026A300F03FE3 /* SMBinDataConvertCDIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMBinDataConvertCDIntegrationSpec.m; sourceTree = "<group>"; };
+		DEABA5AF15E02C5900F03FE3 /* Base64EncodedStringFromData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64EncodedStringFromData.h; sourceTree = "<group>"; };
+		DEABA5B015E02C5900F03FE3 /* Base64EncodedStringFromData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64EncodedStringFromData.m; sourceTree = "<group>"; };
 		DEB8474D159A74D000FF37A3 /* SMClientIntegrationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMClientIntegrationSpec.m; sourceTree = "<group>"; };
 		DEBA17DB15CC9A4600913CF8 /* stackmob-ios-sdkTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "stackmob-ios-sdkTests copy-Info.plist"; path = "/Users/mattvaz/Documents/stackmob/stackmob-ios-sdk/stackmob-ios-sdkTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		DEBBBCA515CC440600650D75 /* SMCoreDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCoreDataStore.h; sourceTree = "<group>"; };
@@ -487,6 +502,7 @@
 		8CCCE4FF1580389800C38962 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				DEABA59F15E0248600F03FE3 /* Resources */,
 				8CCCE5001580389800C38962 /* Supporting Files */,
 				8CC4148B1587A43D004EA957 /* SMClientSpec.m */,
 				DE0CC79015CB52E500E491C4 /* SMCoreDataStoreSpec.m */,
@@ -518,6 +534,7 @@
 				8C3E7060158AA3E300E22505 /* SMDataStoreSpec.m */,
 				8C33B026158FE18D00BE2570 /* SMDataStore+ProtectedSpec.m */,
 				8C3E7084158AF05D00E22505 /* SMQuerySpec.m */,
+				DEABA5A715E025EA00F03FE3 /* SMBinaryDataConversionSpec.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -549,6 +566,7 @@
 				DE0CC7A615CB5EA200E491C4 /* SMIncrementalStoreFetchTest.m */,
 				DE0CC7A715CB5EA200E491C4 /* SMIncrementalStoreTest.m */,
 				DEC570FA15D065FC00D9E44E /* SMCoreDataStoreTest.m */,
+				DEABA5A915E026A300F03FE3 /* SMBinDataConvertCDIntegrationSpec.m */,
 				DE0CC7BD15CB6A9000E491C4 /* Supporting Files */,
 			);
 			path = integrationTestsCoreData;
@@ -562,6 +580,14 @@
 				DE0CC7C515CB6A9000E491C4 /* integrationTestsCoreData-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DEABA59F15E0248600F03FE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEABA5A015E0248600F03FE3 /* goatPic.jpeg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DEBBBCA415CC440600650D75 /* Classes */ = {
@@ -604,6 +630,8 @@
 				DEBBBCDB15CC447C00650D75 /* SMUserSession.m */,
 				DEBBBCDD15CC447C00650D75 /* StackMob.h */,
 				DE655D7D15D1B6E2009CA786 /* SMVersion.h */,
+				DEABA5AF15E02C5900F03FE3 /* Base64EncodedStringFromData.h */,
+				DEABA5B015E02C5900F03FE3 /* Base64EncodedStringFromData.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -626,6 +654,8 @@
 				56404F3615CCF4B5009CCAC1 /* SMModel.h */,
 				DEBBBCD015CC447C00650D75 /* SMQuery.h */,
 				DEBBBCD115CC447C00650D75 /* SMQuery.m */,
+				DEABA5A315E0251000F03FE3 /* SMBinaryDataConversion.h */,
+				DEABA5A415E0251000F03FE3 /* SMBinaryDataConversion.m */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -657,6 +687,8 @@
 				DEBBBCF815CC447C00650D75 /* StackMob.h in Headers */,
 				56404F3815CCF4B5009CCAC1 /* SMModel.h in Headers */,
 				DE655D7F15D1B6E2009CA786 /* SMVersion.h in Headers */,
+				DEABA5A515E0251000F03FE3 /* SMBinaryDataConversion.h in Headers */,
+				DEABA5B115E02C5900F03FE3 /* Base64EncodedStringFromData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CCCE5041580389800C38962 /* InfoPlist.strings in Resources */,
+				DEABA5A115E0248600F03FE3 /* goatPic.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +832,7 @@
 				DE0CC7C115CB6A9000E491C4 /* InfoPlist.strings in Resources */,
 				DE0CC7CC15CB6AE300E491C4 /* person.json in Resources */,
 				DE0CC7CE15CB6AFD00E491C4 /* StackMobCredentials.plist in Resources */,
+				DEABA5AB15E027B600F03FE3 /* goatPic.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -999,6 +1033,8 @@
 				DEBBBCF215CC447C00650D75 /* SMOAuth2Client.m in Sources */,
 				DEBBBCF415CC447C00650D75 /* SMRequestOptions.m in Sources */,
 				DEBBBCF615CC447C00650D75 /* SMUserSession.m in Sources */,
+				DEABA5A615E0251000F03FE3 /* SMBinaryDataConversion.m in Sources */,
+				DEABA5B215E02C5900F03FE3 /* Base64EncodedStringFromData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1055,7 @@
 				DE0CC79215CB52E500E491C4 /* SMCoreDataStoreSpec.m in Sources */,
 				DE0CC79315CB52E500E491C4 /* SMIncrementalStore+QuerySpec.m in Sources */,
 				DE0CC7B215CB66B600E491C4 /* SMCoreDataIntegrationTest.xcdatamodeld in Sources */,
+				DEABA5A815E025EA00F03FE3 /* SMBinaryDataConversionSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,9 +1068,10 @@
 				DE0CC7CB15CB6ADF00E491C4 /* Superpower.m in Sources */,
 				DE0CC7CF15CB6B1F00E491C4 /* SMIntegrationTestHelpers.m in Sources */,
 				DE0CC7D215CB6B3800E491C4 /* SMCoreDataIntegrationTestHelpers.m in Sources */,
-				DEC5710115D07FAC00D9E44E /* SMCoreDataStoreTest.m in Sources */,
-				DE655DA815D1D0FE009CA786 /* SMIncrementalStoreTest.m in Sources */,
-				DE655DAA15D1D101009CA786 /* SMIncrementalStoreFetchTest.m in Sources */,
+				DEABA5AA15E026A300F03FE3 /* SMBinDataConvertCDIntegrationSpec.m in Sources */,
+				DEABA5AC15E0295200F03FE3 /* SMCoreDataStoreTest.m in Sources */,
+				DEABA5AD15E0295500F03FE3 /* SMIncrementalStoreTest.m in Sources */,
+				DEABA5AE15E0295A00F03FE3 /* SMIncrementalStoreFetchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
