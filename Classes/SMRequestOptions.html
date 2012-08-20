@@ -38,6 +38,19 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/headers">&nbsp;&nbsp;&nbsp;&nbsp;headers</option>
+	
+	<option value="//api/name/isSecure">&nbsp;&nbsp;&nbsp;&nbsp;isSecure</option>
+	
+	<option value="//api/name/numberOfRetries">&nbsp;&nbsp;&nbsp;&nbsp;numberOfRetries</option>
+	
+	<option value="//api/name/retryBlock">&nbsp;&nbsp;&nbsp;&nbsp;retryBlock</option>
+	
+	<option value="//api/name/tryRefreshToken">&nbsp;&nbsp;&nbsp;&nbsp;tryRefreshToken</option>
+	
+	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -52,6 +65,8 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addSMErrorServiceUnavailableRetryBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- addSMErrorServiceUnavailableRetryBlock:</option>
 	
 	<option value="//api/name/restrictReturnedFieldsTo:">&nbsp;&nbsp;&nbsp;&nbsp;- restrictReturnedFieldsTo:</option>
 	
@@ -73,11 +88,33 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialize">Initialize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Expanding Relationships">Expanding Relationships</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Limiting Returned Properties">Limiting Returned Properties</a></span></li>
+	
 </ul></li>
 
 
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/headers">headers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSecure">isSecure</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfRetries">numberOfRetries</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/retryBlock">retryBlock</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tryRefreshToken">tryRefreshToken</a></span></li>
+	
+</ul></li>
 
 
 
@@ -94,6 +131,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addSMErrorServiceUnavailableRetryBlock:">addSMErrorServiceUnavailableRetryBlock:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/restrictReturnedFieldsTo:">restrictReturnedFieldsTo:</a></span></li>
 	
@@ -140,7 +179,7 @@
 
 <ul>
 <li>Whether or not it is secure (https).</li>
-<li>Extra headers to add to the request</li>
+<li>Extra <a href="#//api/name/headers">headers</a> to add to the request</li>
 <li>Select and expand choices to control the data being returned to you</li>
 <li>The ability to disable automatic login refresh</li>
 </ul>
@@ -156,8 +195,51 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/headers">&nbsp;&nbsp;headers</a></code>
+		<span class="tooltip"><p>Optional request headers where the key is the header field name.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isSecure">&nbsp;&nbsp;isSecure</a></code>
+		<span class="tooltip"><p>Whether the request should be sent over HTTPS. Default is <code>NO</code>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tryRefreshToken">&nbsp;&nbsp;tryRefreshToken</a></code>
+		<span class="tooltip"><p>In the case that a 401 <code>SMErrorUnauthorized</code> response is returned, whether to try and refresh the session. Default is <code>YES</code>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfRetries">&nbsp;&nbsp;numberOfRetries</a></code>
+		<span class="tooltip"><p>In the case that a 503 <code>SMErrorServiceUnavailable</code> response is returned, the number of times to retry.  The default is 3 times.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/retryBlock">&nbsp;&nbsp;retryBlock</a></code>
+		<span class="tooltip"><p>An optional block to call if the response returns a 503 <code>SMErrorServiceUnavailable</code>. Use <a href="#//api/name/addSMErrorServiceUnavailableRetryBlock:">addSMErrorServiceUnavailableRetryBlock:</a> to set.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
 						
+						<a title="Initialize" name="task_Initialize"></a>
+						<h3 class="subsubtitle task-title">Initialize</h3>
 
 						<ul class="task-list">
 							<li>
@@ -170,7 +252,7 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/optionsWithHeaders:">+&nbsp;optionsWithHeaders:</a></code>
-		<span class="tooltip"><p>Options that will add additional headers to a request.</p></span>
+		<span class="tooltip"><p>Options that will add additional <a href="#//api/name/headers">headers</a> to a request.</p></span>
 	</span>
 	
 	
@@ -181,17 +263,40 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Expanding Relationships" name="task_Expanding Relationships"></a>
+						<h3 class="subsubtitle task-title">Expanding Relationships</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setExpandDepth:">&ndash;&nbsp;setExpandDepth:</a></code>
 		<span class="tooltip"><p>Expand relationships by <code>depth</code> levels.</p></span>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Limiting Returned Properties" name="task_Limiting Returned Properties"></a>
+						<h3 class="subsubtitle task-title">Limiting Returned Properties</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/restrictReturnedFieldsTo:">&ndash;&nbsp;restrictReturnedFieldsTo:</a></code>
 		<span class="tooltip"><p>Return a subset of the schema&rsquo;s fields.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addSMErrorServiceUnavailableRetryBlock:">&ndash;&nbsp;addSMErrorServiceUnavailableRetryBlock:</a></code>
+		<span class="tooltip"><p>Adds a retry block to be used in the event of a 503 <code>SMErrorServiceUnavailable</code> response.</p></span>
 	</span>
 	
 	
@@ -203,6 +308,205 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/headers" title="headers"></a>
+	<h3 class="subsubtitle method-title">headers</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Optional request headers where the key is the header field name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSDictionary *headers</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isSecure" title="isSecure"></a>
+	<h3 class="subsubtitle method-title">isSecure</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Whether the request should be sent over HTTPS. Default is <code>NO</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BOOL isSecure</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfRetries" title="numberOfRetries"></a>
+	<h3 class="subsubtitle method-title">numberOfRetries</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>In the case that a 503 <code>SMErrorServiceUnavailable</code> response is returned, the number of times to retry.  The default is 3 times.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) NSInteger numberOfRetries</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default retry action is to send the original request, resigned with up to date arguments. If a <a href="#//api/name/retryBlock">retryBlock</a> has been added it is used in place of the default.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/retryBlock" title="retryBlock"></a>
+	<h3 class="subsubtitle method-title">retryBlock</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An optional block to call if the response returns a 503 <code>SMErrorServiceUnavailable</code>. Use <a href="#//api/name/addSMErrorServiceUnavailableRetryBlock:">addSMErrorServiceUnavailableRetryBlock:</a> to set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) SMFailureRetryBlock retryBlock</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><code>SMFailureRetryBlock</code> is defined as:</p>
+
+<pre><code>typedef void (^SMFailureRetryBlock)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON, SMRequestOptions *options, SMFullResponseSuccessBlock successBlock, SMFullResponseFailureBlock failureBlock);
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tryRefreshToken" title="tryRefreshToken"></a>
+	<h3 class="subsubtitle method-title">tryRefreshToken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>In the case that a 401 <code>SMErrorUnauthorized</code> response is returned, whether to try and refresh the session. Default is <code>YES</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) BOOL tryRefreshToken</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -271,7 +575,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>SMRequestOptions</code> object with isSecure set to <code>YES</code>.</p>
+		<p>An <code>SMRequestOptions</code> object with <a href="#//api/name/isSecure">isSecure</a> set to <code>YES</code>.</p>
 	</div>
 	
 	
@@ -299,7 +603,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Options that will add additional headers to a request.</p>
+		<p>Options that will add additional <a href="#//api/name/headers">headers</a> to a request.</p>
 	</div>		
 	
     
@@ -313,7 +617,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>headers</em></dt>
-			<dd><p>A dictionary of headers to be attached to a request.</p></dd>
+			<dd><p>A dictionary of <a href="#//api/name/headers">headers</a> to be attached to a request.</p></dd>
 		</dl>
 		
 	</div>
@@ -322,7 +626,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>SMRequestOptions</code> object with headers set to the supplied dictionary.</p>
+		<p>An <code>SMRequestOptions</code> object with <a href="#//api/name/headers">headers</a> set to the supplied dictionary.</p>
 	</div>
 	
 	
@@ -350,6 +654,65 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addSMErrorServiceUnavailableRetryBlock:" title="addSMErrorServiceUnavailableRetryBlock:"></a>
+	<h3 class="subsubtitle method-title">addSMErrorServiceUnavailableRetryBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a retry block to be used in the event of a 503 <code>SMErrorServiceUnavailable</code> response.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addSMErrorServiceUnavailableRetryBlock:(SMFailureRetryBlock)<em>retryBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>retryBlock</em></dt>
+			<dd><p>An instance of SMFailureRetryBlock.</p>
+
+<p>When designing your retry block, consider the following:</p>
+
+<ul>
+<li>The parameter <code>options</code> passed to the block will contain the original request SMRequestOptions instance, with <a href="#//api/name/numberOfRetries">numberOfRetries</a> decremented by 1. This instance should be passed to any subsequent requests so that the retry block is called a finite amount of times.</li>
+<li>To resend the request, call <code>retryCustomCodeRequest:options:onSuccess:onFailure:</code> on your <a href="../Classes/SMClient.html">SMClient</a> <code>dataStore</code> instance.  The default values passed to this method should be the parameters passed to the block, unless you are intentionally redefining one of them.</li>
+</ul>
+</dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>retryBlock</em></dt>
+			<dd><p>The block to be used in place of the default retry action, which is resigning and resending the original request.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMRequestOptions.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/restrictReturnedFieldsTo:" title="restrictReturnedFieldsTo:"></a>
@@ -466,7 +829,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

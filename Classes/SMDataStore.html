@@ -46,33 +46,39 @@
 	
 	<option value="//api/name/createObject:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createObject:inSchema:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createObject:inSchema:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/createObject:inSchema:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- createObject:inSchema:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/deleteObjectId:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectId:inSchema:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/deleteObjectId:inSchema:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- deleteObjectId:inSchema:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/initWithAPIVersion:session:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAPIVersion:session:</option>
 	
 	<option value="//api/name/performCount:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCount:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/performCount:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCount:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/performCount:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCount:options:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/performCustomCodeRequest:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCustomCodeRequest:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/performCustomCodeRequest:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performCustomCodeRequest:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/performQuery:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performQuery:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/performQuery:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performQuery:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/performQuery:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- performQuery:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/readObjectWithId:inSchema:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- readObjectWithId:inSchema:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/readObjectWithId:inSchema:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- readObjectWithId:inSchema:options:onSuccess:onFailure:</option>
+	
+	<option value="//api/name/retryCustomCodeRequest:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- retryCustomCodeRequest:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:</option>
 	
 	<option value="//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObjectWithId:inSchema:update:onSuccess:onFailure:</option>
 	
-	<option value="//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</option>
+	<option value="//api/name/updateObjectWithId:inSchema:update:options:onSuccess:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;- updateObjectWithId:inSchema:update:options:onSuccess:onFailure:</option>
 	
 	
 	
@@ -96,6 +102,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Performing Queries">Performing Queries</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Performing Custom Code Methods">Performing Custom Code Methods</a></span></li>
+	
 </ul></li>
 
 
@@ -110,33 +118,39 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createObject:inSchema:onSuccess:onFailure:">createObject:inSchema:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">createObject:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/createObject:inSchema:options:onSuccess:onFailure:">createObject:inSchema:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectId:inSchema:onSuccess:onFailure:">deleteObjectId:inSchema:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteObjectId:inSchema:options:onSuccess:onFailure:">deleteObjectId:inSchema:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAPIVersion:session:">initWithAPIVersion:session:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCount:onSuccess:onFailure:">performCount:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCount:withOptions:onSuccess:onFailure:">performCount:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCount:options:onSuccess:onFailure:">performCount:options:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCustomCodeRequest:onSuccess:onFailure:">performCustomCodeRequest:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performCustomCodeRequest:options:onSuccess:onFailure:">performCustomCodeRequest:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performQuery:onSuccess:onFailure:">performQuery:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performQuery:withOptions:onSuccess:onFailure:">performQuery:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performQuery:options:onSuccess:onFailure:">performQuery:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readObjectWithId:inSchema:onSuccess:onFailure:">readObjectWithId:inSchema:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/readObjectWithId:inSchema:options:onSuccess:onFailure:">readObjectWithId:inSchema:options:onSuccess:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/retryCustomCodeRequest:options:onSuccess:onFailure:">retryCustomCodeRequest:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:">updateAtomicCounterWithId:field:inSchema:by:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:">updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObjectWithId:inSchema:update:onSuccess:onFailure:">updateObjectWithId:inSchema:update:onSuccess:onFailure:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateObjectWithId:inSchema:update:options:onSuccess:onFailure:">updateObjectWithId:inSchema:update:options:onSuccess:onFailure:</a></span></li>
 	
 </ul></li>
 
@@ -219,7 +233,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;createObject:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/createObject:inSchema:options:onSuccess:onFailure:">&ndash;&nbsp;createObject:inSchema:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Create a new object in your StackMob datastore.</p></span>
 	</span>
 	
@@ -233,7 +247,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/readObjectWithId:inSchema:options:onSuccess:onFailure:">&ndash;&nbsp;readObjectWithId:inSchema:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Read an existing object from your StackMob datastore (with request options).</p></span>
 	</span>
 	
@@ -247,7 +261,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:">&ndash;&nbsp;updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/updateObjectWithId:inSchema:update:options:onSuccess:onFailure:">&ndash;&nbsp;updateObjectWithId:inSchema:update:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Update an existing object in your StackMob datastore (with request options).</p></span>
 	</span>
 	
@@ -261,7 +275,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:">&ndash;&nbsp;updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:">&ndash;&nbsp;updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Do an atomic update on a particular value (with request options).</p></span>
 	</span>
 	
@@ -275,7 +289,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:">&ndash;&nbsp;deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/deleteObjectId:inSchema:options:onSuccess:onFailure:">&ndash;&nbsp;deleteObjectId:inSchema:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Delete an existing object from your StackMob datastore (with request options).</p></span>
 	</span>
 	
@@ -297,7 +311,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performQuery:withOptions:onSuccess:onFailure:">&ndash;&nbsp;performQuery:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/performQuery:options:onSuccess:onFailure:">&ndash;&nbsp;performQuery:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Execute a query against your StackMob datastore (with request options).</p></span>
 	</span>
 	
@@ -311,8 +325,37 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performCount:withOptions:onSuccess:onFailure:">&ndash;&nbsp;performCount:withOptions:onSuccess:onFailure:</a></code>
+		<code><a href="#//api/name/performCount:options:onSuccess:onFailure:">&ndash;&nbsp;performCount:options:onSuccess:onFailure:</a></code>
 		<span class="tooltip"><p>Count the results that would be returned by a query against your StackMob datastore (with request options).</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Performing Custom Code Methods" name="task_Performing Custom Code Methods"></a>
+						<h3 class="subsubtitle task-title">Performing Custom Code Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performCustomCodeRequest:onSuccess:onFailure:">&ndash;&nbsp;performCustomCodeRequest:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Calls <a href="#//api/name/performCustomCodeRequest:options:onSuccess:onFailure:">performCustomCodeRequest:options:onSuccess:onFailure:</a> with <a href="../Classes/SMRequestOptions.html#//api/name/options"><code>[SMRequestOptions options]</code></a> for the parameter <code>options</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/performCustomCodeRequest:options:onSuccess:onFailure:">&ndash;&nbsp;performCustomCodeRequest:options:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Execute a custom code method on StackMob.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/retryCustomCodeRequest:options:onSuccess:onFailure:">&ndash;&nbsp;retryCustomCodeRequest:options:onSuccess:onFailure:</a></code>
+		<span class="tooltip"><p>Retry executing a custom code method on StackMob.</p></span>
 	</span>
 	
 	
@@ -395,8 +438,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/createObject:inSchema:withOptions:onSuccess:onFailure:" title="createObject:inSchema:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">createObject:inSchema:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/createObject:inSchema:options:onSuccess:onFailure:" title="createObject:inSchema:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">createObject:inSchema:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -406,7 +449,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)createObject:(NSDictionary *)<em>theObject</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)createObject:(NSDictionary *)<em>theObject</em> inSchema:(NSString *)<em>schema</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -522,8 +565,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/deleteObjectId:inSchema:withOptions:onSuccess:onFailure:" title="deleteObjectId:inSchema:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">deleteObjectId:inSchema:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/deleteObjectId:inSchema:options:onSuccess:onFailure:" title="deleteObjectId:inSchema:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">deleteObjectId:inSchema:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -533,7 +576,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)deleteObjectId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreObjectIdSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)deleteObjectId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreObjectIdSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -700,8 +743,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performCount:withOptions:onSuccess:onFailure:" title="performCount:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">performCount:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/performCount:options:onSuccess:onFailure:" title="performCount:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performCount:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -711,7 +754,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performCount:(SMQuery *)<em>query</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMCountSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)performCount:(SMQuery *)<em>query</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMCountSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -745,6 +788,128 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performCustomCodeRequest:onSuccess:onFailure:" title="performCustomCodeRequest:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performCustomCodeRequest:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calls <a href="#//api/name/performCustomCodeRequest:options:onSuccess:onFailure:">performCustomCodeRequest:options:onSuccess:onFailure:</a> with <a href="../Classes/SMRequestOptions.html#//api/name/options"><code>[SMRequestOptions options]</code></a> for the parameter <code>options</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performCustomCodeRequest:(SMCustomCodeRequest *)<em>customCodeRequest</em> onSuccess:(SMFullResponseSuccessBlock)<em>successBlock</em> onFailure:(SMFullResponseFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customCodeRequest</em></dt>
+			<dd><p>The request to execute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block to call upon success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The block to call upon failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/performCustomCodeRequest:options:onSuccess:onFailure:" title="performCustomCodeRequest:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performCustomCodeRequest:options:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Execute a custom code method on StackMob.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)performCustomCodeRequest:(SMCustomCodeRequest *)<em>customCodeRequest</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMFullResponseSuccessBlock)<em>successBlock</em> onFailure:(SMFullResponseFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>customCodeRequest</em></dt>
+			<dd><p>The request to execute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>The options for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block to call upon success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The block to call upon failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>See <a href="https://stackmob.com/devcenter/docs/Getting-Started:-Custom-Code-SDK">Getting Started With Custom Code</a> for more information.</p>
+	</div>
 	
 	
 	
@@ -817,8 +982,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performQuery:withOptions:onSuccess:onFailure:" title="performQuery:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">performQuery:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/performQuery:options:onSuccess:onFailure:" title="performQuery:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">performQuery:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -828,7 +993,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performQuery:(SMQuery *)<em>query</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultsSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)performQuery:(SMQuery *)<em>query</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMResultsSuccessBlock)<em>successBlock</em> onFailure:(SMFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -939,8 +1104,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/readObjectWithId:inSchema:withOptions:onSuccess:onFailure:" title="readObjectWithId:inSchema:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">readObjectWithId:inSchema:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/readObjectWithId:inSchema:options:onSuccess:onFailure:" title="readObjectWithId:inSchema:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">readObjectWithId:inSchema:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -950,7 +1115,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)readObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)readObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreObjectIdFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -989,6 +1154,72 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMDataStore.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/retryCustomCodeRequest:options:onSuccess:onFailure:" title="retryCustomCodeRequest:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">retryCustomCodeRequest:options:onSuccess:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retry executing a custom code method on StackMob.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)retryCustomCodeRequest:(NSURLRequest *)<em>request</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMFullResponseSuccessBlock)<em>successBlock</em> onFailure:(SMFullResponseFailureBlock)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>The request to execute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>The options for this request.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>The block to call upon success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>The block to call upon failure.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method should only be called by developers defining their own custom code retry blocks.  See <a href="../Classes/SMRequestOptions.html">SMRequestOptions</a> method <code>addSMErrorServiceUnavailableRetryBlock:</code>.</p>
+	</div>
 	
 	
 	
@@ -1076,8 +1307,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:" title="updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">updateAtomicCounterWithId:field:inSchema:by:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:" title="updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateAtomicCounterWithId:field:inSchema:by:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -1087,7 +1318,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateAtomicCounterWithId:(NSString *)<em>theObjectId</em> field:(NSString *)<em>field</em> inSchema:(NSString *)<em>schema</em> by:(int)<em>increment</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateAtomicCounterWithId:(NSString *)<em>theObjectId</em> field:(NSString *)<em>field</em> inSchema:(NSString *)<em>schema</em> by:(int)<em>increment</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -1218,8 +1449,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:" title="updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:"></a>
-	<h3 class="subsubtitle method-title">updateObjectWithId:inSchema:update:withOptions:onSuccess:onFailure:</h3>
+	<a name="//api/name/updateObjectWithId:inSchema:update:options:onSuccess:onFailure:" title="updateObjectWithId:inSchema:update:options:onSuccess:onFailure:"></a>
+	<h3 class="subsubtitle method-title">updateObjectWithId:inSchema:update:options:onSuccess:onFailure:</h3>
 	
 	
 	
@@ -1229,7 +1460,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)updateObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> update:(NSDictionary *)<em>updatedFields</em> withOptions:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)updateObjectWithId:(NSString *)<em>theObjectId</em> inSchema:(NSString *)<em>schema</em> update:(NSDictionary *)<em>updatedFields</em> options:(SMRequestOptions *)<em>options</em> onSuccess:(SMDataStoreSuccessBlock)<em>successBlock</em> onFailure:(SMDataStoreFailureBlock)<em>failureBlock</em></code></div>
 
     
 	
@@ -1301,7 +1532,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-08)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
