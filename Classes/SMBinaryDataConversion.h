@@ -23,7 +23,7 @@
  
  Once you have your content in NSData form, pass it to the stringForBinaryData:name:contentType: method.
  
-        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];
     NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile];
  

@@ -266,6 +266,10 @@
 
 /**
  Calls performCustomCodeRequest:options:onSuccess:onFailure: with `[SMRequestOptions options]` for the parameter `options`.
+ 
+ @param customCodeRequest The request to execute.
+ @param successBlock The block to call upon success.
+ @param failureBlock The block to call upon failure.
  */
 - (void)performCustomCodeRequest:(SMCustomCodeRequest *)customCodeRequest onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock;
 /**
