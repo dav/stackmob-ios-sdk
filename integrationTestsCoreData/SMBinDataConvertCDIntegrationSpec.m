@@ -15,16 +15,17 @@
  */
 
 #import <Kiwi/Kiwi.h>
+#import "StackMob.h"
+#import "SMClient.h"
 #import "SMCoreDataStore.h"
 #import "SMIntegrationTestHelpers.h"
 #import "SMCoreDataIntegrationTestHelpers.h"
 #import "Superpower.h"
-#import "SMData.h"
-#import "StackMob.h"
+#import "SMBinaryDataConversion.h"
 
-SPEC_BEGIN(SMDataCDIntegrationSpec)
+SPEC_BEGIN(SMBinDataConvertCDIntegrationSpec)
 
-describe(@"SMDataCDIntegration", ^{
+describe(@"SMBinDataConvertCDIntegration", ^{
     __block SMClient *client = nil;
     __block SMCoreDataStore *coreDataStore = nil;
     __block NSManagedObjectModel *mom = nil;
@@ -46,7 +47,7 @@ describe(@"SMDataCDIntegration", ^{
             NSString* pathToImageFile = [bundle pathForResource:@"goatPic" ofType:@"jpeg"];
             NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile options:NSDataReadingMappedIfSafe error:&error];
             [error shouldBeNil];
-            dataString = [SMData stringForBinaryData:theData withName:@"whatever" andContentType:@"image/jpeg"];
+            dataString = [SMBinaryDataConversion stringForBinaryData:theData name:@"whatever" contentType:@"image/jpeg"];
             [dataString shouldNotBeNil];
             [superpower setName:@"cool"];
             [superpower setValue:dataString forKey:@"pic"];
@@ -64,7 +65,6 @@ describe(@"SMDataCDIntegration", ^{
             }];
         });
     });
-    
 });
 
 SPEC_END

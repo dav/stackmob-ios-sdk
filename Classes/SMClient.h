@@ -504,7 +504,7 @@
  @param successBlock Completion block called on success.
  @param failureBlock Completion block called on failure.
  */
-- (void)getLoggedInUserTwitterInfoWithOnSuccess:(SMResultSuccessBlock)successBlock
+- (void)getLoggedInUserTwitterInfoOnSuccess:(SMResultSuccessBlock)successBlock
                                       onFailure:(SMFailureBlock)failureBlock;
 
 

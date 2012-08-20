@@ -238,7 +238,7 @@
 
 - (void)retryCustomCodeRequest:(NSURLRequest *)request options:(SMRequestOptions *)options onSuccess:(SMFullResponseSuccessBlock)successBlock onFailure:(SMFullResponseFailureBlock)failureBlock
 {
-    [self queueRequest:request options:options onSuccess:successBlock onFailure:failureBlock];
+    [self queueRequest:[self.session signRequest:request] options:options onSuccess:successBlock onFailure:failureBlock];
 }
 
 @end

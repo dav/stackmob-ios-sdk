@@ -15,11 +15,11 @@
  */
 
 #import <Kiwi/Kiwi.h>
-#import "SMData.h"
+#import "SMBinaryDataConversion.h"
 
-SPEC_BEGIN(SMDataSpec)
+SPEC_BEGIN(SMBinaryDataConversionSpec)
 
-describe(@"SMData init", ^{
+describe(@"SMBinaryDataConversion init", ^{
     __block NSData *theData = nil;
     beforeEach(^{
         NSError *error = nil;
@@ -34,13 +34,12 @@ describe(@"SMData init", ^{
     describe(@"return a StackMob string version for NSData", ^{
         __block NSString *fieldValueForBinaryData = nil;
         beforeEach(^{
-            fieldValueForBinaryData = [SMData stringForBinaryData:theData withName:@"goatPic.jpeg" andContentType:@"image/jpeg"]; 
+            fieldValueForBinaryData = [SMBinaryDataConversion stringForBinaryData:theData name:@"goatPic.jpeg" contentType:@"image/jpeg"]; 
         });
         it(@"data should not be nil", ^{
             [fieldValueForBinaryData shouldNotBeNil];
         });
     });
 });
-
 
 SPEC_END

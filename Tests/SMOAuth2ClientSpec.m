@@ -118,7 +118,7 @@ describe(@"Generating a request", ^{
     });
 });
 
-describe(@"-customCodeRequest:withOptions", ^{
+describe(@"-customCodeRequest:options", ^{
     context(@"given a custom code request", ^{
         __block SMCustomCodeRequest *request = nil;
         __block SMClient *client = nil;

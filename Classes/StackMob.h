@@ -45,3 +45,5 @@
 #import "SMIncrementalStore+Query.h"
 #import "SMResponseBlocks.h"
 
+#import "SMBinaryDataConversion.h"
+
