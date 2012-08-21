@@ -31,6 +31,133 @@
 				</div>
 				<div id="container">
 					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>Welcome to the StackMob iOS SDK Documentation!</h1>
+
+<h3>Current Version: 1.0.0beta.2</h3>
+
+<h2>Overview</h2>
+
+<p>The goal of the iOS SDK is to provide the best experience possible for developing an application that uses StackMob as a cloud backend.</p>
+
+<h3>How is the new iOS SDK different from the older version?</h3>
+
+<p>The biggest difference between the new and the current SDKs is our use of Core Data as a foundation for the new SDK. We believe Core Data is a better approach for integrating StackMob’s REST based API into an iOS application.</p>
+
+<p>We&rsquo;ve also separated our Push Notification API into a separate SDK. For more information, see the <a href="http://stackmob.github.com/stackmob-ios-push-sdk/index.html">iOS Push SDK Reference</a>.</p>
+
+<h3>Why base the new SDK on Core Data?</h3>
+
+<p>Our number one goal is to create a better experience. Core Data allows us to place a familiar wrapper around StackMob REST calls and datastore API. iOS developers can leverage their existing knowledge of Core Data to quickly integrate StackMob into their applications.  For those interested in sticking to the REST-based way of making requests, we provide the full data store API.</p>
+
+<h3>Reporting issues or feature requests</h3>
+
+<p>You can file issues through the <a href="https://github.com/stackmob/stackmob-ios-sdk/issues">GitHub issue tracker</a>.</p>
+
+<h3>Still have questions about the new iOS SDK?</h3>
+
+<p>Email us at <a href="mailto:support@stackmob.com">support@stackmob.com</a>.</p>
+
+<h2>Getting Started</h2>
+
+<p>If you don&rsquo;t already have the StackMob SDK imported into your application, <a href="https://stackmob.com/platform/start">get started with StackMob</a>.</p>
+
+<p><strong>The fundamental class for StackMob is SMClient</strong>.  From an instance of this class you have access to a configured managed object context and persistent store coordinator as well as a REST-based data store. Check out the <a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMClient.html">class reference for SMClient</a> for more information.  Let&rsquo;s see how to initialize our <code>SMClient</code>:</p>
+
+<h3>Initialize your SMClient</h3>
+
+<p>Wherever you plan to use StackMob, add <code>#import "StackMob.h"</code> to the header file.</p>
+
+<p>Create a variable of class <code>SMClient</code>, most likely in your AppDelegate file where you initialize other application wide variables, and initalize it like this:</p>
+
+<pre><code>// Assuming your variable is decalred SMClient *client;
+client = [[SMClient alloc] initWithAPIVersion:&lt;api_version&gt; publicKey:&lt;public_key&gt;];
+</code></pre>
+
+<p>If you haven&rsquo;t found your public key yet, check out <strong>Manage App Info</strong> under the <strong>App Settings</strong> sidebar on the <a href="https://stackmob.com/platform">Platform page</a>.</p>
+
+<h3>Start persisting data</h3>
+
+<p>There are two ways to persist data to StackMob:</p>
+
+<ul>
+<li>Core Data</li>
+<li>Lower Level Datastore API</li>
+</ul>
+
+
+<h4>Core Data</h4>
+
+<p>StackMob recommends using Core Data… it provides a powerful and robust object graph management system that otherwise would be a nightmare to implement.  Although it may have a reputation for being pretty complex, the basics are easy to grasp and understanding.  If you want to learn the basics, check out <strong>Core Data References</strong> below.</p>
+
+<p>The three main pieces of Core Data are instances of:</p>
+
+<ul>
+<li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectContext_Class/NSManagedObjectContext.html">NSManagedObjectContext</a> &ndash; This is what you use to create, read, update and delete objects in your database.</li>
+<li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/CoreDataFramework/Classes/NSPersistentStoreCoordinator_Class/NSPersistentStoreCoordinator.html">NSPersistentStoreCoordinator</a> &ndash; Coordinates between the managed object context and the actual database, in this case StackMob.</li>
+<li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/CoreDataFramework/Classes/NSManagedObjectModel_Class/Reference/Reference.html">NSManagedObjectModel</a> &ndash; References a file where you defined your object graph.</li>
+</ul>
+
+
+<p><strong>Access a StackMob-configured managed object context</strong></p>
+
+<p>You can obtain a managed object context configured from your SMClient instance like this:</p>
+
+<pre><code>// aManagedObjectModel is an initialized instance of NSManagedObjectModel
+// client is your instance of SMClient
+SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:aManagedObjectModel];
+
+// assuming you have a variable called managedObjectContext
+self.managedObjectContext = [coreDataStore managedObjectContext];
+</code></pre>
+
+<p>Use this instance of NSManagedObjectContext throughout your application.</p>
+
+<h4>Lower Level Datastore API</h4>
+
+<p>If you want to make direct REST-based calls to the datastore, grab an instance of SMDataStore like this:</p>
+
+<pre><code>SMDataStore *dataStore = [client dataStore];
+</code></pre>
+
+<p>Check out <a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMDataStore.html">SMDataStore</a> for all available methods.</p>
+
+<h2>Classes To Check Out</h2>
+
+<ul>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMClient.html">SMClient</a> &ndash; Gives you access to everything you need to communicate with StackMob.</li>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMCoreDataStore.html">SMCoreDataStore</a> &ndash;  Gives you access to a configured NSManagedObjectContext communicate with StackMob directly through Core Data.</li>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMDataStore.html">SMDataStore</a> &ndash; Gives you access to make direct REST-based calls to StackMob.</li>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMRequestOptions.html">SMRequestOptions</a> &ndash; When making direct calls to StackMob, an instance of SMRequestOptions gives you request configuration options.</li>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMCustomCodeRequest.html">SMCustomCodeRequest</a> &ndash; Starting place for making custom code calls.</li>
+<li><a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMBinaryDataConversion.html">SMBinaryDataConversion</a> &ndash; Convert NSData to NSString for persisting to a field on StackMob with type Binary Data (s3 Integration).</li>
+</ul>
+
+
+<h2>Tutorials</h2>
+
+<ul>
+<li><a href="https://stackmob.com/devcenter/docs/StackMob-iOS-SDK-Tutorial">Your First StackMob Application</a></li>
+</ul>
+
+
+<h2>Core Data References</h2>
+
+<ul>
+<li><a href="http://www.raywenderlich.com/934/core-data-on-ios-5-tutorial-getting-started">Getting Started With Core Data</a> &ndash; Ray Wenderlich does a great tutorial on the basics of Core Data.  I would definitely start here.</li>
+<li><a href="http://mobile.tutsplus.com/tutorials/iphone/iphone-core-data/">iPhone Core Data: Your First Steps</a> &ndash; Well organized tutorial on Core Data.</li>
+<li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/CoreData/cdProgrammingGuide.html#//apple_ref/doc/uid/TP40001075">Introduction To Core Data</a> &ndash; Apple&rsquo;s Core Data Programming Guide</li>
+<li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/Predicates/predicates.html#//apple_ref/doc/uid/TP40001789">Introduction To Predicates</a> &ndash; Apple&rsquo;s Predicates Programming Guide</li>
+</ul>
+
+
+<h2>Index</h2>
+						
+						
+					</div>
+					
                         
                     
 					
@@ -104,7 +231,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-20)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

@@ -275,7 +275,7 @@ SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:sel
 self.managedObjectContext = [coreDataStore managedObjectContext];
 </code></pre>
 
-<p>It is important only to insantiate one <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> instance and use the same managedObjectContext throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.</p>
+<p>It is important only to insantiate one <code>SMCoreDataStore</code> instance and use the same <code>NSManagedObjectInstance</code> instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.</p>
 
 <h2>User Sessions</h2>
 
@@ -309,7 +309,7 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/defaultClient">+&nbsp;defaultClient</a></code>
-		<span class="tooltip"><p>A convenient shared <code>SMClient</code> instance. This will be the first <code>SMClient</code> object created, unless overridden
+		<span class="tooltip"><p>A shared <code>SMClient</code> instance, for convenience. This will be the first <code>SMClient</code> object created, unless overridden
 via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
 	</span>
 	
@@ -339,14 +339,14 @@ via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/coreDataStoreWithManagedObjectModel:">&ndash;&nbsp;coreDataStoreWithManagedObjectModel:</a></code>
-		<span class="tooltip"><p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p></span>
+		<span class="tooltip"><p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call the <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> that has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/dataStore">&ndash;&nbsp;dataStore</a></code>
-		<span class="tooltip"><p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p></span>
+		<span class="tooltip"><p>A <code>dataStore</code> instance should be used to make direct REST calls to StackMob.  See <a href="../Classes/SMDataStore.html">SMDataStore</a> for basic CRUD methods.</p></span>
 	</span>
 	
 	
@@ -602,7 +602,7 @@ via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>A convenient shared <code>SMClient</code> instance. This will be the first <code>SMClient</code> object created, unless overridden
+		<p>A shared <code>SMClient</code> instance, for convenience. This will be the first <code>SMClient</code> object created, unless overridden
 via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p>
 	</div>		
 	
@@ -760,7 +760,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	
 	<div class="method-subsection brief-description">
-		<p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p>
+		<p>With the instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a> returned by this method you can call the <code>&ndash; (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of <code>NSManagedObjectContext</code> that has been configured to StackMob.  It includes an <code>NSPersistentStoreCoordinator</code> of type <a href="../Classes/SMIncrementalStore.html">SMIncrementalStore</a> which has been initialized with the <code>NSManagedObjectModel</code> provided to this method.</p>
 	</div>		
 	
     
@@ -783,7 +783,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An instance of <a href="../Classes/SMCoreDataStore.html">SMCoreDataStore</a>.</p>
+		<p>An instance of <code>SMCoreDataStore</code>.</p>
 	</div>
 	
 	
@@ -1023,7 +1023,7 @@ will result in an error. This API requires the user to be logged in as well as t
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>username</em></dt>
-			<dd><p>The username to user, rather than getting one from Facebook.</p></dd>
+			<dd><p>The username to user, rather than getting one from Twitter.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1065,7 +1065,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p>
+		<p>A <code>dataStore</code> instance should be used to make direct REST calls to StackMob.  See <a href="../Classes/SMDataStore.html">SMDataStore</a> for basic CRUD methods.</p>
 	</div>		
 	
     
@@ -1078,9 +1078,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <a href="../Classes/SMDataStore.html">SMDataStore</a> instance using this client&rsquo;s configurations.</p>
-
-<p>A dataStore should be used to make direct REST calls to StackMob.  See <a href="../Classes/SMDataStore.html">SMDataStore</a> for basic CRUD methods.</p>
+		<p>An <code>SMDataStore</code> instance using this client&rsquo;s configurations.</p>
 	</div>
 	
 	
@@ -1254,7 +1252,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The logged in user must have a linked Twitter account, via either
-createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+<a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>.</p>
 	</div>
 	
 	
@@ -1844,7 +1842,7 @@ createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterT
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The credentials should match a existing user object that has a linked Twitter account, via either createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+		<p>The credentials should match a existing user object that has a linked Twitter account, via either <a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>.</p>
 	</div>
 	
 	
@@ -1916,7 +1914,7 @@ createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterT
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The credentials should match a existing user object that has a linked Twitter account, via either
-createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+<a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>.</p>
 	</div>
 	
 	
@@ -2124,7 +2122,7 @@ createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterT
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code> to the failure block.</p>
+		<p>This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code> to the failure block.</p>
 	</div>
 	
 	
@@ -2200,7 +2198,7 @@ createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterT
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this api. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code>.</p>
+		<p>This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code>.</p>
 	</div>
 	
 	
@@ -2493,7 +2491,7 @@ password. They can then use that temporary password to login with <a href="#//ap
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>The logged in user must have a linked Twitter account, via either
-createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.</p>
+<a href="#//api/name/createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>, or <a href="#//api/name/linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:">linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:</a>.</p>
 	</div>
 	
 	
@@ -2523,7 +2521,7 @@ createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterT
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-20)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-21)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
