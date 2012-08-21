@@ -19,9 +19,9 @@
 /**
  The `SMCustomCodeRequest` class is for initializing instances of requests for custom code methods.
  
- Use the init method that corresponds to the HTTP verb you want to use for the request.  To execute the request, call `performCustomCodeRequest:onSuccess:onFailure:` on your SMClient `dataStore` instance, passing the instance of `SMCustomCodeRequest`.
+ Use the init method that corresponds to the HTTP verb you want to use for the request.  To execute the request, call `performCustomCodeRequest:onSuccess:onFailure:` on your <SMClient> `dataStore` instance, passing the instance of `SMCustomCodeRequest`.
  
- You can optionally add request headers and/or a retry block in the case of a 503 `SMErrorServiceUnavailable` response by creating an instance of SMRequestOptions and passing it to `performCustomCodeRequest:options:onSuccess:onFailure:`.
+ You can optionally add request headers and/or a retry block in the case of a 503 `SMErrorServiceUnavailable` response by creating an instance of <SMRequestOptions> and passing it to `performCustomCodeRequest:options:onSuccess:onFailure:`.
  */
 @interface SMCustomCodeRequest : NSObject
 

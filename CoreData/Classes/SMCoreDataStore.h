@@ -19,13 +19,13 @@
 @class SMIncrementalStore;
 
 /**
- The `SMCoreDataStore` class provides an `NSPersistentStoreCoordinator` and `NSManagedObjectContext` instance to the developer, configured to StackMob using the SMDataStore and SMUserSession credentials.
+ The `SMCoreDataStore` class provides an `NSPersistentStoreCoordinator` and `NSManagedObjectContext` instance to the developer, configured to StackMob using the `SMUserSession` credentials.
  
  ## Using SMCoreDataStore ##
  
- With your `SMCoreDataStore` object you can retrieve a managed object context configured with a SMIncrementalStore as it's persistent store to allow communication to StackMob from Core Data.  This instance of `NSManagedObjectContext` should be used throughout the duration of your application by being passed to each controller's seperate `NSManagedObjectContext` instance.
+ With your `SMCoreDataStore` object you can retrieve a managed object context configured with a `SMIncrementalStore` as it's persistent store to allow communication to StackMob from Core Data.  This instance of `NSManagedObjectContext` should be used throughout the duration of your application by being passed to each controller's seperate `NSManagedObjectContext` instance.
  
- @note You should not have to initialize an instance of this class directly.  Instead, initialize an instance of SMClient and use the method coreDataStoreWithManagedObjectModel: to retrieve an instance completely configured and ready to communicate to StackMob.
+ @note You should not have to initialize an instance of this class directly.  Instead, initialize an instance of <SMClient> and use the method <coreDataStoreWithManagedObjectModel:> to retrieve an instance completely configured and ready to communicate to StackMob.
  */
 @interface SMCoreDataStore : SMDataStore
 
@@ -34,9 +34,9 @@
 ///-------------------------------
 
 /**
- An instance of `NSPersistentStoreCoordinator` with the SMIncrementalStore class as it's persistent store type.
+ An instance of `NSPersistentStoreCoordinator` with the `SMIncrementalStore` class as it's persistent store type.
  
- Uses the `NSManagedObjectModel` passed to the coreDataStoreWithManagedObjectModel: method in SMClient.
+ Uses the `NSManagedObjectModel` passed to the `coreDataStoreWithManagedObjectModel:` method in <SMClient>.
  */
 @property(nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 

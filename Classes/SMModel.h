@@ -17,7 +17,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- `NSManagedObject` sublcasses that have an attribute to be used by StackMob as it's primary key field that does not conform to lowercaseEntityName_id (i.e. person_id for entity Person) should adopt this protocol.  The will override the primaryKeyFieldName method to specify the name of the attribute to be used by StackMob as the primary key field.
+ `NSManagedObject` sublcasses that have an attribute to be used by StackMob as it's primary key field that does not conform to lowercaseEntityName_id (i.e. person_id for entity Person) should adopt this protocol.  The will override the <primaryKeyFieldName> method to specify the name of the attribute to be used by StackMob as the primary key field.
  */
 @protocol SMModel <NSObject>
 

@@ -22,12 +22,12 @@
 @interface NSDictionary (AtomicCounter)
 
 /**
- Returns a new dictionary with a new entry representing an atomic counter update for a field
+ Returns a new dictionary with a new entry representing an atomic counter update for a field.
  
- Updating an atomic counter means incrementing or decrementing a value atomically such that you don't need to worry about concurrency issues. This might power a thumbs-up button counter or the score in a game. The dictionary you get from this method can then be passed into `SMDataStore` methods.
+ Updating an atomic counter means incrementing or decrementing a value atomically such that you don't need to worry about concurrency issues. This might power a thumbs-up button counter or the score in a game. The dictionary you get from this method can then be passed into <SMDataStore> methods.
  
- @param field The field to increment
- @param value The amount to increment by. Can be positive or negative
+ @param field The field to increment.
+ @param value The amount to increment by. Can be positive or negative.
  */
 - (NSDictionary *)dictionaryByAppendingCounterUpdateForField:(NSString *)field by:(int)value;
 @end
@@ -38,12 +38,12 @@
 @interface NSMutableDictionary (AtomicCounter)
 
 /**
- Set a new entry in the dictionary representing an atomic counter update for a field
+ Set a new entry in the dictionary representing an atomic counter update for a field.
  
- Updating an atomic counter means incrementing or decrementing a value atomically such that you don't need to worry about concurrency issues. This might power a thumbs-up button counter or the score in a game. After you call this method, the dictionary can be passed into `SMDataStore` methods.
+ Updating an atomic counter means incrementing or decrementing a value atomically such that you don't need to worry about concurrency issues. This might power a thumbs-up button counter or the score in a game. After you call this method, the dictionary can be passed into <SMDataStore> methods.
  
- @param field The field to increment
- @param value The amount to increment by. Can be positive or negative
+ @param field The field to increment.
+ @param value The amount to increment by. Can be positive or negative.
  */
 - (void)updateCounterForField:(NSString *)field by:(int)value;
 @end

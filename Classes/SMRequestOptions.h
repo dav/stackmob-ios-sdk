@@ -50,12 +50,12 @@
 /**
  In the case that a 503 `SMErrorServiceUnavailable` response is returned, the number of times to retry.  The default is 3 times.
  
- The default retry action is to send the original request, resigned with up to date arguments. If a retryBlock has been added it is used in place of the default.
+ The default retry action is to send the original request, resigned with up to date arguments. If a <retryBlock> has been added it is used in place of the default.
  */
 @property(nonatomic, readwrite) NSInteger numberOfRetries;
 
 /**
- An optional block to call if the response returns a 503 `SMErrorServiceUnavailable`. Use addSMErrorServiceUnavailableRetryBlock: to set.
+ An optional block to call if the response returns a 503 `SMErrorServiceUnavailable`. Use <addSMErrorServiceUnavailableRetryBlock:> to set.
  
  `SMFailureRetryBlock` is defined as:
  
@@ -123,12 +123,12 @@
 /**
  Adds a retry block to be used in the event of a 503 `SMErrorServiceUnavailable` response.
  
- @param retryBlock An instance of SMFailureRetryBlock.
+ @param retryBlock An instance of <SMFailureRetryBlock>.
  
  When designing your retry block, consider the following:
  
- * The parameter `options` passed to the block will contain the original request SMRequestOptions instance, with numberOfRetries decremented by 1. This instance should be passed to any subsequent requests so that the retry block is called a finite amount of times.
- * To resend the request, call `retryCustomCodeRequest:options:onSuccess:onFailure:` on your SMClient `dataStore` instance.  The default values passed to this method should be the parameters passed to the block, unless you are intentionally redefining one of them.
+ * The parameter `options` passed to the block will contain the original request `SMRequestOptions` instance, with `numberOfRetries` decremented by 1. This instance should be passed to any subsequent requests so that the retry block is called a finite amount of times.
+ * To resend the request, call `retryCustomCodeRequest:options:onSuccess:onFailure:` on your `SMClient` `dataStore` instance.  The default values passed to this method should be the parameters passed to the block, unless you are intentionally redefining one of them.
  
  @param retryBlock The block to be used in place of the default retry action, which is resigning and resending the original request.
  */

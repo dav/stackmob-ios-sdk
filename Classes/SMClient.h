@@ -33,21 +33,21 @@
  
  `SMClient` sets default values for other configuration settings which may be set as necessary by your application.
  
- `SMClient` exposes a defaultClient for applications which use a globally available client to share configuration settings.
+ `SMClient` exposes a <defaultClient> for applications which use a globally available client to share configuration settings.
  
  ## Core Data Integration ##
  
- In order to use the Core Data integration, you must initialize an `SMClient` as well as a `NSManagedObjectModel`, then pass the `NSManagedObjectModel` instance to the `SMClient` instance method coreDataStoreWithManagedObjectModel: which returns an instance of SMCoreDataStore.  You can then retrieve an instance of `NSManagedObjectContext`:
+ In order to use the Core Data integration, you must initialize an `SMClient` as well as a `NSManagedObjectModel`, then pass the `NSManagedObjectModel` instance to the `SMClient` instance method <coreDataStoreWithManagedObjectModel:> which returns an instance of <SMCoreDataStore>.  You can then retrieve an instance of `NSManagedObjectContext`:
  
     SMClient *client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"12345"];
     SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:self.managedObjectModel];
     self.managedObjectContext = [coreDataStore managedObjectContext];
  
- It is important only to insantiate one SMCoreDataStore instance and use the same managedObjectContext throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.
+ It is important only to insantiate one `SMCoreDataStore` instance and use the same `NSManagedObjectInstance` instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.
  
  ## User Sessions ##
  
- When a client is instantiated, an instance of SMUserSession is initialized and configured with the provided settings.  This is where the user's OAuth2 credentials and token information is located, and is used by the internal SMDataStore instance to authenticate requests.
+ When a client is instantiated, an instance of <SMUserSession> is initialized and configured with the provided settings.  This is where the user's OAuth2 credentials and token information is located, and is used by the internal <SMDataStore> instance to authenticate requests.
  
  ## Facebook Authentication ##
  
@@ -77,8 +77,8 @@
 + (void)setDefaultClient:(SMClient *)client;
 
 /**
- A convenient shared `SMClient` instance. This will be the first `SMClient` object created, unless overridden
- via setDefaultClient:.
+ A shared `SMClient` instance, for convenience. This will be the first `SMClient` object created, unless overridden
+ via <setDefaultClient:>.
  */
 + (SMClient *)defaultClient;
 
@@ -117,18 +117,18 @@
 ///-------------------------------
 
 /**
- With the instance of SMCoreDataStore returned by this method you can call <code>- (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of `NSManagedObjectContext` has been configured to StackMob.  It includes an `NSPersistentStoreCoordinator` of type SMIncrementalStore which has been initialized with the `NSManagedObjectModel` provided to this method.
+ With the instance of <SMCoreDataStore> returned by this method you can call the <code>- (NSManagedObjectContext)managedObjectContext</code> method to retrieve an instance of `NSManagedObjectContext` that has been configured to StackMob.  It includes an `NSPersistentStoreCoordinator` of type <SMIncrementalStore> which has been initialized with the `NSManagedObjectModel` provided to this method.
  
  @param managedObjectModel An instance of `NSManagedObjectModel` set to the data model to be replicated on StackMob.
  
- @return An instance of SMCoreDataStore.
+ @return An instance of `SMCoreDataStore`.
  */
 - (SMCoreDataStore *)coreDataStoreWithManagedObjectModel:(NSManagedObjectModel *)managedObjectModel;
 
 /**
- @return An SMDataStore instance using this client's configurations.
+ A `dataStore` instance should be used to make direct REST calls to StackMob.  See <SMDataStore> for basic CRUD methods.
  
- A dataStore should be used to make direct REST calls to StackMob.  See SMDataStore for basic CRUD methods.
+ @return An `SMDataStore` instance using this client's configurations.
  */
 - (SMDataStore *)dataStore;
 
@@ -145,7 +145,7 @@
  @param username The username to log in with.
  @param password The password to log in with.
  @param successBlock Completion block called on successful login with the user object for the logged in user.
- @param failureBlock Completion block called on failure. If the error code is `SMErrorTemporaryPasswordResetRequired`, you should prompt the user supply a new password and call loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:.
+ @param failureBlock Completion block called on failure. If the error code is `SMErrorTemporaryPasswordResetRequired`, you should prompt the user supply a new password and call <loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:>.
  */
 - (void)loginWithUsername:(NSString *)username
                  password:(NSString *)password
@@ -161,7 +161,7 @@
  @param password The password to log in with.
  @param options An options object contains headers and other configuration for this request.
  @param successBlock Completion block called on successful login with the user object for the logged in user.
- @param failureBlock Completion block called on failure. If the error code is `SMErrorTemporaryPasswordResetRequired`, you should prompt the user supply a new password and call loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:.
+ @param failureBlock Completion block called on failure. If the error code is `SMErrorTemporaryPasswordResetRequired`, you should prompt the user supply a new password and call <loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:>.
  */
 - (void)loginWithUsername:(NSString *)username
                  password:(NSString *)password
@@ -172,7 +172,7 @@
 /**
  Login a user to your app with a username and temporary password, changing the users's password to the supplied new password.
  
- This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via loginWithUsername:password:onSuccess:onFailure: returning the error `SMErrorTemporaryPasswordResetRequired` to the failure block.
+ This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired` to the failure block.
  
  @param username The username to log in with.
  @param tempPassword The temporary password received via email.
@@ -189,7 +189,7 @@
 /**
  Login a user to your app with a username and temporary password, changing the users's password to the supplied new password. 
  
- This call is meant to be used as part of the forgotPassword flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this api. Your app can detect this situation via loginWithUsername:password:onSuccess:onFailure: returning the error `SMErrorTemporaryPasswordResetRequired`.
+ This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired`.
  
  @param username The username to log in with.
  @param tempPassword The temporary password received via email.
@@ -252,7 +252,7 @@
 - (BOOL)isLoggedIn;
 
 /**
- Check whether the user is logged out by returning the negation of isLoggedIn.
+ Check whether the user is logged out by returning the negation of <isLoggedIn>.
  
  @return `YES` if the current user is logged out, otherwise `NO`.
  */
@@ -276,7 +276,7 @@
  Kick off the "Forgot Password" process.
  
  This should be hooked up to a button on the login screen. An email will be sent to the user with a temporary 
- password. They can then use that temporary password to login with loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:.
+ password. They can then use that temporary password to login with <loginWithUsername:temporaryPassword:settingNewPassword:onSuccess:onFailure:>.
  
  @param username The user to send the email to.
  @param successBlock Completion block called on success.
@@ -348,7 +348,7 @@
 /**
  Login a user to your app with a Facebook token.
  
- The credentials should match a existing user object that has a linked Facebook account, via either createUserWithFacebookToken:onSuccess:onFailure:, or linkLoggedInUserWithFacebookToken:onSuccess:onFailure:.
+ The credentials should match a existing user object that has a linked Facebook account, via either <createUserWithFacebookToken:onSuccess:onFailure:>, or <linkLoggedInUserWithFacebookToken:onSuccess:onFailure:>.
  
  @param fbToken A Facebook access token obtained from Facebook.
  @param successBlock Completion block called on successful login with the user object for the logged in user.
@@ -361,7 +361,7 @@
 /**
  Login a user to your app with a Facebook token.
  
- The credentials should match a existing user object that has a linked Facebook account, via either createUserWithFacebookToken:onSuccess:onFailure:, or linkLoggedInUserWithFacebookToken:onSuccess:onFailure:.
+ The credentials should match a existing user object that has a linked Facebook account, via either <createUserWithFacebookToken:onSuccess:onFailure:>, or <linkLoggedInUserWithFacebookToken:onSuccess:onFailure:>.
  
  @param fbToken A Facebook access token obtained from Facebook.
  @param options An options object contains headers and other configuration for this request.
@@ -377,7 +377,7 @@
  Update the logged in users's Facebook status.
  
  The logged in user must have a linked Facebook account, via either 
- createUserWithFacebookToken:onSuccess:onFailure:, or linkLoggedInUserWithFacebookToken:onSuccess:onFailure:.
+ <createUserWithFacebookToken:onSuccess:onFailure:>, or <linkLoggedInUserWithFacebookToken:onSuccess:onFailure:>.
  
  @param message The message to post.
  @param successBlock Completion block called on success.
@@ -391,7 +391,7 @@
  Get Facebook info for the logged in users.
  
  The logged in user must have a linked Facebook account, via either 
- createUserWithFacebookToken:onSuccess:onFailure:, or linkLoggedInUserWithFacebookToken:onSuccess:onFailure:.
+ <createUserWithFacebookToken:onSuccess:onFailure:>, or <linkLoggedInUserWithFacebookToken:onSuccess:onFailure:>.
  
  @param successBlock Completion block called on success.
  @param failureBlock Completion block called on failure.
@@ -425,7 +425,7 @@
  
  @param twitterToken A Twitter token obtained from Twitter.
  @param twitterSecret A Twitter secret obtained from Twitter.
- @param username The username to user, rather than getting one from Facebook.
+ @param username The username to user, rather than getting one from Twitter.
  @param successBlock Completion block called on success.
  @param failureBlock Completion block called on failure.
  */
@@ -451,7 +451,7 @@
 /**
  Login a user to your app with twitter credentials.
  
- The credentials should match a existing user object that has a linked Twitter account, via either createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.
+ The credentials should match a existing user object that has a linked Twitter account, via either <createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>, or <linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>.
  
  @param twitterToken A Twitter token obtained from Twitter.
  @param twitterSecret A Twitter secret obtained from Twitter.
@@ -467,7 +467,7 @@
  Login a user to your app with twitter credentials.
  
  The credentials should match a existing user object that has a linked Twitter account, via either 
- createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.
+ <createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>, or <linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>.
  
  @param twitterToken A Twitter token obtained from Twitter.
  @param twitterSecret A Twitter secret obtained from Twitter.
@@ -485,7 +485,7 @@
  Update the logged in users's Twitter status.
  
  The logged in user must have a linked Twitter account, via either 
- createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.
+ <createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>, or <linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>.
  
  @param message The message to post.
  @param successBlock Completion block called on success.
@@ -499,7 +499,7 @@
  Get Twitter info for the logged in users.
  
  The logged in user must have a linked Twitter account, via either
- createUserWithTwitterToken:onSuccess:onFailure:, or linkLoggedInUserWithTwitterToken:onSuccess:onFailure:.
+ <createUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>, or <linkLoggedInUserWithTwitterToken:twitterSecret:onSuccess:onFailure:>.
  
  @param successBlock Completion block called on success.
  @param failureBlock Completion block called on failure.

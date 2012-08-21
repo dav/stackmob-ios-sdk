@@ -81,6 +81,7 @@
 
 /**
  Add the query criteria: field != value.
+ 
  @param field The field in the StackMob schema that is to be compared.
  @param value A constant value to be compared.
  */

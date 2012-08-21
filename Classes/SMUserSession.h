@@ -28,7 +28,7 @@
  * Re-authenticating a session using a refresh token.
  * Declaring whether a given request should be https or not.
  
- @note You should not need to instantiate your own `SMUserSession` instance.  Once is initialized when creating an SMClient and is used to monitor authentication for all requests sent through that client.
+ @note You should not need to instantiate your own `SMUserSession` instance.  One is initialized when creating an <SMClient> and is used to monitor authentication for all requests sent through that client.
  
  */
 @interface SMUserSession : NSObject
@@ -71,16 +71,16 @@
  @param publicKey Your StackMob application's OAuth2 public key.
  @param userSchema The StackMob schema that has been flagged as a user object.
  
- @return An instance of SMUserSession configured with the provided settings.
+ @return An instance of `SMUserSession` configured with the provided settings.
  */
 - (id)initWithAPIVersion:(NSString *)version apiHost:(NSString *)apiHost publicKey:(NSString *)publicKey userSchema:(NSString *)userSchema;
 
 /**
- Returns an instance of SMOAuth2Client configured to make requests over http or https.
+ Returns an instance of `SMOAuth2Client` configured to make requests over http or https.
  
  @param https `YES` is the client should be configured to make requests over https, `NO` for http.
  
- @return An instance of SMOAuth2Client configured according to the value of https.
+ @return An instance of `SMOAuth2Client` configured according to the value of https.
  */
 - (id)oauthClientWithHTTPS:(BOOL)https;
 

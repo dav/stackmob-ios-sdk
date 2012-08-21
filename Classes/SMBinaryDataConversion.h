@@ -17,11 +17,11 @@
 #import <Foundation/Foundation.h>
 
 /**
- `SMBinaryDataConversion` offers a class method stringForBinaryData:withName:andContentType: to decode binary data into a string.  This is then used to send to StackMob as the value for a field with type Binary Data.  The contents of the string will be parsed and the content will be stored on s3.  StackMob will then store the public url as the value.  A call to `refreshObject:mergeChanges:` on the managed object context will update the in-memory value to the url in the persistent store.
+ `SMBinaryDataConversion` offers a class method <stringForBinaryData:name:contentType:> to decode binary data into a string.  This is then used to send to StackMob as the value for a field with type Binary Data.  The contents of the string will be parsed and the content will be stored on s3.  StackMob will then store the public url as the value.  A call to `refreshObject:mergeChanges:` on the managed object context will update the in-memory value to the url in the persistent store.
  
  ## Example s3 Integration ##
  
- Once you have your content in NSData form, pass it to the stringForBinaryData:name:contentType: method.
+ Once you have your content in `NSData` form, pass it to the <stringForBinaryData:name:contentType:> method.
  
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];

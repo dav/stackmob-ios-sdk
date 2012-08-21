@@ -30,7 +30,7 @@
 @class SMCustomCodeRequest;
 
 /**
- `SMDataStore` exposes an interface for performing CRUD operations on known StackMob objects and for executing a SMQuery.
+ `SMDataStore` exposes an interface for performing CRUD operations on known StackMob objects and for executing a <SMQuery>.
  
  As a direct interface to StackMob, `SMDataStore` uses StackMob's terminology:
  - Operations are performed against a specific _schema_ (usually also the name of a model class or of an entity in a managed object model).
@@ -49,7 +49,7 @@
  Initialize a data store.
  
  @param apiVersion The API version of your StackMob application which this `SMDataStore` instance should use.
- @param session An instance of SMUserSession configured with the proper credentials.  This is used to properly authenticate requests.
+ @param session An instance of <SMUserSession> configured with the proper credentials.  This is used to properly authenticate requests.
  
  @return An instance of `SMDataStore` configured with the supplied apiVersion and session.
  */
@@ -224,7 +224,7 @@
 /** 
  Execute a query against your StackMob datastore.
   
- @param query A SMQuery object describing the query to perform.
+ @param query An `SMQuery` object describing the query to perform.
  @param successBlock A block to invoke after the query succeeds. Passed an array of object dictionaries returned from StackMob (if any).
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
@@ -233,7 +233,7 @@
 /** 
  Execute a query against your StackMob datastore (with request options).
   
- @param query A SMQuery object describing the query to perform.
+ @param query An `SMQuery` object describing the query to perform.
  @param options An options object contains headers and other configuration for this request.
  @param successBlock A block to invoke after the query succeeds. Passed an array of object dictionaries returned from StackMob (if any).
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
@@ -243,7 +243,7 @@
 /** 
  Count the results that would be returned by a query against your StackMob datastore.
   
- @param query A SMQuery object describing the query to perform.
+ @param query An `SMQuery` object describing the query to perform.
  @param successBlock A block to invoke when the count is complete.  Passed the number of objects returned that would by the query.
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
  */
@@ -252,7 +252,7 @@
 /** 
  Count the results that would be returned by a query against your StackMob datastore (with request options).
   
- @param query A SMQuery object describing the query to perform.
+ @param query An `SMQuery` object describing the query to perform.
  @param options An options object contains headers and other configuration for this request.
  @param successBlock A block to invoke when the count is complete.  Passed the number of objects that would be returned by the query.
  @param failureBlock A block to invoke if the data store fails to perform the query. Passed the error returned by StackMob.
@@ -265,7 +265,7 @@
 ///-------------------------------
 
 /**
- Calls performCustomCodeRequest:options:onSuccess:onFailure: with `[SMRequestOptions options]` for the parameter `options`.
+ Calls <performCustomCodeRequest:options:onSuccess:onFailure:> with `[SMRequestOptions options]` for the parameter `options`.
  
  @param customCodeRequest The request to execute.
  @param successBlock The block to call upon success.
@@ -287,7 +287,7 @@
 /**
  Retry executing a custom code method on StackMob.
  
- This method should only be called by developers defining their own custom code retry blocks.  See SMRequestOptions method `addSMErrorServiceUnavailableRetryBlock:`.
+ This method should only be called by developers defining their own custom code retry blocks.  See <SMRequestOptions> method `addSMErrorServiceUnavailableRetryBlock:`.
  
  @param request The request to execute.
  @param options The options for this request.

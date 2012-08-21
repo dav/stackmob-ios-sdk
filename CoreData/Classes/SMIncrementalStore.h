@@ -43,7 +43,7 @@ extern NSString *const SM_DataStoreKey;
  
  [Apple's NSIncrementalStore class reference](http://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/Reference/NSIncrementalStore.html)
  
- @note You should never have to instantiate your own instance of `SMIncrementalStore`.  It is used when creating a persistent store coordinator in SMCoreDataStore so that `NSPersistentStore` methods divert to the overriden versions in this class. 
+ @note You should never have to instantiate your own instance of `SMIncrementalStore`.  It is used when creating a persistent store coordinator in `SMCoreDataStore` so that `NSPersistentStore` methods divert to the overriden versions in this class. 
  */
 @interface SMIncrementalStore : NSIncrementalStore
 

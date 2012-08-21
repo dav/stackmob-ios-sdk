@@ -89,7 +89,7 @@ typedef void (^SMDataStoreObjectIdFailureBlock)(NSError *theError, NSString* the
 typedef void (^SMCountSuccessBlock)(NSNumber *count);
 
 /**
- When executing custom code requests, you can optionally define your own retry blocks in the event of a 503 `SMServiceUnavailable` response.  To do this pass a `SMFailureRetryBlock` instance to SMRequestOptions method `addSMErrorServiceUnavailableRetryBlock:`.
+ When executing custom code requests, you can optionally define your own retry blocks in the event of a 503 `SMServiceUnavailable` response.  To do this pass a `SMFailureRetryBlock` instance to <SMRequestOptions> method `addSMErrorServiceUnavailableRetryBlock:`.
  
  @param request The original request in `NSURLRequest` form.
  @param response The response from the server.

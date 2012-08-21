@@ -15,7 +15,7 @@
  */
 
 /**
- SMError is a class which translates numeric error codes into readable errors, so you know what went wrong.
+ `SMError` is a class which translates numeric error codes into readable errors, so you know what went wrong.
  */
 
 #import <Foundation/Foundation.h>

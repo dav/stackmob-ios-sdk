@@ -18,7 +18,7 @@
 #import "SMQuery.h"
 
 /**
- A category on SMIncrementalStore providing methods to translate fetch requests into instances of SMQuery.
+ A category on <SMIncrementalStore> providing methods to translate fetch requests into instances of <SMQuery>.
  */
 @interface SMIncrementalStore (Query)
 
@@ -26,9 +26,9 @@
  Given a fetch request, returns the equivalent query to be sent to StackMob.
  
  @param fetchRequest The fetch request to be translated.
- @param error If an error occurs during the translation, it is placed here as an instance of SMError.
+ @param error If an error occurs during the translation, it is placed here as an instance of `SMError`.
  
- @return An instance of SMQuery representing the recieved fetch request.
+ @return An instance of `SMQuery` representing the recieved fetch request.
  */
 + (SMQuery *)queryForFetchRequest:(NSFetchRequest *)fetchRequest 
                             error:(NSError *__autoreleasing *)error;
@@ -36,10 +36,10 @@
  Given a fetch request with a predicate, returns the equivalent query to be sent to StackMob.
  
  @param entityDescription The description of the entity to be translated.
- @param predicate The predicate to applied to the fetchRequest.
- @param error If an error occurs during the translation, it is placed here as an instance of SMError.
+ @param predicate The predicate to applied to the fetch request.
+ @param error If an error occurs during the translation, it is placed here as an instance of `SMError`.
  
- @return An instance of SMQuery representing the recieved fetch request.
+ @return An instance of `SMQuery` representing the recieved fetch request.
  */
 + (SMQuery *)queryForEntity:(NSEntityDescription *)entityDescription 
                   predicate:(NSPredicate *)predicate 

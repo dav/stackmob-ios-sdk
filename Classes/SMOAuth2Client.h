@@ -33,7 +33,7 @@
 @property (nonatomic, copy) NSString *macKey;
 
 /**
- Initialize method used by SMUserSession.
+ Initialize method used by <SMUserSession>.
  @param version The API version of your StackMob application which this client instance should use.
  @param scheme Either http or https
  @param apiHost The host to connect to for API requests.
@@ -61,7 +61,7 @@
 /**
  Creates a signed request for a custom code method using the given parameters.
  
- @param request An instance of SMCustomCodeRequest representing the request to sign.
+ @param request An instance of <SMCustomCodeRequest> representing the request to sign.
  @param options Options to be applied to the request.
  
  @return A signed request to be placed on an operation queue.
@@ -109,7 +109,7 @@
  @param timestamp The timestamp to use for the authorization.
  @param nonce The nonce to use for the authorization.
  
- @return A string that is set in signRequest: for the Authorization header.
+ @return A string that is set in <signRequest:> for the Authorization header.
  */
 - (NSString *)createMACHeaderForHttpMethod:(NSString *)method path:(NSString *)path timestamp:(double)timestamp nonce:(NSString *)nonce;
 

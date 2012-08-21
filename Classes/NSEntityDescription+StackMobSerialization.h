@@ -30,9 +30,9 @@
 /**
  Returns the primary key field for the entity used to uniquely define the object on StackMob.
  
- If the `NSManagedObject` sublass for this entity conforms to the SMModel protocol, the return string from the overriden primaryKeyFieldName method is returned. Otherwise <lowercase entity name>_id is used.
+ If the `NSManagedObject` sublass for this entity conforms to the <SMModel> protocol, the return string from the overriden <primaryKeyFieldName> method is returned. Otherwise lowercaseEntityName_id is used.
  
- @note If the `NSManagedObject` sublass for this entity does not conforms to the SMModel protocol, and lowercaseEntityName_id (i.e. person_id for entity Person) is not one of the entity's attributes, a `SMExceptionIncompatibleObject` exception is thrown. 
+ @note If the `NSManagedObject` sublass for this entity does not conforms to the 'SMModel' protocol, and lowercaseEntityName_id (i.e. person_id for entity Person) is not one of the entity's attributes, a `SMExceptionIncompatibleObject` exception is thrown. 
  */
 - (NSString *)sm_primaryKeyField;
 

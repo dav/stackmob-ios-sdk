@@ -19,9 +19,9 @@
 #import "SMResponseBlocks.h"
 
 /**
- Supplemental methods for SMDataStore.  In essence they add an extra layer of logic to existing SMDataStore methods for special conditions. 
+ Supplemental methods for <SMDataStore>.  In essence they add an extra layer of logic to existing `SMDataStore` methods for special conditions. 
  
- @note You shouldn't need to import this file or use any of these methods directly. They are deliberately abstracted out for use by SMDataStore and SMClient.
+ @note You shouldn't need to import this file or use any of these methods directly. They are deliberately abstracted out for use by `SMDataStore` and `SMClient`.
  
  */
 @interface SMDataStore (SpecialCondition)
