@@ -34,9 +34,27 @@
 					<div class="section section-overview index-overview">
 						
 						
-						<h1>Welcome to the StackMob iOS SDK Documentation!</h1>
+						<h1>Welcome to the docs for the StackMob iOS SDK!</h1>
 
 <h3>Current Version: 1.0.0beta.2</h3>
+
+<h3>Jump To:</h3>
+
+<p><a href="#overview">Overview</a></p>
+
+<p><a href="#getting_started">Getting Started</a></p>
+
+<p><a href="#coding_practices">StackMob &lt;&mdash;> Core Data Coding Practices</a></p>
+
+<p><a href="#classes_to_check_out">Classes To Check Out</a></p>
+
+<p><a href="#tutorials">Tutorials</a></p>
+
+<p><a href="#core_data_references">Core Data References</a></p>
+
+<p><a href="#class_index">Index of Classes</a></p>
+
+<p><a name="overview">&nbsp;</a></p>
 
 <h2>Overview</h2>
 
@@ -59,6 +77,8 @@
 <h3>Still have questions about the new iOS SDK?</h3>
 
 <p>Email us at <a href="mailto:support@stackmob.com">support@stackmob.com</a>.</p>
+
+<p><a name="getting_started">&nbsp;</a></p>
 
 <h2>Getting Started</h2>
 
@@ -90,7 +110,7 @@ client = [[SMClient alloc] initWithAPIVersion:&lt;api_version&gt; publicKey:&lt;
 
 <h4>Core Data</h4>
 
-<p>StackMob recommends using Core Data… it provides a powerful and robust object graph management system that otherwise would be a nightmare to implement.  Although it may have a reputation for being pretty complex, the basics are easy to grasp and understanding.  If you want to learn the basics, check out <strong>Core Data References</strong> below.</p>
+<p>StackMob recommends using Core Data… it provides a powerful and robust object graph management system that otherwise would be a nightmare to implement.  Although it may have a reputation for being pretty complex, the basics are easy to grasp and understanding.  If you want to learn the basics, check out <a href="#core_data_references">Core Data References</a> below.</p>
 
 <p>The three main pieces of Core Data are instances of:</p>
 
@@ -124,6 +144,57 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 
 <p>Check out <a href="http://stackmob.github.com/stackmob-ios-sdk/Classes/SMDataStore.html">SMDataStore</a> for all available methods.</p>
 
+<p><a name="coding_practices">&nbsp;</a></p>
+
+<h2>StackMob &lt;&mdash;> Core Data Coding Practices</h2>
+
+<p>There are a few coding practices to adhere to as well as general things to know when using StackMob with Core Data.  This allows StackMob to seamlessly translate to and from the language that Core Data speaks.</p>
+
+<p>First, a table of how Core Data, StackMob and regular databases map to each other:</p>
+
+<table cellpadding="8px" width="600px">
+    <tr align="center">
+        <th>Core Data</th>
+        <th>StackMob</th>
+        <th>Database</th>
+    </tr>
+    <tr>
+        <td>Entity</td>
+        <td>Schema</td>
+        <td>Table</td>
+    </tr>
+    <tr>
+        <td>Attribute</td>
+        <td>Field</td>
+        <td>Column</td>
+    </tr>
+    <tr>
+        <td>Relationship</td>
+        <td>Relationship</td>
+        <td>Reference Column</td>
+    </tr>
+</table>
+
+
+<p><strong>Coding Practices for successful app development:</strong></p>
+
+<ol>
+<li>Core Data entities are encouraged to start with a capital letter and will translate to all lowercase on StackMob. Example: <strong>Superpower</strong> entity on Core Data translates to <strong>superpower</strong> schema on StackMob.</li>
+<li>Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: <strong>year_born</strong>, WRONG: <strong>yearBorn</strong>.</li>
+<li>All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.</li>
+<li>Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the <a href="http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html">SMModel</a> protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity <strong>Soda</strong> should have attribute <strong>soda_id</strong>.</li>
+<li><p>When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context. Luckily, it&rsquo;s easy:</p>
+
+<pre><code> // assuming your instance is called newManagedObject
+ [newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
+
+ // now you can make a call to save: on your managed object context
+</code></pre></li>
+</ol>
+
+
+<p><a name="classes_to_check_out">&nbsp;</a></p>
+
 <h2>Classes To Check Out</h2>
 
 <ul>
@@ -136,12 +207,16 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 </ul>
 
 
+<p><a name="tutorials">&nbsp;</a></p>
+
 <h2>Tutorials</h2>
 
 <ul>
 <li><a href="https://stackmob.com/devcenter/docs/StackMob-iOS-SDK-Tutorial">Your First StackMob Application</a></li>
 </ul>
 
+
+<p><a name="core_data_references">&nbsp;</a></p>
 
 <h2>Core Data References</h2>
 
@@ -152,6 +227,8 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 <li><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/Predicates/predicates.html#//apple_ref/doc/uid/TP40001789">Introduction To Predicates</a> &ndash; Apple&rsquo;s Predicates Programming Guide</li>
 </ul>
 
+
+<p><a name="class_index">&nbsp;</a></p>
 
 <h2>Index</h2>
 						
