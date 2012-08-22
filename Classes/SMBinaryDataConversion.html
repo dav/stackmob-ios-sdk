@@ -123,7 +123,7 @@
 NSString* pathToImageFile = [bundle pathForResource:@"coolPic" ofType:@"jpg"];
 NSData *theData = [NSData dataWithContentsOfFile:pathToImageFile];
 
-NSString *picData = [SMData stringForBinaryData:theData name:@"whateverNameYouWant" contentType:@"image/jpg"];
+NSString *picData = [SMBinaryDataConversion stringForBinaryData:theData name:@"whateverNameYouWant" contentType:@"image/jpg"];
 </code></pre>
 
 <p>You can now set the string value, save the managed object context, and refresh your in-memory copy of the object to grab the url pointing to your data.</p>
