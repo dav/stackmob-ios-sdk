@@ -55,7 +55,7 @@
     }];
     
     if ([matchingProperties count] > 1) {
-        [NSException raise:SMExceptionIncompatibleObject format:@"Multiple matching properties found for field \"%@\": ", fieldName, matchingProperties];
+        [NSException raise:SMExceptionIncompatibleObject format:@"Multiple matching properties found for field \"%@\":%@", fieldName, matchingProperties];
     }
     else if ([matchingProperties count] == 0) {
         return nil;
