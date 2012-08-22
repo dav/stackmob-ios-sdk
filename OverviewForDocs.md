@@ -31,6 +31,11 @@ We've also separated our Push Notification API into a separate SDK. For more inf
 ### Why base the new SDK on Core Data? 
 Our number one goal is to create a better experience. Core Data allows us to place a familiar wrapper around StackMob REST calls and datastore API. iOS developers can leverage their existing knowledge of Core Data to quickly integrate StackMob into their applications.  For those interested in sticking to the REST-based way of making requests, we provide the full data store API.
 
+### Already know Core Data?
+Then you already know how to use StackMob!
+
+All you need to do to get started with StackMob is initialize an instance of SMClient and use a configured managed object context by following the instructions in <a href="#getting_started">Initialize an SMClient</a>.
+
 ### Reporting issues or feature requests  
 
 You can file issues through the [GitHub issue tracker](https://github.com/stackmob/stackmob-ios-sdk/issues).
@@ -47,7 +52,7 @@ If you don't already have the StackMob SDK imported into your application, [get 
 
 **The fundamental class for StackMob is SMClient**.  From an instance of this class you have access to a configured managed object context and persistent store coordinator as well as a REST-based data store. Check out the [class reference for SMClient](http://stackmob.github.com/stackmob-ios-sdk/Classes/SMClient.html) for more information.  Let's see how to initialize our `SMClient`:
 
-### Initialize your SMClient
+### Initialize an SMClient
 
 Wherever you plan to use StackMob, add `#import "StackMob.h"` to the header file.
 
@@ -87,7 +92,11 @@ You can obtain a managed object context configured from your SMClient instance l
 	// assuming you have a variable called managedObjectContext
 	self.managedObjectContext = [coreDataStore managedObjectContext];
 	
-Use this instance of NSManagedObjectContext throughout your application.
+Use this instance of NSManagedObjectContext throughout your application. Other than that, use Core Data like you normally would!
+
+**Important:** Make sure you adhere to the <a href="#coding_practices">StackMob <--> Core Data Coding Practices</a>!
+
+</br>
 
 #### Lower Level Datastore API
 
