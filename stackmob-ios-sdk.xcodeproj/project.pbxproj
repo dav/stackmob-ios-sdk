@@ -974,7 +974,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "// make directories for Headers and Pods\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\n\n// copy Headers and Pods from builds\ncp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods/\"\n\n// copy readme and changelog\ncp \"${PROJECT_DIR}/CHANGELOG.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"";
+			shellScript = "// make directories for Headers and Pods\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\n#mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\n\n// copy Headers and Pods from builds\n#cp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\n\n// copy readme and changelog\ncp \"${PROJECT_DIR}/CHANGELOG.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"";
 		};
 		DEDDE2C215DDAFB30055FAFF /* Zip It Up */ = {
 			isa = PBXShellScriptBuildPhase;
