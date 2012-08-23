@@ -175,7 +175,7 @@
                 NSString *retryAfter = [[response allHeaderFields] valueForKey:@"Retry-After"];
                 if (retryAfter) {
                     [options setNumberOfRetries:(options.numberOfRetries - 1)];
-                    double delayInSeconds = [retryAfter intValue] / 1000.00;
+                    double delayInSeconds = [retryAfter doubleValue];
                     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
                     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                         if (options.retryBlock) {

@@ -32,7 +32,7 @@ describe(@"CRUD", ^{
         __block NSDictionary *newBook = nil;
         __block NSString *newBookTitle = nil;
         beforeEach(^{
-            newBookTitle = [NSString stringWithFormat:@"Twilight part %d", random() % 10000];
+            newBookTitle = [NSString stringWithFormat:@"Twilight part %ld", random() % 10000];
             NSDictionary *book = [NSDictionary dictionaryWithObjectsAndKeys:
                                   newBookTitle, @"title",
                                   @"Rabid Fan", @"author",
@@ -118,7 +118,7 @@ describe(@"CRUD", ^{
         __block NSDictionary *newBook = nil;
         __block NSString *newBookTitle = nil;
         beforeEach(^{
-            newBookTitle = [NSString stringWithFormat:@"Twilight part %d", random() % 10000];
+            newBookTitle = [NSString stringWithFormat:@"Twilight part %ld", random() % 10000];
             NSDictionary *book = [NSDictionary dictionaryWithObjectsAndKeys:
                                   newBookTitle, @"title",
                                   @"Rabid Fan", @"author",
