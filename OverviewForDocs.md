@@ -1,6 +1,6 @@
 # Welcome to the docs for the StackMob iOS SDK!
 
-### Current Version: 1.0.0beta.2
+### Current Version: 1.0.0beta.3
 
 ### Jump To:
 <a href="#overview">Overview</a>
@@ -35,6 +35,10 @@ Our number one goal is to create a better experience. Core Data allows us to pla
 Then you already know how to use StackMob!
 
 All you need to do to get started with StackMob is initialize an instance of SMClient and use a configured managed object context by following the instructions in <a href="#getting_started">Initialize an SMClient</a>.
+
+### What's supported with our Core Data integration?
+
+Check out the [StackMob <--> Core Data Support Specifications](http://stackmob.github.com/stackmob-ios-push-sdk/CoreDataSupportSpecs.html).
 
 ### Reporting issues or feature requests  
 
