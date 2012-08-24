@@ -38,7 +38,7 @@ All you need to do to get started with StackMob is initialize an instance of SMC
 
 ### What's supported with our Core Data integration?
 
-Check out the [StackMob <--> Core Data Support Specifications](http://stackmob.github.com/stackmob-ios-push-sdk/CoreDataSupportSpecs.html).
+Check out the [StackMob <--> Core Data Support Specifications](http://stackmob.github.com/stackmob-ios-sdk/CoreDataSupportSpecs.html).
 
 ### Reporting issues or feature requests  
 

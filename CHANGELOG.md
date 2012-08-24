@@ -1,5 +1,10 @@
 ## StackMob iOS SDK Changelog
 
+### 1.0.0beta.3
+
+* Fix bug so save: to the managed object context will return NO if StackMob calls fail.
+* Fix bug where fetch requests not returning errors.
+
 ### 1.0.0beta.2
 
 * Performing custom code methods is now available through the `SMCustomCodeRequest` class.
