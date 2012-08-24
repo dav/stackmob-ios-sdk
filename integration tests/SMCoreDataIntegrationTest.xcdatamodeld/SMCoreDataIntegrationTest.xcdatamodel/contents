@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Favorite" syncable="YES">
         <attribute name="favorite_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,6 +10,10 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="years_involved" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="person" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="interests" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Oauth2test" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oauth2test_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="armor_class" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -33,5 +37,6 @@
         <element name="Interest" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Person" positionX="160" positionY="192" width="128" height="165"/>
         <element name="Superpower" positionX="511" positionY="216" width="128" height="120"/>
+        <element name="Oauth2test" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

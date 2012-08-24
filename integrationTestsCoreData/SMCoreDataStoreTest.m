@@ -101,6 +101,41 @@ describe(@"create an instance of SMCoreDataStore from SMClient", ^{
                     [error shouldBeNil]; 
                 }];
             });
+            describe(@"after sending a request for a field that doesn't exist", ^{
+                __block NSFetchRequest *theRequest = nil;
+                beforeEach(^{
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"not_a_field = 'hello'"];
+                    theRequest = [SMCoreDataIntegrationTestHelpers makeFavoriteFetchRequest:predicate];
+                });
+                it(@"the fetch request should fail, and the error should contain the info", ^{
+                    __block NSArray *results = nil;
+                    [moc performBlockAndWait:^{
+                        NSError *__autoreleasing error = nil;
+                        results = [moc executeFetchRequest:theRequest error:&error];
+                        [error shouldNotBeNil];
+                    }];
+                    [results shouldBeNil];
+                });
+            });
+            describe(@"after trying inserting an object to a schema with permission Allow any logged in user when we are not logged in", ^{
+                __block NSManagedObject *newManagedObject = nil;
+                beforeEach(^{
+                    newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Oauth2test" inManagedObjectContext:moc];
+                    [newManagedObject setValue:@"fail" forKey:@"name"];
+                    [newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
+                });
+                it(@"a call to save: should fail, and the error should contain the info", ^{
+                    __block BOOL saveSuccess = NO;
+                    [moc performBlockAndWait:^{
+                        NSError *__autoreleasing anError = nil;
+                        saveSuccess = [moc save:&anError];
+                        
+                        [anError shouldNotBeNil];
+                    }];
+                    
+                    [[theValue(saveSuccess) should] beNo];
+                });
+            });
         });
     });
 });

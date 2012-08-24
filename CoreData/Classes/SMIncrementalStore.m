@@ -146,12 +146,28 @@ You should implement this method conservatively, and expect that unknown request
                   error:(NSError *__autoreleasing *)error {
     DLog();
     NSSaveChangesRequest *saveRequest = [[NSSaveChangesRequest alloc] initWithInsertedObjects:[context insertedObjects] updatedObjects:[context updatedObjects] deletedObjects:[context deletedObjects] lockedObjects:nil];
+    
     NSSet *insertedObjects = [saveRequest insertedObjects];
+    if ([insertedObjects count] > 0) {
+        BOOL insertSuccess = [self handleInsertedObjects:insertedObjects inContext:context error:error];
+        if (!insertSuccess) {
+            return nil;
+        }
+    }
     NSSet *updatedObjects = [saveRequest updatedObjects];
+    if ([updatedObjects count] > 0) {
+        BOOL updateSuccess = [self handleUpdatedObjects:updatedObjects inContext:context error:error];
+        if (!updateSuccess) {
+            return nil;
+        }
+    }
     NSSet *deletedObjects = [saveRequest deletedObjects];
-    [self handleInsertedObjects:insertedObjects inContext:context error:error];
-    [self handleUpdatedObjects:updatedObjects inContext:context error:error];
-    [self handleDeletedObjects:deletedObjects inContext:context error:error];
+    if ([deletedObjects count] > 0) {
+        BOOL deleteSuccess = [self handleDeletedObjects:deletedObjects inContext:context error:error];
+        if (!deleteSuccess) {
+            return nil;
+        }
+    }
     
     return [NSArray array];
 }
@@ -238,7 +254,6 @@ You should implement this method conservatively, and expect that unknown request
             *stop = YES;
     }];
     return success;
-    return YES;
 }
 
 - (BOOL)handleDeletedObjects:(NSSet *)deletedObjects inContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error {
@@ -316,8 +331,8 @@ You should implement this method conservatively, and expect that unknown request
     __block id resultsWithoutOID;
     synchronousQuery(self.smDataStore, query, ^(NSArray *results) {
         resultsWithoutOID = results;
-    }, ^(NSError *error) {
-        
+    }, ^(NSError *theError) {
+        *error = (__bridge id)(__bridge_retained CFTypeRef)theError;
     });
 
     return [resultsWithoutOID map:^(id item) {
