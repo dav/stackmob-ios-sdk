@@ -48,6 +48,17 @@ Open the new workspace and we can start developing using the StackMob library
 
 # Development
 
+## Debugging
+
+<p>There are many log statements embedded throughout the iOS SDK to help with debugging.  The syntax is DLog(), defined in StackMob.h.</p>
+<p>To turn this feature on, do the following:</p> 
+
+1. If you installed with Cocoapods, do to the build settings tab for the Pods project in your workspace.  If you imported the Static Library, go to the build settings tab of your project.
+2. Search for the **Preprocessor Macros** build setting.
+3. Add **SMDEBUG=1** to Debug.
+4. Build and run under the Debug configuration to get log statements from the SDK.
+5. To turn off, change the setting to SMDEBUG=0, or just remove it. 
+
 ## Testing
 
 </br>
