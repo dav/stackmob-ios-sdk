@@ -77,7 +77,7 @@ There are two ways to persist data to StackMob:
 #### Core Data
 
 
-StackMob recommends using Core Data… it provides a powerful and robust object graph management system that otherwise would be a nightmare to implement.  Although it may have a reputation for being pretty complex, the basics are easy to grasp and understanding.  If you want to learn the basics, check out <a href="#core_data_references">Core Data References</a> below.
+StackMob recommends using Core Data… it provides a powerful and robust object graph management system that otherwise would be a nightmare to implement.  Although it may have a reputation for being pretty complex, the basics are easy to grasp and understand.  If you want to learn the basics, check out <a href="#core_data_references">Core Data References</a> below.
 
 The three main pieces of Core Data are instances of:
 
