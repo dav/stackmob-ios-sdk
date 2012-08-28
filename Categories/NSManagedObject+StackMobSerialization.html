@@ -229,7 +229,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The id is placed in the objects primary key attribute, retieved from <a href="#//api/name/sm_primaryKeyField">sm_primaryKeyField</a>. It is used as the reference when assigning a permanent ID to the Core Data <code>NSManagedObject</code> so that Core Data and StackMob are referencing the same key.</p><div class="note"><p><strong>Note:</strong> When creating an <code>NSManagedObject</code>, you must call this method and set it&rsquo;s return string as the value for the primary key field.  A call to <code>save:</code> on the managed object context will fail if any newly inserted object has a nil value for its primary key field.  To avoid this, when you are done setting other values simply add the line (assuming your new object is called newManagedObject):</p>
+		<p>The id is placed in the object&rsquo;s primary key attribute, retrieved from <a href="#//api/name/sm_primaryKeyField">sm_primaryKeyField</a>. It is used as the reference when assigning a permanent ID to the Core Data <code>NSManagedObject</code> so that Core Data and StackMob are referencing the same key.</p><div class="note"><p><strong>Note:</strong> When creating an <code>NSManagedObject</code>, you must call this method and set it&rsquo;s return string as the value for the primary key field.  A call to <code>save:</code> on the managed object context will fail if any newly inserted object has a nil value for its primary key field.  To avoid this, when you are done setting other values simply add the line (assuming your new object is called newManagedObject):</p>
 
 <pre><code>[newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
 </code></pre></div>
@@ -345,7 +345,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If the <code>NSManagedObject</code> sublass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overriden <code>primaryKeyFieldName</code> method is returned. Otherwise lowercaseEntityName_id (i.e. person_id for entity Person) is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> sublass for this entity does not conforms to the <code>SMModel</code> protocol, and lowercaseEntityName_id is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
+		<p>If the <code>NSManagedObject</code> subclass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overridden <code>primaryKeyFieldName</code> method is returned. Otherwise lowercaseEntityName_id (i.e. person_id for entity Person) is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> subclass for this entity does not conforms to the <code>SMModel</code> protocol, and lowercaseEntityName_id is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
 	</div>
 	
 	

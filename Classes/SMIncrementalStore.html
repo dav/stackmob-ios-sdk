@@ -100,7 +100,7 @@
 
 <h2>How it works</h2>
 
-<p><code>NSIncrementalStore</code> provides an abstract class to sublcass and override methods which are called by Core Data&rsquo;s persistent store coordinator and managed object context throughout application execution.  This allows communication to a remote backend API rather than the standard SQLite database.</p>
+<p><code>NSIncrementalStore</code> provides an abstract class to subclass and override methods which are called by Core Data&rsquo;s persistent store coordinator and managed object context throughout application execution.  This allows communication to a remote backend API rather than the standard SQLite database.</p>
 
 <p>Most methods involve contacting the remote backend, in this case StackMob, for information requested by Core Data.  This data is then used to decide whether to persist the in-memory version of an object to the remote backend or to discard it for what already exists.  Core Data still handles merge conflict resolution with the supplied <code>NSMergePolicy</code>.</p>
 
@@ -119,7 +119,7 @@
 
 <h2>References</h2>
 
-<p><a href="http://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/Reference/NSIncrementalStore.html">Apple&rsquo;s NSIncrementalStore class reference</a></p><div class="note"><p><strong>Note:</strong> You should never have to instantiate your own instance of <code>SMIncrementalStore</code>.  It is used when creating a persistent store coordinator in <code>SMCoreDataStore</code> so that <code>NSPersistentStore</code> methods divert to the overriden versions in this class.</p></div>
+<p><a href="http://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/Reference/NSIncrementalStore.html">Apple&rsquo;s NSIncrementalStore class reference</a></p><div class="note"><p><strong>Note:</strong> You should never have to instantiate your own instance of <code>SMIncrementalStore</code>.  It is used when creating a persistent store coordinator in <code>SMCoreDataStore</code> so that <code>NSPersistentStore</code> methods divert to the overridden versions in this class.</p></div>
 					</div>
 					
 					

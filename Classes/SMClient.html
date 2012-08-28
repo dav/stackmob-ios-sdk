@@ -275,7 +275,7 @@ SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:sel
 self.managedObjectContext = [coreDataStore managedObjectContext];
 </code></pre>
 
-<p>It is important only to insantiate one <code>SMCoreDataStore</code> instance and use the same <code>NSManagedObjectInstance</code> instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.</p>
+<p>It is important only to instantiate one <code>SMCoreDataStore</code> instance and use the same <code>NSManagedObjectInstance</code> instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.</p>
 
 <p>Last but not least, make sure to adhere to the <a href="http://stackmob.github.com/stackmob-ios-sdk/index.html#coding_practices">StackMob &lt;&mdash;> Core Data Coding Practices</a>!</p>
 
@@ -2124,7 +2124,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code> to the failure block.</p>
+		<p>This call is meant to be used as part of the forgot password flow. After the user receives an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code> to the failure block.</p>
 	</div>
 	
 	
@@ -2200,7 +2200,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code>.</p>
+		<p>This call is meant to be used as part of the forgot password flow. After the user receives an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <a href="#//api/name/loginWithUsername:password:onSuccess:onFailure:">loginWithUsername:password:onSuccess:onFailure:</a> returning the error <code>SMErrorTemporaryPasswordResetRequired</code>.</p>
 	</div>
 	
 	
@@ -2307,7 +2307,7 @@ will result in an error. This API requires the user to be logged in as well as t
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Only use this method if you plan to manually manage your session. Logins expire after an hour and needs to be refeshed. This is handled automatically when you make a request, but for highly concurrent systems you may want to call this manually.</p>
+		<p>Only use this method if you plan to manually manage your session. Logins expire after an hour and needs to be refreshed. This is handled automatically when you make a request, but for highly concurrent systems you may want to call this manually.</p>
 	</div>
 	
 	

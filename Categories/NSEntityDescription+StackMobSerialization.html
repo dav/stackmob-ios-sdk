@@ -233,7 +233,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> An <code>SMExceptionIncompatibleObject</code> excpetion is thrown if the field name matches multiple properties.</p></div>
+		<div class="note"><p><strong>Note:</strong> An <code>SMExceptionIncompatibleObject</code> exception is thrown if the field name matches multiple properties.</p></div>
 	</div>
 	
 	
@@ -274,7 +274,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If the <code>NSManagedObject</code> sublass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overriden <primaryKeyFieldName> method is returned. Otherwise lowercaseEntityName_id is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> sublass for this entity does not conforms to the &lsquo;SMModel&rsquo; protocol, and lowercaseEntityName_id (i.e. person_id for entity Person) is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
+		<p>If the <code>NSManagedObject</code> subclass for this entity conforms to the <a href="../Protocols/SMModel.html">SMModel</a> protocol, the return string from the overridden <primaryKeyFieldName> method is returned. Otherwise lowercaseEntityName_id is used.</p><div class="note"><p><strong>Note:</strong> If the <code>NSManagedObject</code> subclass for this entity does not conforms to the &lsquo;SMModel&rsquo; protocol, and lowercaseEntityName_id (i.e. person_id for entity Person) is not one of the entity&rsquo;s attributes, a <code>SMExceptionIncompatibleObject</code> exception is thrown.</p></div>
 	</div>
 	
 	
