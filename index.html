@@ -203,7 +203,9 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
  [newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
 
  // now you can make a call to save: on your managed object context
-</code></pre></li>
+</code></pre>
+</li>
+<li>Creating NSManagedObject subclasses for your entities is highly recommended for convenience. You can add an init method in each subclass and include the ID assignment line from above. This way you don&rsquo;t have to remember to do it each time you create a new object!</li>
 </ol>
 
 
