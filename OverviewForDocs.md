@@ -60,9 +60,9 @@ If you don't already have the StackMob SDK imported into your application, [get 
 
 Wherever you plan to use StackMob, add `#import "StackMob.h"` to the header file.
 
-Create a variable of class `SMClient`, most likely in your AppDelegate file where you initialize other application wide variables, and initalize it like this:
+Create a variable of class `SMClient`, most likely in your AppDelegate file where you initialize other application wide variables, and initialize it like this:
 
-	// Assuming your variable is decalred SMClient *client;
+	// Assuming your variable is declared SMClient *client;
 	client = [[SMClient alloc] initWithAPIVersion:<api_version> publicKey:<public_key>];
 	
 If you haven't found your public key yet, check out **Manage App Info** under the **App Settings** sidebar on the [Platform page](https://stackmob.com/platform).
@@ -153,7 +153,7 @@ First, a table of how Core Data, StackMob and regular databases map to each othe
 		
 		// now you can make a call to save: on your managed object context
 		
-
+6. Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above - then you don't have to remember to do it each time you create a new object!
 
 <a name="classes_to_check_out">&nbsp;</a>
 ## Classes To Check Out

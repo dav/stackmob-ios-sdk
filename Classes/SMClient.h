@@ -43,7 +43,9 @@
     SMCoreDataStore *coreDataStore = [client coreDataStoreWithManagedObjectModel:self.managedObjectModel];
     self.managedObjectContext = [coreDataStore managedObjectContext];
  
- It is important only to insantiate one `SMCoreDataStore` instance and use the same `NSManagedObjectInstance` instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.
+ It is important only to instantiate one `SMCoreDataStore` instance and use the same `NSManagedObjectInstance` instance throughout the duration of your application.  This ensures that you use the same copy of the context and persistent store.
+ 
+ Last but not least, make sure to adhere to the [StackMob <--> Core Data Coding Practices](http://stackmob.github.com/stackmob-ios-sdk/index.html\#coding\_practices)!
  
  ## User Sessions ##
  
@@ -172,7 +174,7 @@
 /**
  Login a user to your app with a username and temporary password, changing the users's password to the supplied new password.
  
- This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired` to the failure block.
+ This call is meant to be used as part of the forgot password flow. After the user receives an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired` to the failure block.
  
  @param username The username to log in with.
  @param tempPassword The temporary password received via email.
@@ -189,7 +191,7 @@
 /**
  Login a user to your app with a username and temporary password, changing the users's password to the supplied new password. 
  
- This call is meant to be used as part of the forgot password flow. After the user recieves an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired`.
+ This call is meant to be used as part of the forgot password flow. After the user receives an email with their temporary password, they should be taken to a login screen with an extra field for a new password, and that should hook up to this API. Your app can detect this situation via <loginWithUsername:password:onSuccess:onFailure:> returning the error `SMErrorTemporaryPasswordResetRequired`.
  
  @param username The username to log in with.
  @param tempPassword The temporary password received via email.
@@ -208,7 +210,7 @@
 /**
  Refresh the current login. 
  
- Only use this method if you plan to manually manage your session. Logins expire after an hour and needs to be refeshed. This is handled automatically when you make a request, but for highly concurrent systems you may want to call this manually.
+ Only use this method if you plan to manually manage your session. Logins expire after an hour and needs to be refreshed. This is handled automatically when you make a request, but for highly concurrent systems you may want to call this manually.
  
  @param successBlock Completion block called on success with the user object for the logged in user.
  @param failureBlock Completion block called on failure.
@@ -304,7 +306,7 @@
                              onFailure:(SMFailureBlock)failureBlock;
 
 
-#pragma mark facebook
+#pragma mark Facebook
 ///-------------------------------
 /// @name Facebook Authentication
 ///-------------------------------

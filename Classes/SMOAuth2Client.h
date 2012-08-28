@@ -76,7 +76,7 @@
 - (void)signRequest:(NSMutableURLRequest *)request;
 
 /**
- Returns whether the client has non-nil values for both the accesToken and macKey.
+ Returns whether the client has non-nil values for both the accessToken and macKey.
  
  @return `YES` is the credentials are valid, otherwise `NO`.
  */

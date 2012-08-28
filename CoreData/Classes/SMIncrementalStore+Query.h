@@ -28,7 +28,7 @@
  @param fetchRequest The fetch request to be translated.
  @param error If an error occurs during the translation, it is placed here as an instance of `SMError`.
  
- @return An instance of `SMQuery` representing the recieved fetch request.
+ @return An instance of `SMQuery` representing the received fetch request.
  */
 + (SMQuery *)queryForFetchRequest:(NSFetchRequest *)fetchRequest 
                             error:(NSError *__autoreleasing *)error;
@@ -39,7 +39,7 @@
  @param predicate The predicate to applied to the fetch request.
  @param error If an error occurs during the translation, it is placed here as an instance of `SMError`.
  
- @return An instance of `SMQuery` representing the recieved fetch request.
+ @return An instance of `SMQuery` representing the received fetch request.
  */
 + (SMQuery *)queryForEntity:(NSEntityDescription *)entityDescription 
                   predicate:(NSPredicate *)predicate 

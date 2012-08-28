@@ -25,7 +25,7 @@ extern NSString *const SM_DataStoreKey;
  
  ## How it works ##
  
- `NSIncrementalStore` provides an abstract class to sublcass and override methods which are called by Core Data's persistent store coordinator and managed object context throughout application execution.  This allows communication to a remote backend API rather than the standard SQLite database.
+ `NSIncrementalStore` provides an abstract class to subclass and override methods which are called by Core Data's persistent store coordinator and managed object context throughout application execution.  This allows communication to a remote backend API rather than the standard SQLite database.
  
  Most methods involve contacting the remote backend, in this case StackMob, for information requested by Core Data.  This data is then used to decide whether to persist the in-memory version of an object to the remote backend or to discard it for what already exists.  Core Data still handles merge conflict resolution with the supplied `NSMergePolicy`.
  
@@ -43,7 +43,7 @@ extern NSString *const SM_DataStoreKey;
  
  [Apple's NSIncrementalStore class reference](http://developer.apple.com/library/ios/documentation/CoreData/Reference/NSIncrementalStore_Class/Reference/NSIncrementalStore.html)
  
- @note You should never have to instantiate your own instance of `SMIncrementalStore`.  It is used when creating a persistent store coordinator in `SMCoreDataStore` so that `NSPersistentStore` methods divert to the overriden versions in this class. 
+ @note You should never have to instantiate your own instance of `SMIncrementalStore`.  It is used when creating a persistent store coordinator in `SMCoreDataStore` so that `NSPersistentStore` methods divert to the overridden versions in this class. 
  */
 @interface SMIncrementalStore : NSIncrementalStore
 

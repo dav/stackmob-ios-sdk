@@ -35,7 +35,7 @@
 /**
  Assigns a unique ID to the `NSManagedObject` instance.
  
- The id is placed in the objects primary key attribute, retieved from <sm_primaryKeyField>. It is used as the reference when assigning a permanent ID to the Core Data `NSManagedObject` so that Core Data and StackMob are referencing the same key.
+ The id is placed in the object's primary key attribute, retrieved from <sm_primaryKeyField>. It is used as the reference when assigning a permanent ID to the Core Data `NSManagedObject` so that Core Data and StackMob are referencing the same key.
  
  @note When creating an `NSManagedObject`, you must call this method and set it's return string as the value for the primary key field.  A call to `save:` on the managed object context will fail if any newly inserted object has a nil value for its primary key field.  To avoid this, when you are done setting other values simply add the line (assuming your new object is called newManagedObject):
  
@@ -47,9 +47,9 @@
 /**
  Returns the primary key field for the entity used to uniquely define the object on StackMob.
  
- If the `NSManagedObject` sublass for this entity conforms to the <SMModel> protocol, the return string from the overriden `primaryKeyFieldName` method is returned. Otherwise lowercaseEntityName_id (i.e. person_id for entity Person) is used.
+ If the `NSManagedObject` subclass for this entity conforms to the <SMModel> protocol, the return string from the overridden `primaryKeyFieldName` method is returned. Otherwise lowercaseEntityName_id (i.e. person_id for entity Person) is used.
  
- @note If the `NSManagedObject` sublass for this entity does not conforms to the `SMModel` protocol, and lowercaseEntityName_id is not one of the entity's attributes, a `SMExceptionIncompatibleObject` exception is thrown. 
+ @note If the `NSManagedObject` subclass for this entity does not conforms to the `SMModel` protocol, and lowercaseEntityName_id is not one of the entity's attributes, a `SMExceptionIncompatibleObject` exception is thrown.
  */
 - (NSString *)sm_primaryKeyField;
 
