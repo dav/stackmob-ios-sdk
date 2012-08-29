@@ -38,6 +38,23 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/apiHost">&nbsp;&nbsp;&nbsp;&nbsp;apiHost</option>
+	
+	<option value="//api/name/appAPIVersion">&nbsp;&nbsp;&nbsp;&nbsp;appAPIVersion</option>
+	
+	<option value="//api/name/passwordFieldName">&nbsp;&nbsp;&nbsp;&nbsp;passwordFieldName</option>
+	
+	<option value="//api/name/publicKey">&nbsp;&nbsp;&nbsp;&nbsp;publicKey</option>
+	
+	<option value="//api/name/session">&nbsp;&nbsp;&nbsp;&nbsp;session</option>
+	
+	<option value="//api/name/userIdName">&nbsp;&nbsp;&nbsp;&nbsp;userIdName</option>
+	
+	<option value="//api/name/userSchema">&nbsp;&nbsp;&nbsp;&nbsp;userSchema</option>
+	
+	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -127,6 +144,8 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initialize">Initialize</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving a Data Store">Retrieving a Data Store</a></span></li>
@@ -137,7 +156,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Logout">Logout</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reseting Password">Reseting Password</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Resetting Password">Resetting Password</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Facebook Authentication">Facebook Authentication</a></span></li>
 	
@@ -148,6 +167,24 @@
 
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/apiHost">apiHost</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appAPIVersion">appAPIVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/passwordFieldName">passwordFieldName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/publicKey">publicKey</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/session">session</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userIdName">userIdName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userSchema">userSchema</a></span></li>
+	
+</ul></li>
 
 
 
@@ -260,11 +297,25 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An <code>SMClient</code> provides a high level interface to interacting with StackMob. A new client must be given at the very least an API version and public key in order to communicate with your StackMob application.</p>
+						<p><code>SMClient</code> provides a high level interface to interacting with StackMob. A new client must be given, at the very least, an API version and public key in order to communicate with your StackMob application.</p>
 
-<p><code>SMClient</code> sets default values for other configuration settings which may be set as necessary by your application.</p>
+<p>When initialized, an instance of <code>SMClient</code> sets default values for other configuration settings which may be set as necessary by your application.</p>
 
-<p><code>SMClient</code> exposes a <a href="#//api/name/defaultClient">defaultClient</a> for applications which use a globally available client to share configuration settings.</p>
+<p>A <a href="#//api/name/defaultClient">defaultClient</a> is can be used for applications which use a globally available client to share configuration settings.</p>
+
+<h2>Initialize</h2>
+
+<p>Wherever you plan to use StackMob, add <code>#import "StackMob.h"</code> to the header file.</p>
+
+<p>Create a variable of type <code>SMClient</code>, most likely in your AppDelegate file where you initialize other application wide variables, and initialize it like this:</p>
+
+<pre><code>// Assuming your variable is declared SMClient *client;
+client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
+</code></pre>
+
+<p>If you haven&rsquo;t found your public key yet, check out <strong>Manage App Info</strong> under the <strong>App Settings</strong> sidebar on the <a href="https://stackmob.com/platform">Platform page</a>.</p>
+
+<p><strong>Important:</strong> The default schema to use for authentication is <strong>user</strong>, with <strong>username</strong> and <strong>password</strong> fields. If you plan on using a different user object schema or different field names, check out the <strong>User Authentication</strong> section below.</p>
 
 <h2>Core Data Integration</h2>
 
@@ -279,9 +330,37 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 
 <p>Last but not least, make sure to adhere to the <a href="http://stackmob.github.com/stackmob-ios-sdk/index.html#coding_practices">StackMob &lt;&mdash;> Core Data Coding Practices</a>!</p>
 
-<h2>User Sessions</h2>
+<h2>User Authentication</h2>
 
-<p>When a client is instantiated, an instance of <a href="../Classes/SMUserSession.html">SMUserSession</a> is initialized and configured with the provided settings.  This is where the user&rsquo;s OAuth2 credentials and token information is located, and is used by the internal <a href="../Classes/SMDataStore.html">SMDataStore</a> instance to authenticate requests.</p>
+<p>When a client is instantiated, an instance of <code>SMUserSession</code> is initialized and configured with the provided settings.  This is where the user&rsquo;s OAuth2 credentials and token information is located, and is used by the internal <code>SMDataStore</code> instance to authenticate requests.</p>
+
+<p><code>SMClient</code> provides a set of methods for logging in and out, checking state, and resetting passwords.</p>
+
+<h3>The User Schema</h3>
+
+<p>When you create an application on StackMob, a <strong>user</strong> schema is automatically generated, with <strong>username</strong> as it&rsquo;s primary key field as well as a <strong>password</strong> field. This is the default schema used for user authentication.</p>
+
+<p>When you initialize an <code>SMClient</code> with <a href="#//api/name/initWithAPIVersion:publicKey:">initWithAPIVersion:publicKey:</a>, the following defaults are set:</p>
+
+<ul>
+<li>apiHost = @&ldquo;api.stackmob.com&rdquo;;</li>
+<li>userSchema = @&ldquo;user&rdquo;;</li>
+<li>userIdName = @&ldquo;username&rdquo;;</li>
+<li>passwordFieldName = @&ldquo;password&rdquo;;</li>
+</ul>
+
+
+<p>To change the defaults so they match your schemas and fields on StackMob:</p>
+
+<ul>
+<li><p>With your instance of <code>SMClient</code>, you can directly set the properties listed above using the dot notation or setters.  For example:</p>
+
+<pre><code>  client.userSchema = @"teacher";
+  [client setUserIdName:@"name_of_user"];
+</code></pre></li>
+<li><p>Alternatively, you can set all the properties at once using <a href="#//api/name/initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:">initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:</a>.</p></li>
+</ul>
+
 
 <h2>Facebook Authentication</h2>
 
@@ -295,6 +374,63 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appAPIVersion">&nbsp;&nbsp;appAPIVersion</a></code>
+		<span class="tooltip"><p>The API version of your StackMob application which this client instance should use.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/apiHost">&nbsp;&nbsp;apiHost</a></code>
+		<span class="tooltip"><p>The host to connect to for API requests.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/publicKey">&nbsp;&nbsp;publicKey</a></code>
+		<span class="tooltip"><p>Your StackMob application&rsquo;s OAuth2 public key.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userSchema">&nbsp;&nbsp;userSchema</a></code>
+		<span class="tooltip"><p>The StackMob schema that has been marked as a user object.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/userIdName">&nbsp;&nbsp;userIdName</a></code>
+		<span class="tooltip"><p>The StackMob primary key field name for the user object schema.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/passwordFieldName">&nbsp;&nbsp;passwordFieldName</a></code>
+		<span class="tooltip"><p>The StackMob field name for the password.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/session">&nbsp;&nbsp;session</a></code>
+		<span class="tooltip"><p>An instance of <code>SMUserSession</code> which contains the necessary credentials to make StackMob requests.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
 						
 						<a title="Initialize" name="task_Initialize"></a>
@@ -450,8 +586,8 @@ via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
 						</ul>
 						
 						
-						<a title="Reseting Password" name="task_Reseting Password"></a>
-						<h3 class="subsubtitle task-title">Reseting Password</h3>
+						<a title="Resetting Password" name="task_Resetting Password"></a>
+						<h3 class="subsubtitle task-title">Resetting Password</h3>
 
 						<ul class="task-list">
 							<li>
@@ -590,6 +726,289 @@ via <a href="#//api/name/setDefaultClient:">setDefaultClient:</a>.</p></span>
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/apiHost" title="apiHost"></a>
+	<h3 class="subsubtitle method-title">apiHost</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The host to connect to for API requests.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *apiHost</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <code>api.stackmob.com</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/appAPIVersion" title="appAPIVersion"></a>
+	<h3 class="subsubtitle method-title">appAPIVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The API version of your StackMob application which this client instance should use.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *appAPIVersion</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Pass @&ldquo;0&rdquo; for Development, @&ldquo;1&rdquo; or higher for the corresponding version in Production.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/passwordFieldName" title="passwordFieldName"></a>
+	<h3 class="subsubtitle method-title">passwordFieldName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The StackMob field name for the password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *passwordFieldName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <code>@"password"</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/publicKey" title="publicKey"></a>
+	<h3 class="subsubtitle method-title">publicKey</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Your StackMob application&rsquo;s OAuth2 public key.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, copy) NSString *publicKey</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/session" title="session"></a>
+	<h3 class="subsubtitle method-title">session</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An instance of <code>SMUserSession</code> which contains the necessary credentials to make StackMob requests.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong) SMUserSession *session</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userIdName" title="userIdName"></a>
+	<h3 class="subsubtitle method-title">userIdName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The StackMob primary key field name for the user object schema.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *userIdName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <code>@"username"</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/userSchema" title="userSchema"></a>
+	<h3 class="subsubtitle method-title">userSchema</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The StackMob schema that has been marked as a user object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *userSchema</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <code>@"user"</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SMClient.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -1358,7 +1777,7 @@ will result in an error. This API requires the user to be logged in as well as t
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>apiHost</em></dt>
-			<dd><p>The host to connect to for API requests.</p></dd>
+			<dd><p>The host to connect to for API requests. Default is <code>api.stackmob.com</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1368,17 +1787,17 @@ will result in an error. This API requires the user to be logged in as well as t
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>userSchema</em></dt>
-			<dd><p>The StackMob schema that has been flagged as a user object.</p></dd>
+			<dd><p>The StackMob schema that has been marked as a user object. Default is <code>@"user"</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>userIdName</em></dt>
-			<dd><p>The StackMob primary key field name for the user object schema.</p></dd>
+			<dd><p>The StackMob primary key field name for the user object schema. Default is <code>@"username"</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>passwordFieldName</em></dt>
-			<dd><p>The StackMob field name for the password.</p></dd>
+			<dd><p>The StackMob field name for the password. Default is <code>@"password"</code>.</p></dd>
 		</dl>
 		
 	</div>
@@ -2523,7 +2942,7 @@ password. They can then use that temporary password to login with <a href="#//ap
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-27)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-08-29)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
