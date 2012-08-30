@@ -9,6 +9,8 @@
 
 <a href="#coding_practices">StackMob <--> Core Data Coding Practices</a>
 
+[StackMob <--> Core Data Support Specifications](http://stackmob.github.com/stackmob-ios-sdk/CoreDataSupportSpecs.html)
+
 <a href="#classes_to_check_out">Classes To Check Out</a>
 
 <a href="#tutorials">Tutorials</a>
@@ -56,6 +58,8 @@ If you don't already have the StackMob SDK imported into your application, [get 
 
 **The fundamental class for StackMob is SMClient**.  From an instance of this class you have access to a configured managed object context and persistent store coordinator as well as a REST-based data store. Check out the [class reference for SMClient](http://stackmob.github.com/stackmob-ios-sdk/Classes/SMClient.html) for more information.  Let's see how to initialize our `SMClient`:
 
+<br/>
+
 ### Initialize an SMClient
 
 Wherever you plan to use StackMob, add `#import "StackMob.h"` to the header file.
@@ -63,9 +67,11 @@ Wherever you plan to use StackMob, add `#import "StackMob.h"` to the header file
 Create a variable of class `SMClient`, most likely in your AppDelegate file where you initialize other application wide variables, and initialize it like this:
 
 	// Assuming your variable is declared SMClient *client;
-	client = [[SMClient alloc] initWithAPIVersion:<api_version> publicKey:<public_key>];
+	client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
 	
 If you haven't found your public key yet, check out **Manage App Info** under the **App Settings** sidebar on the [Platform page](https://stackmob.com/platform).
+
+<br/>
 	
 ### Start persisting data
 
@@ -73,6 +79,8 @@ There are two ways to persist data to StackMob:
 
 * Core Data
 * Lower Level Datastore API
+
+<br/>
 
 #### Core Data
 
@@ -100,7 +108,7 @@ Use this instance of NSManagedObjectContext throughout your application. Other t
 
 **Important:** Make sure you adhere to the <a href="#coding_practices">StackMob <--> Core Data Coding Practices</a>!
 
-</br>
+<br/>
 
 #### Lower Level Datastore API
 
@@ -109,6 +117,16 @@ If you want to make direct REST-based calls to the datastore, grab an instance o
 	SMDataStore *dataStore = [client dataStore];
 	
 Check out [SMDataStore](http://stackmob.github.com/stackmob-ios-sdk/Classes/SMDataStore.html) for all available methods.
+
+<br/>
+
+### User Authentication
+
+SMClient provides all the necessary methods for user authentication.
+
+The default schema to use for authentication is **user**, with **username** and **password** fields. 
+
+If you plan on using a different user object schema or different field names, check out the **User Authentication** section of the [SMClient Class Reference](http://stackmob.github.com/stackmob-ios-sdk/Classes/SMClient.html).
 
 <a name="coding_practices">&nbsp;</a>
 ## StackMob <--> Core Data Coding Practices

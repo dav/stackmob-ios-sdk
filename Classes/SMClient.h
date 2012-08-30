@@ -29,11 +29,24 @@
 #define DEFAULT_PASSWORD_FIELD_NAME @"password"
 
 /**
- An `SMClient` provides a high level interface to interacting with StackMob. A new client must be given at the very least an API version and public key in order to communicate with your StackMob application.
+ `SMClient` provides a high level interface to interacting with StackMob. A new client must be given, at the very least, an API version and public key in order to communicate with your StackMob application.
  
- `SMClient` sets default values for other configuration settings which may be set as necessary by your application.
+ When initialized, an instance of `SMClient` sets default values for other configuration settings which may be set as necessary by your application.
  
- `SMClient` exposes a <defaultClient> for applications which use a globally available client to share configuration settings.
+ A <defaultClient> is can be used for applications which use a globally available client to share configuration settings.
+ 
+ ## Initialize ##
+ 
+ Wherever you plan to use StackMob, add `#import "StackMob.h"` to the header file.
+ 
+ Create a variable of type `SMClient`, most likely in your AppDelegate file where you initialize other application wide variables, and initialize it like this:
+ 
+    // Assuming your variable is declared SMClient *client;
+    client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
+ 
+ If you haven't found your public key yet, check out **Manage App Info** under the **App Settings** sidebar on the [Platform page](https://stackmob.com/platform).
+ 
+ **Important:** The default schema to use for authentication is **user**, with **username** and **password** fields. If you plan on using a different user object schema or different field names, check out the **User Authentication** section below.
  
  ## Core Data Integration ##
  
@@ -47,9 +60,35 @@
  
  Last but not least, make sure to adhere to the [StackMob <--> Core Data Coding Practices](http://stackmob.github.com/stackmob-ios-sdk/index.html\#coding\_practices)!
  
- ## User Sessions ##
+ ## User Authentication ##
  
- When a client is instantiated, an instance of <SMUserSession> is initialized and configured with the provided settings.  This is where the user's OAuth2 credentials and token information is located, and is used by the internal <SMDataStore> instance to authenticate requests.
+ When a client is instantiated, an instance of `SMUserSession` is initialized and configured with the provided settings.  This is where the user's OAuth2 credentials and token information is located, and is used by the internal `SMDataStore` instance to authenticate requests.
+ 
+ `SMClient` provides a set of methods for logging in and out, checking state, and resetting passwords.
+ 
+ ### The User Schema ###
+ 
+ When you create an application on StackMob, a **user** schema is automatically generated, with **username** as it's primary key field as well as a **password** field. This is the default schema for user objects.
+ 
+ When you initialize an `SMClient` with <initWithAPIVersion:publicKey:>, the following defaults are set:
+ 
+ * apiHost = @"api.stackmob.com";
+ * userSchema = @"user";
+ * userIdName = @"username";
+ * passwordFieldName = @"password";
+ 
+ To change the defaults so they match your schemas and fields on StackMob:
+ 
+ * With your instance of `SMClient`, you can directly set the properties listed above using the dot notation or setters.  For example:
+    
+        client.userSchema = @"teacher";
+        [client setUserIdName:@"name_of_user"];
+ 
+ 
+ * Alternatively, you can set all the properties at once using <initWithAPIVersion:apiHost:publicKey:userSchema:userIdName:passwordFieldName:>.
+ 
+ **Important:** Don't forget to check the **Create as a User Object** box when <a href="https://www.stackmob.com/platform/api/schemas/create" target="_blank">creating a new schema</a> for user objects. 
+ 
  
  ## Facebook Authentication ##
  
@@ -58,12 +97,54 @@
  */
 @interface SMClient : NSObject
 
+#pragma mark properties
+///-------------------------------
+/// @name Properties
+///-------------------------------
+
+/**
+ The API version of your StackMob application which this client instance should use.
+ 
+ Pass @"0" for Development, @"1" or higher for the corresponding version in Production.
+ */
 @property(nonatomic, copy) NSString *appAPIVersion;
+
+/**
+ The host to connect to for API requests. 
+ 
+ Default is `api.stackmob.com`.
+ */
 @property(nonatomic, copy) NSString *apiHost;
+
+/**
+ Your StackMob application's OAuth2 public key.
+ */
 @property(nonatomic, readonly, copy) NSString *publicKey;
+
+/**
+ The StackMob schema that has been marked as a user object. 
+ 
+ Default is `@"user"`.
+ */
 @property(nonatomic, copy) NSString *userSchema;
+
+/**
+ The StackMob primary key field name for the user object schema. 
+ 
+ Default is `@"username"`.
+ */
 @property(nonatomic, copy) NSString *userIdName;
+
+/**
+ The StackMob field name for the password. 
+ 
+ Default is `@"password"`.
+ */
 @property(nonatomic, copy) NSString *passwordFieldName;
+
+/**
+ An instance of `SMUserSession` which contains the necessary credentials to make StackMob requests.
+ */
 @property(nonatomic, readonly, strong) SMUserSession * session;
 
 #pragma mark init
@@ -88,11 +169,11 @@
  Initialize specifying all parameters.
  
  @param appAPIVersion The API version of your StackMob application which this client instance should use.
- @param apiHost The host to connect to for API requests.
+ @param apiHost The host to connect to for API requests. Default is `api.stackmob.com`.
  @param publicKey Your StackMob application's OAuth2 public key.
- @param userSchema The StackMob schema that has been flagged as a user object.
- @param userIdName The StackMob primary key field name for the user object schema.
- @param passwordFieldName The StackMob field name for the password. 
+ @param userSchema The StackMob schema that has been marked as a user object. Default is `@"user"`.
+ @param userIdName The StackMob primary key field name for the user object schema. Default is `@"username"`.
+ @param passwordFieldName The StackMob field name for the password. Default is `@"password"`.
  
  @return An instance of `SMClient`.
  */
@@ -218,7 +299,10 @@
 - (void)refreshLoginWithOnSuccess:(SMResultSuccessBlock)successBlock
                         onFailure:(SMFailureBlock)failureBlock;
 
-/** @name Retrieve the Logged In User */
+#pragma mark Retrieve User
+///-------------------------------
+/// @name Retrieve the Logged In User
+///-------------------------------
 
 /**
  Return the full object associated with the logged in user.
@@ -260,8 +344,10 @@
  */
 - (BOOL)isLoggedOut;
 
-
-/** @name Logout */
+#pragma mark Logout
+///-------------------------------
+/// @name Logout
+///-------------------------------
 
 /**
  Logout, clearing token validity locally and on the server.
@@ -272,7 +358,10 @@
 - (void)logoutOnSuccess:(SMResultSuccessBlock)successBlock
               onFailure:(SMFailureBlock)failureBlock;
 
-/** @name Reseting Password */
+#pragma mark Resetting Password
+///-------------------------------
+/// @name Resetting Password
+///-------------------------------
 
 /**
  Kick off the "Forgot Password" process.
