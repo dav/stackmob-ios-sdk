@@ -163,13 +163,15 @@ First, a table of how Core Data, StackMob and regular databases map to each othe
 2. Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: **year_born**, WRONG: **yearBorn**.
 3. All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.
 4. Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the [SMModel](http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html) protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity **Soda** should have attribute **soda_id**.
-5. When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context. Luckily, it's easy:
-	
+5. When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context. 
+90% of the time you can get away with assigning ids like this:
 		
 		// assuming your instance is called newManagedObject
 		[newManagedObject setValue:[newManagedObject sm_assignObjectId] forKey:[newManagedObject sm_primaryKeyField]];
 		
 		// now you can make a call to save: on your managed object context
+		
+	The other 10% of the time is when you want to assign your own ids that aren't unique strings based on a UUID algorithm. A great example of this is user objects, where you would probably assign the user's name to the primary key field. 
 		
 6. Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above - then you don't have to remember to do it each time you create a new object!
 
