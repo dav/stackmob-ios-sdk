@@ -111,6 +111,8 @@
 client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
 </code></pre>
 
+<p>For API-VERSION, pass @&ldquo;0&rdquo; for Development, @&ldquo;1&rdquo; or higher for the corresponding version in Production.</p>
+
 <p>If you haven&rsquo;t found your public key yet, check out <strong>Manage App Info</strong> under the <strong>App Settings</strong> sidebar on the <a href="https://stackmob.com/platform">Platform page</a>.</p>
 
 <br/>
@@ -216,11 +218,11 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 <p><strong>Coding Practices for successful app development:</strong></p>
 
 <ol>
-<li>Core Data entities are encouraged to start with a capital letter and will translate to all lowercase on StackMob. Example: <strong>Superpower</strong> entity on Core Data translates to <strong>superpower</strong> schema on StackMob.</li>
-<li>Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: <strong>year_born</strong>, WRONG: <strong>yearBorn</strong>.</li>
-<li>All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.</li>
-<li>Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the <a href="http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html">SMModel</a> protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity <strong>Soda</strong> should have attribute <strong>soda_id</strong>.</li>
-<li><p>When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context.
+<li><strong>Lowercase Entities:</strong> Core Data entities are encouraged to start with a capital letter and will translate to all lowercase on StackMob. Example: <strong>Superpower</strong> entity on Core Data translates to <strong>superpower</strong> schema on StackMob.</li>
+<li><strong>Lowercase Properties:</strong> Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: <strong>year_born</strong>, WRONG: <strong>yearBorn</strong>.</li>
+<li><strong>Schema Primary Keys:</strong> All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.</li>
+<li><strong>Entity Primary Keys:</strong> Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the <a href="http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html">SMModel</a> protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity <strong>Soda</strong> should have attribute <strong>soda_id</strong>.</li>
+<li><p><strong>Assign IDs:</strong> When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context.
 90% of the time you can get away with assigning ids like this:</p>
 
 <pre><code>  // assuming your instance is called newManagedObject
@@ -230,7 +232,21 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 </code></pre>
 
 <p>  The other 10% of the time is when you want to assign your own ids that aren&rsquo;t unique strings based on a UUID algorithm. A great example of this is user objects, where you would probably assign the user&rsquo;s name to the primary key field.</p></li>
-<li><p>Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above &ndash; then you don&rsquo;t have to remember to do it each time you create a new object!</p></li>
+<li><p><strong>NSManagedObject Subclasses:</strong> Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above &ndash; then you don&rsquo;t have to remember to do it each time you create a new object!</p></li>
+<li><p><strong>Asynchronous Save Calls:</strong> Core Data performs synchronous calls to its Persistent Store. To get the effect of asynchronous save: calls on your managed object context, allowing you to continue working on the main thread, you can use NSManagedObjectContext&rsquo;s performBlock: method like this:</p>
+
+<pre><code> // assuming your context is called self.managedObjectContext
+ [self.managedObjectContext performBlock:^{
+     NSError *error = nil;
+     if (![context save:&amp;error]) {
+         // Code to handle the error appropriately.
+     } else {
+         // Code to handle success.
+     }
+ }];
+</code></pre>
+
+<p> Optionally you can use dispatch queues from Apple&rsquo;s <a href="http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html" target="_blank">Grand Central Dispatch</a>. <strong>Important:</strong> You should not perform other methods such as creating, updating or deleting objects on the managed object context while a save is in progress.</p></li>
 </ol>
 
 
@@ -355,7 +371,7 @@ self.managedObjectContext = [coreDataStore managedObjectContext];
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-09-05)</span><br />
+						<p><span class="copyright">&copy; 2012 StackMob. All rights reserved. (Last updated: 2012-09-06)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
