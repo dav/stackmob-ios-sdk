@@ -68,7 +68,9 @@ Create a variable of class `SMClient`, most likely in your AppDelegate file wher
 
 	// Assuming your variable is declared SMClient *client;
 	client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
-	
+
+For API-VERSION, pass @"0" for Development, @"1" or higher for the corresponding version in Production.
+
 If you haven't found your public key yet, check out **Manage App Info** under the **App Settings** sidebar on the [Platform page](https://stackmob.com/platform).
 
 <br/>
@@ -159,11 +161,11 @@ First, a table of how Core Data, StackMob and regular databases map to each othe
 
 **Coding Practices for successful app development:**
 
-1. Core Data entities are encouraged to start with a capital letter and will translate to all lowercase on StackMob. Example: **Superpower** entity on Core Data translates to **superpower** schema on StackMob.
-2. Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: **year_born**, WRONG: **yearBorn**.
-3. All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.
-4. Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the [SMModel](http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html) protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity **Soda** should have attribute **soda_id**.
-5. When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context. 
+1. **Lowercase Entities:** Core Data entities are encouraged to start with a capital letter and will translate to all lowercase on StackMob. Example: **Superpower** entity on Core Data translates to **superpower** schema on StackMob.
+2. **Lowercase Properties:** Core Data attribute and relationship names must be all lowercase and can include underscores (for now). RIGHT: **year_born**, WRONG: **yearBorn**.
+3. **Schema Primary Keys:** All StackMob schemas have a primary key field that is always schemaName_id, unless the schema is a user object, in which case it defaults to username but can be changed manually.
+4. **Entity Primary Keys:** Following #3, each Core Data entity must include an attribute of type string that maps to the primary key field on StackMob. If it is not schemaName_id, you must adopt the [SMModel](http://stackmob.github.com/stackmob-ios-sdk/Protocols/SMModel.html) protocol. In order to adopt the protocol you will make an NSManagedObject subclass of the entity. This is good to do in general as it automatically provides getters and setters. Example, entity **Soda** should have attribute **soda_id**.
+5. **Assign IDs:** When inserting new objects into your managed object context, you must assign an id value to the attribute which maps to the StackMob primary key field BEFORE you make save the context. 
 90% of the time you can get away with assigning ids like this:
 		
 		// assuming your instance is called newManagedObject
@@ -173,7 +175,20 @@ First, a table of how Core Data, StackMob and regular databases map to each othe
 		
 	The other 10% of the time is when you want to assign your own ids that aren't unique strings based on a UUID algorithm. A great example of this is user objects, where you would probably assign the user's name to the primary key field. 
 		
-6. Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above - then you don't have to remember to do it each time you create a new object!
+6. **NSManagedObject Subclasses:** Creating an NSManagedObject subclass for each of your entities is highly recommended for convenience. You can add an init method to each subclass and include the ID assignment line from above - then you don't have to remember to do it each time you create a new object!
+7. **Asynchronous Save Calls:** Core Data performs synchronous calls to its Persistent Store. To get the effect of asynchronous save: calls on your managed object context, allowing you to continue working on the main thread, you can use NSManagedObjectContext's performBlock: method like this:
+
+		// assuming your context is called self.managedObjectContext
+		[self.managedObjectContext performBlock:^{
+			NSError *error = nil;
+        	if (![context save:&error]) {
+            	// Code to handle the error appropriately.
+        	} else {
+            	// Code to handle success.
+        	}
+		}];
+		
+	Optionally you can use dispatch queues from Apple's <a href="http://developer.apple.com/library/ios/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html" target="_blank">Grand Central Dispatch</a>. **Important:** You should not perform other methods such as creating, updating or deleting objects on the managed object context while a save is in progress.
 
 <a name="classes_to_check_out">&nbsp;</a>
 ## Classes To Check Out
@@ -189,8 +204,13 @@ First, a table of how Core Data, StackMob and regular databases map to each othe
 * [Starter App](https://stackmob.com/devcenter/docs/StackMob-iOS-Starter-App)
 * [Create an Object](https://stackmob.com/devcenter/docs/StackMob-iOS-Create-Tutorial)
 * [Read an Object](https://stackmob.com/devcenter/docs/StackMob-iOS-Read-Tutorial)
+* [Read to a Tableview](https://stackmob.com/devcenter/docs/StackMob-iOS-Read-TableView-Tutorial)
 * [Update an Object](https://stackmob.com/devcenter/docs/StackMob-iOS-Update-Tutorial)
 * [Delete an Object](https://stackmob.com/devcenter/docs/StackMob-iOS-Delete-Tutorial)
+* [Create a User Object](https://stackmob.com/devcenter/docs/StackMob-iOS-User-Object-Tutorial)
+* [User Authentication](https://stackmob.com/devcenter/docs/StackMob-iOS-User-Authentication-Tutorial)
+* [One To One Relationships](https://stackmob.com/devcenter/docs/StackMob-iOS-One-To-One-Relationship-Tutorial)
+* [One To Many Relationships](https://stackmob.com/devcenter/docs/StackMob-iOS-One-To-Many-Relationship-Tutorial)
 
 ... More coming soon!
 

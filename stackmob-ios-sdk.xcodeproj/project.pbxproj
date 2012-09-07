@@ -200,8 +200,8 @@
 		DEDDE22815DD95C40055FAFF /* Copy Headers */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Headers;
-			dstSubfolderSpec = 16;
+			dstPath = "~/Desktop/Headers";
+			dstSubfolderSpec = 0;
 			files = (
 				DE8D51CF15E2CB11002F582A /* NSDictionary+AtomicCounter.h in Copy Headers */,
 				DE8D51D015E2CB11002F582A /* NSEntityDescription+StackMobSerialization.h in Copy Headers */,
@@ -932,7 +932,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# make a new output folder\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\n# combine lib files for various platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libstackmob-ios-sdk.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libstackmob-ios-sdk.a\" -output \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/libstackmob-v${SDK_VERSION}.a\"\n";
+			shellScript = "#delete old output folder\nrm -rf ${PROJECT_DIR}/build/${SDK_VERSION}\n# make a new output folder\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\n# combine lib files for various platforms into one\nlipo -create \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libstackmob-ios-sdk.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libstackmob-ios-sdk.a\" -output \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/libstackmob-v${SDK_VERSION}.a\"\n";
 		};
 		DEDDE22915DD95D90055FAFF /* Copy Pods */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -960,7 +960,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#build the targets\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphonesimulator -configuration Release build\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphoneos -configuration Release build";
+			shellScript = "#build the targets\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphonesimulator -configuration Release clean build\nxcodebuild -workspace stackmob-ios-sdk.xcworkspace -scheme \"stackmob-ios-sdk\" -sdk iphoneos -configuration Release clean build";
 		};
 		DEDDE28615DD9F0F0055FAFF /* Copy Files To Build Dir */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -974,7 +974,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "// make directories for Headers and Pods\nmkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers\n#mkdir -p ${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Pods\n\n// copy Headers and Pods from builds\n#cp \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libpods.a\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Headers/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\n\n// copy readme and changelog\ncp \"${PROJECT_DIR}/CHANGELOG.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"";
+			shellScript = "mv -f ~/Desktop/Headers \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}\"\ncp -rf \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/Pods/\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/Headers/\"\n\n// copy readme and changelog\ncp \"${PROJECT_DIR}/CHANGELOG.md\" \"${PROJECT_DIR}/build/${SDK_VERSION}/StackMob-v${SDK_VERSION}/\"";
 		};
 		DEDDE2C215DDAFB30055FAFF /* Zip It Up */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -44,6 +44,8 @@
     // Assuming your variable is declared SMClient *client;
     client = [[SMClient alloc] initWithAPIVersion:@"API-VERSION" publicKey:@"PUBLIC-KEY"];
  
+ For API-VERSION, pass @"0" for Development, @"1" or higher for the corresponding version in Production.
+ 
  If you haven't found your public key yet, check out **Manage App Info** under the **App Settings** sidebar on the [Platform page](https://stackmob.com/platform).
  
  **Important:** The default schema to use for authentication is **user**, with **username** and **password** fields. If you plan on using a different user object schema or different field names, check out the **User Authentication** section below.
