@@ -28,83 +28,83 @@
 
 - (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSchema:(NSString *)schema withSuccessBlock:(SMDataStoreSuccessBlock)successBlock
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         if (successBlock) {
             successBlock(JSON, schema);
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withSuccessBlock:(SMDataStoreObjectIdSuccessBlock)successBlock 
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         if (successBlock) {
             successBlock(theObjectId, schema);
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForSuccessBlock:(SMSuccessBlock)successBlock 
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         if (successBlock) {
             successBlock();
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultSuccessBlock:(SMResultSuccessBlock)successBlock 
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         if (successBlock) {
             successBlock(JSON);
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseSuccessBlock)SMFullResponseSuccessBlockForResultsSuccessBlock:(SMResultsSuccessBlock)successBlock 
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
         if (successBlock) {
             successBlock(JSON);
         }
-    };
+    } copy] autorelease];
 }
 
 
 - (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObject:(NSDictionary *)theObject ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreFailureBlock)failureBlock
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
         if (failureBlock) {
             failureBlock([self errorFromResponse:response JSON:JSON], theObject, schema);
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseFailureBlock)SMFullResponseFailureBlockForObjectId:(NSString *)theObjectId ofSchema:(NSString *)schema withFailureBlock:(SMDataStoreObjectIdFailureBlock)failureBlock
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
         if (failureBlock) {
             failureBlock([self errorFromResponse:response JSON:JSON], theObjectId, schema);
         }
-    };
+    } copy] autorelease];
 }
 
 - (SMFullResponseFailureBlock)SMFullResponseFailureBlockForFailureBlock:(SMFailureBlock)failureBlock
 {
-    return ^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    return [[^void(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
     {
         if (failureBlock) {
             failureBlock([self errorFromResponse:response JSON:JSON]);
         }
-    };
+    } copy] autorelease];
 }
 
 - (int)countFromRangeHeader:(NSString *)rangeHeader results:(NSArray *)results
